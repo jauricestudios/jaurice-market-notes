@@ -8,3 +8,8 @@ execute:
   use_issues_button: false
   use_repository_button: false
   home_page_in_navbar: false
+
+  html:
+  extra_css:
+    - assets/custom.css
+    
