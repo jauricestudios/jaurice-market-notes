@@ -11,7 +11,7 @@ New research notes and visualisations will be added regularly.
 If you find the work useful, feel free to star the repository on GitHub ⭐
 ```
 
-#### Links
+## Links
 
 - [GitHub Profile](https://github.com/jauricestudios)
 - [LinkedIn](https://www.linkedin.com/in/jaurice-o-814a79373/)
