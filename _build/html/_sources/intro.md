@@ -1,36 +1,33 @@
-# Jaurice O’Connor Research Notebook
+# Jaurice O'Connor Research Notebook
 
-*Quantitative Finance | Global Markets | Commodity Market Research | Risk Modelling*
+*Quantitative Finance / Global Markets / Commodity Market Research / Risk Modelling*
 
-This research notebook documents my academic and independent work exploring the intersection of quantitative finance, global macroeconomics, and commodity markets.
+This research notebook documents my academic and independent work across quantitative finance, macroeconomics, and commodity markets.
 
-Commodity markets occupy a unique position within the global financial system. They are shaped both by physical supply chains and by broader macroeconomic forces such as global growth, inflation, interest rates, and geopolitical developments.
-
-The purpose of this research site is to build a structured research library exploring how mathematical models, economic theory, and real-world market dynamics interact in global financial markets.
+The site is designed as a structured library of notes, models, and research projects, with a focus on combining mathematical tools with real-world market understanding.
 
 ## Research Focus
 
-My work currently focuses on several interconnected areas:
+My work currently centres on:
 
 - stochastic processes and mathematical finance
-- Monte Carlo simulation methods
+- Monte Carlo methods in financial modelling
 - derivatives pricing and financial engineering
-- global macroeconomic drivers of markets
+- global macroeconomic drivers of commodity markets
 - commodity market structure and physical trade flows
 - quantitative risk modelling
 
 ## Research Objective
 
-The long-term goal of this project is to develop a rigorous understanding of how quantitative models and economic theory can be applied to analyse complex global markets.
+The long-term aim of this project is to build a rigorous understanding of how quantitative methods and economic theory can be applied to analyse complex global markets.
 
-This notebook therefore functions as both:
+This notebook functions as:
 
 - a structured research archive
-- a technical notebook for modelling and experimentation
-- a public record of ongoing research in global financial markets
+- a platform for modelling and experimentation
+- a public record of ongoing technical development
 
-# Links
+## Links
 
-- [LinkedIn](https://www.linkedin.com/in/jaurice-o-814a79373/)
-- [GitHub](https://github.com/jauricestudios)
-
+- [GitHub Profile](https://github.com/yourusername)
+- [LinkedIn](https://linkedin.com/in/yourprofile)

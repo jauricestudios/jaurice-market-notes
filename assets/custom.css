@@ -1,24 +1,19 @@
 body {
-  background-color: white !important;
-  color: #111111 !important;
+    background-color: #ffffff;
+    color: #111111;
 }
 
 .bd-sidebar {
-  background-color: #f8f8f8 !important;
-}
-
-a {
-  color: #0b5ed7;
-}
-
-h1, h2, h3 {
-  color: #111111;
-}
-
-.bd-content {
-  background-color: white;
+    background-color: #f5f5f5;
 }
 
 .bd-main {
-  background-color: white;
+    background-color: #ffffff;
+}
+a {
+    color: #1f77ff !important;
+}
+
+a:hover {
+    color: #0a58ca !important;
 }

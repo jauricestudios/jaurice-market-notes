@@ -1,55 +1,33 @@
-# Global Markets & Commodity Research Notebook
+# Jaurice O'Connor Research Notebook
 
-*Jaurice O'Connor*  
-*Mathematical Finance | Global Macro | Commodity Market Structure | Quantitative Risk Modelling*
+*Quantitative Finance / Global Markets / Commodity Market Research / Risk Modelling*
 
----
+This research notebook documents my academic and independent work across quantitative finance, macroeconomics, and commodity markets.
 
-This research notebook documents academic and independent work at the intersection of **mathematical finance, global macroeconomics, and commodity markets**.
-
-Its focus is on understanding how **stochastic models, derivatives pricing theory, Monte Carlo simulation, and quantitative risk frameworks** interact with real-world market structure — particularly within **global commodity systems**.
-
----
+The site is designed as a structured library of notes, models, and research projects, with a focus on combining mathematical tools with real-world market understanding.
 
 ## Research Focus
 
-This site brings together work across:
+My work currently centres on:
 
-- stochastic processes and mathematical finance  
-- Monte Carlo simulation and numerical methods  
-- derivatives pricing and financial engineering  
-- quantitative risk modelling and volatility dynamics  
-- global macroeconomic drivers of markets  
-- commodity market structure and physical trade flows  
-
----
+- stochastic processes and mathematical finance
+- Monte Carlo methods in financial modelling
+- derivatives pricing and financial engineering
+- global macroeconomic drivers of commodity markets
+- commodity market structure and physical trade flows
+- quantitative risk modelling
 
 ## Research Objective
 
-The central objective is to bridge **theoretical models from mathematical finance** with the **structural realities of global markets**.
+The long-term aim of this project is to build a rigorous understanding of how quantitative methods and economic theory can be applied to analyse complex global markets.
 
-The long-term goal is to build a structured research library showing how mathematical methods, economic theory, and market intuition can be applied to analyse complex financial and commodity systems.
+This notebook functions as:
 
----
+- a structured research archive
+- a platform for modelling and experimentation
+- a public record of ongoing technical development
 
-## Current Development
+## Links
 
-Current areas of development include:
-
-- commodity macro drivers and global market linkages  
-- storage economics, inventories, and futures curve structure  
-- trade flows, logistics, and geopolitical chokepoints  
-- Monte Carlo applications in risk, pricing, and simulation
-- [LinkedIn](https://www.linkedin.com/in/jaurice-o-814a79373/)
-- [GitHub](https://github.com/jauricestudios)
-
----
-
-## Site Structure
-
-The research notebook is organised into the following areas:
-
-- **Global Markets** – macroeconomic drivers of commodity markets  
-- **Commodities** – physical market structure and trade flows  
-- **Mathematical Finance** – derivatives pricing and stochastic models  
-- **Research Projects** – applied analysis and modelling work
+- [GitHub Profile](https://github.com/yourusername)
+- [LinkedIn](https://linkedin.com/in/yourprofile)

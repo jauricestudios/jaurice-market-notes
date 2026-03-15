@@ -1,0 +1,11 @@
+body {
+    background-color: #0f1116;
+}
+
+.bd-sidebar {
+    background-color: #151922;
+}
+
+.bd-main {
+    background-color: #0f1116;
+}

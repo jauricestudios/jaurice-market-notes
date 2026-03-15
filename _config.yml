@@ -1,15 +1,31 @@
 title: Jaurice Research Notes
 author: Jaurice O'Connor
 
+
 execute:
-  execute_notebooks: off
+  execute_notebooks: force
 
-  html:
+repository:
+  url: https://github.com/yourusername/jaurice-notes-book
+  branch: main
+
+html:
   use_issues_button: false
-  use_repository_button: false
+  use_repository_button: true
+  use_edit_page_button: false
+  use_download_button: false
   home_page_in_navbar: false
+  extra_navbar: ""
+  extra_footer: ""
 
-  html:
-  extra_css:
-    - assets/custom.css
-    
+  theme:
+    name: sphinx_book_theme
+    options:
+      default_mode: light
+
+sphinx:
+  config:
+    html_css_files:
+      - custom.css
+      
+

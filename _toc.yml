@@ -5,22 +5,16 @@ chapters:
   - file: about
   - file: dissertation
   - file: mathematics
-
   - file: quantitative_notes/brownian_motion
-    sections:
-      - file: quantitative_notes/monte_carlo_methods
-      - file: quantitative_notes/yield_curves
-      - file: quantitative_notes/volatility_and_risk
-
+  - file: quantitative_notes/monte_carlo_methods
+  - file: quantitative_notes/volatility_and_risk
+  - file: quantitative_notes/yield_curves
   - file: commodity_research/commodity_macro_drivers
-    sections:
-      - file: commodity_research/oil_market_structure
-      - file: commodity_research/storage_and_optionality
-      - file: commodity_research/trade_flows_and_chokepoints
-
+  - file: commodity_research/oil_market_structure
+  - file: commodity_research/storage_and_optionality
+  - file: commodity_research/trade_flows_and_chokepoints
   - file: visualisations/mathematical_and_market_visualisations
-
+  - file: projects/market_risk_projects
   - file: projects/monte_carlo_engine
-    sections:
-      - file: projects/market_risk_projects
-      
+  - file: disclaimer
+  
