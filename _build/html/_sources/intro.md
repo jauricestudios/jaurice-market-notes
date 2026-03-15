@@ -1,4 +1,4 @@
-#### Welcome
+#### Welcome 👋🏾
 
 This is a research notebook that documents my academic and independent work across quantitative finance, macroeconomics, and commodity markets. I will be using - [Python]( https://www.python.org/python) to help illsutate each topic and relate them to wider market issues.
 
@@ -6,57 +6,15 @@ I am in the process of understanding and gaining knowledge of the commodity mark
 
 ## Contents
 
-### Quantitative Foundations
-
 - [Brownian Motion](quantitative_notes/brownian_motion.md)
+
 - [Monte Carlo Methods](quantitative_notes/monte_carlo_methods.md)
-- [Volatility and Risk](quantitative_notes/volatility_and_risk.md)
-- [Yield Curves](quantitative_notes/yield_curves.md)
 
-### Commodity Market Structure
-
-- [Global Macro Drivers](commodity_research/commodity_macro_drivers.md)
-- [Oil Market Structure](commodity_research/oil_market_structure.md)
-- [Storage and Optionality](commodity_research/storage_and_optionality.md)
-- [Trade Flows and Chokepoints](commodity_research/trade_flows_and_chokepoints.md)
-
-### Visualisations
-
-- [Market Visualisations](visualisations/mathematical_and_market_visualisations.md)
-
-### Research Projects
+- [Visualisations](visualisations/mathematical_and_market_visualisations.md)
 
 - [Market Risk Projects](projects/market_risk_projects.md)
-- [Monte Carlo Engine](projects/monte_carlo_engine.md)
 
-### Quantitative Foundations
-
-1. [Brownian Motion](quantitative_notes/brownian_motion.md)
-2. [Monte Carlo Methods](quantitative_notes/monte_carlo_methods.md)
-3. [Volatility and Risk](quantitative_notes/volatility_and_risk.md)
-4. [Yield Curves](quantitative_notes/yield_curves.md)
-
----
-
-### Commodity Market Structure
-
-1. [Global Macro Drivers](commodity_research/commodity_macro_drivers.md)
-2. [Oil Market Structure](commodity_research/oil_market_structure.md)
-3. [Storage and Optionality](commodity_research/storage_and_optionality.md)
-4. [Trade Flows and Chokepoints](commodity_research/trade_flows_and_chokepoints.md)
-
----
-
-### Visualisations
-
-1. [Market Visualisations](visualisations/mathematical_and_market_visualisations.md)
-
----
-
-### Research Projects
-
-1. [Market Risk Projects](projects/market_risk_projects.md)
-2. [Monte Carlo Engine](projects/monte_carlo_engine.md)
+1. [Research notes](quantitative_notes/monte_carlo_methods.md)
 
 
 ```{note}
