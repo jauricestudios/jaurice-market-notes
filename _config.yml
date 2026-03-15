@@ -2,13 +2,11 @@ title: Jaurice Research Notes
 author: Jaurice O'Connor
 logo: assets/profile.jpg
 
-
-
 execute:
   execute_notebooks: force
 
 repository:
-  url: https://github.com/yourusername/jaurice-notes-book
+  url: https://github.com/jauricestudios/jaurice-market-notes
   branch: main
 
 html:
