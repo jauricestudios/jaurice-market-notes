@@ -1,31 +1,25 @@
 format: jb-book
 root: intro
 
-chapters:
-  - file: about
+parts:
+  - caption: Main
+    chapters:
+      - file: about
+      - file: disclaimer
 
-  - part: Flagship Projects
+  - caption: Flagship Projects
     chapters:
       - file: grid_stress
       - file: copper_demand
-      - file: colocation_value
-      - file: climate_asset_risk
+      - file: colocation
+      - file: climate_risk
 
-  - part: Systems
+  - caption: Research Notes
     chapters:
-      - file: dashboards
-      - file: maps
-
-  - part: Research Notes
-    chapters:
-      - file: uk_power
       - file: commodities
-      - file: market_structure
+      - file: power_markets
 
-  - part: Methods
+  - caption: Methods
     chapters:
-      - file: monte_carlo
-      - file: regression
-      - file: scenario_models
-
-  - file: contact
+      - file: monte_carlo_methods_in_financial_modelling
+      - file: mathematics

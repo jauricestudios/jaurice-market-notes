@@ -1,28 +1,35 @@
-#### Welcome 👋🏾
+# Jaurice O’Connor
 
-This research notebook documents my academic and independent work across **quantitative finance, macroeconomics, and commodity markets**.  
-Throughout the site I use **[Python](https://www.python.org/)** to illustrate models, analyse data, and connect theory with real-world market dynamics.
+## Markets. Infrastructure. Risk. Systems.
 
-The goal of this project is to develop a structured understanding of commodity markets, combining economic theory, quantitative analysis, and market intelligence.
+I build research tools and analytical models to understand how physical constraints, policy decisions, and capital allocation shape markets.
 
-## Contents
+---
 
-- [Brownian Motion](quantitative_notes/brownian_motion.md)
-- [Monte Carlo Methods](quantitative_notes/monte_carlo_methods.md)
+## Featured Projects
 
-- [Visualisations and Market Outlooks](visualisations/mathematical_and_market_visualisations.md)
+- [UK Grid Stress Dashboard](grid_stress.md)
+- [Copper Demand Engine](copper_demand.md)
+- [Co-location Valuation Model](colocation.md)
+- [Climate Infrastructure Risk Map](climate_risk.md)
 
-- [Market Risk Projects](projects/market_risk_projects.md)
+---
 
-- [Mathematical Finance Notes](quantitative_notes/monte_carlo_methods.md)
+## Research Areas
 
-- [Options, Futures and Other Derivatives — John Hull](https://www.amazon.co.uk/Options-Futures-Other-Derivatives-Global/dp/1292212896/)
+- [Commodity Research Notes](commodities.md)
+- [Power Market Research Notes](power_markets.md)
+- [About](about.md)
 
-```{note}
-This project is currently under construction 🚧  
-New research notes and visualisations will be added regularly.
+---
 
-If you find the work useful, feel free to star the repository on GitHub ⭐
+## Methods
 
-- [GitHub Profile](https://github.com/jauricestudios)
-- [LinkedIn](https://www.linkedin.com/in/jaurice-o-814a79373/)
+- [Monte Carlo Methods](monte_carlo_methods_in_financial_modelling.md)
+- [Mathematics](mathematics.md)
+
+---
+
+## Objective
+
+To turn complexity into structured decision-making through mathematics, data, and commercial judgement.
