@@ -7,51 +7,60 @@
 
 ## Risk Analytics for Markets, Infrastructure & Climate-Exposed Assets
 
-I am a mathematics graduate building risk analytics projects across energy, infrastructure, climate and markets.
+I am a mathematics graduate using energy, infrastructure and commodity systems as case studies for broader risk, pricing, economic research and data science problems.
 
 [View Featured Projects](#featured-projects) · [Methods](#methods-toolkit) · [Research Notes](#research-notes) · [Contact](#contact)
 
+## Featured Work
 
-## Projects
+### Risk & Insurance Analytics: 
+#### Climate Exposure Risk Map: Transport & Energy Assets  
+Which transport and energy assets are most exposed to climate stress?
 
-### 1. Physical Climate Risk Mapping for UK Energy Infrastructure
+A geospatial exposure model identifying infrastructure assets most exposed to flood, heat and coastal hazards.
+  
+**Methods:** Python · GeoPandas · exposure scoring · geospatial joins · scenario analysis
 
-A Python based geospatial risk model that identifies UK energy infrastructure assets exposed to flood, heat and coastal climate stress.
+[`View project`](#)
 
-This project combines public energy asset data, geospatial joins, hazard overlays, risk scoring and regional concentration analysis.
+---
 
-**Methods:** Python • pandas • GeoPandas • geospatial joins • hazard overlay analysis • risk scoring • scenario analysis • portfolio concentration metrics.
+### Infrastructure Analytics:  
+#### Infrastructure Stress Dashboard: Data Centres & Power Systems  
+When does data centre demand collide with constrained electricity systems?
 
-[View project](./physical-climate-risk-uk-energy/intro.html)
+A dashboard exploring how demand growth, regional bottlenecks and grid constraints can create infrastructure stress.
+ 
+**Methods:** Python · Streamlit · Plotly · dashboard design · time series analysis
+
+[`View project`](#)
+
+---
+
+### Economic Research & Market Analysis:  
+#### Economic Demand Scenario Model: Copper, AI & Electrification  
+How does AI infrastructure and electrification change the medium-term case for copper?
+
+A scenario model exploring how grid buildout, electrification and AI infrastructure could affect medium-term copper demand.
+ 
+**Methods:** Python · demand modelling · scenario analysis · sensitivity analysis · market research
+
+[`View project`](#)
+
+---
+
+### Pricing & Commercial Analytics:  
+#### Commercial Valuation Model: Co-location vs Standalone Assets  
+When does co-location create more value than standalone assets?
+
+A valuation model comparing standalone and co-located infrastructure assets under different utilisation, cost and revenue assumptions.
+ 
+**Methods:** Python · pricing logic · sensitivity analysis · scenario modelling · commercial risk
+
+[`View project`](#)
 
 
-### 2. UK Grid Stress Dashboard
-
-A dashboard exploring how electricity demand, grid constraints and infrastructure bottlenecks can create regional power-system stress.
-
-**Methods:** Python • Streamlit • Plotly • power market data • scenario analysis • dashboard design.
-
-[View project](#)
-
-### 3. Copper Demand Engine
-
-A scenario model exploring how AI infrastructure, electrification, grid buildout and clean-energy investment may affect medium-term copper demand.
-
-**Methods:** Python • pandas • scenario modelling • sensitivity analysis • commodity research.
-
-[View project](#)
-
-
-### 4. Co-location Valuation Model
-
-A commercial model exploring when co-located assets create more value than standalone infrastructure assets.
-
-**Methods:** Python • valuation logic • scenario analysis • asset-level assumptions • commercial risk thinking.
-
-[View project](#)
-
-
-## Methods Toolkit
+## Methods:
 
 | Skill area | Tools and methods |
 |---|---|
@@ -62,7 +71,7 @@ A commercial model exploring when co-located assets create more value than stand
 
 ---
 
-## Research Notes
+## Research Notes:
 
 Short market notes connecting risk analysis, infrastructure and commodities and insurance.
 
@@ -75,7 +84,7 @@ Short market notes connecting risk analysis, infrastructure and commodities and 
 
 ---
 
-## Contact
+## Contact:
 
 - GitHub: [jauricestudios](https://github.com/jauricestudios)
 - LinkedIn: https://www.linkedin.com/in/jaurice-o-814a79373/

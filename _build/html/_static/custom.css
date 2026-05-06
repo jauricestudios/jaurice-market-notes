@@ -436,3 +436,36 @@ h3 {
 .bd-article table tbody tr:nth-child(odd) td {
   background: #00291f !important;
 }
+
+/* Fix heading colours for green chalkboard theme */
+h1,
+h2,
+h3 {
+  color: #fffdf2 !important; /* chalk white */
+}
+
+h4,
+h5,
+h6 {
+  color: #d9f99d !important; /* pale lime */
+}
+
+/* Project title headings specifically */
+.bd-article h3,
+.bd-article h4 {
+  color: #fefce8 !important;
+}
+
+/* Category headings */
+.bd-article h5,
+.bd-article h6 {
+  color: #bbf7d0 !important;
+}
+
+/* Keep sidebar active highlight in matching mint */
+.bd-toc .nav-link.active,
+.bd-sidebar-primary .nav-link.active {
+  color: #ecfccb !important;
+  background: rgba(217, 249, 157, 0.16) !important;
+  border-left: 3px solid #d9f99d !important;
+}
