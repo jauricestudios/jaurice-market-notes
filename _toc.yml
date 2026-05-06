@@ -1,25 +1,10 @@
 format: jb-book
 root: intro
 
-parts:
-  - caption: Main
-    chapters:
-      - file: about
-      - file: disclaimer
-
-  - caption: Flagship Projects
-    chapters:
-      - file: grid_stress
-      - file: copper_demand
-      - file: colocation
-      - file: climate_risk
-
-  - caption: Research Notes
-    chapters:
-      - file: commodities
-      - file: power_markets
-
-  - caption: Methods
-    chapters:
-      - file: monte_carlo_methods_in_financial_modelling
-      - file: mathematics
+chapters:
+  - file: about
+  - file: grid_stress
+  - file: copper_demand
+  - file: colocation
+  - file: climate_risk
+  - file: contact
