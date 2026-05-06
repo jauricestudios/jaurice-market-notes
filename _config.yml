@@ -1,6 +1,6 @@
 title: Jaurice Research Notes
 author: Jaurice O'Connor
-logo: assets/profile.jpg
+logo: assets/random_walk_3d.png
 
 execute:
   execute_notebooks: force
@@ -18,14 +18,15 @@ html:
   extra_navbar: ""
   extra_footer: ""
 
-  theme:
-    name: sphinx_book_theme
-    options:
-      default_mode: light
+theme:
+  name: sphinx_book_theme
+  options:
+    default_mode: dark
 
 sphinx:
   config:
+    html_static_path:
+      - "_static"
     html_css_files:
-      - custom.css
-      
-
+      - "custom.css"
+    html_title: "Jaurice O'Connor | Risk Analytics Portfolio"

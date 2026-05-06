@@ -1,5 +1,10 @@
 # Jaurice O'Connor
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-111111?logo=github)](https://github.com/jauricestudios/jaurice-market-notes)
+[![Python](https://img.shields.io/badge/Python-Analytics-3776AB?logo=python&logoColor=white)](#methods-toolkit)
+[![Documentation](https://img.shields.io/badge/Docs-Portfolio-22c55e)](#projects)
+[![Risk](https://img.shields.io/badge/Risk-Analytics-a3e635)](#projects)
+
 ## Risk Analytics for Markets, Infrastructure & Climate-Exposed Assets
 
 I am a mathematics graduate building risk analytics projects across energy, infrastructure, climate and markets.
@@ -11,45 +16,40 @@ I am a mathematics graduate building risk analytics projects across energy, infr
 
 ### 1. Physical Climate Risk Mapping for UK Energy Infrastructure
 
-A Python-based geospatial risk model that identifies UK energy infrastructure assets exposed to flood, heat and coastal climate stress.
+A Python based geospatial risk model that identifies UK energy infrastructure assets exposed to flood, heat and coastal climate stress.
 
 This project combines public energy asset data, geospatial joins, hazard overlays, risk scoring and regional concentration analysis.
 
-**Methods:** Python, pandas, GeoPandas, geospatial joins, hazard overlay analysis, risk scoring, scenario analysis, portfolio concentration metrics.
+**Methods:** Python • pandas • GeoPandas • geospatial joins • hazard overlay analysis • risk scoring • scenario analysis • portfolio concentration metrics.
 
 [View project](./physical-climate-risk-uk-energy/intro.html)
 
----
 
 ### 2. UK Grid Stress Dashboard
 
 A dashboard exploring how electricity demand, grid constraints and infrastructure bottlenecks can create regional power-system stress.
 
-**Methods:** Python, Streamlit, Plotly, power market data, scenario analysis, dashboard design.
+**Methods:** Python • Streamlit • Plotly • power market data • scenario analysis • dashboard design.
 
 [View project](#)
-
----
 
 ### 3. Copper Demand Engine
 
 A scenario model exploring how AI infrastructure, electrification, grid buildout and clean-energy investment may affect medium-term copper demand.
 
-**Methods:** Python, pandas, scenario modelling, sensitivity analysis, commodity research.
+**Methods:** Python • pandas • scenario modelling • sensitivity analysis • commodity research.
 
 [View project](#)
 
----
 
 ### 4. Co-location Valuation Model
 
 A commercial model exploring when co-located assets create more value than standalone infrastructure assets.
 
-**Methods:** Python, valuation logic, scenario analysis, asset-level assumptions, commercial risk thinking.
+**Methods:** Python • valuation logic • scenario analysis • asset-level assumptions • commercial risk thinking.
 
 [View project](#)
 
----
 
 ## Methods Toolkit
 
@@ -80,3 +80,4 @@ Short market notes connecting risk analysis, infrastructure and commodities and 
 - GitHub: [jauricestudios](https://github.com/jauricestudios)
 - LinkedIn: https://www.linkedin.com/in/jaurice-o-814a79373/
 - Email: jauricega@gmail.com
+
