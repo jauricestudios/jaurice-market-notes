@@ -19,15 +19,15 @@ I build Python-based projects that combine statistics, geospatial analysis, dash
 
 ### Risk & Insurance Analytics:
 
-#### Climate Exposure Risk Map: Transport & Energy Assets
+#### Climate Exposure Risk Map: UK Energy Infrastructure Prototype
 
-Which transport and energy assets are most exposed to climate stress?
+Where might physical climate exposure be concentrated across UK renewable energy infrastructure?
 
-A Python based geospatial exposure model identifying infrastructure assets most exposed to flood, heat and coastal hazards.
+A Python-based geospatial exposure-screening project using operational renewable energy asset data, regional geography and installed capacity to identify assets and regions that may warrant closer climate-risk review.
 
-**Output:** asset-level exposure rankings and regional risk views for insurance, infrastructure and portfolio risk decisions.
+**Output:** asset-level exposure rankings, Low / Medium / High screening categories, and regional portfolio summaries for infrastructure, insurance and risk analysis.
 
-**Methods:** Python · GeoPandas · exposure scoring · geospatial joins · scenario analysis
+**Methods:** Python · pandas · GeoPandas · CRS conversion · distance-based exposure proxy · installed-capacity weighting · regional aggregation · scenario-style risk screening
 
 [`View project`](./physical-climate-risk-uk-energy/intro.html)
 
