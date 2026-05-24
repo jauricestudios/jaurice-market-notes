@@ -29,8 +29,9 @@ A Python-based geospatial exposure-screening project using operational renewable
 
 **Methods:** Python · pandas · GeoPandas · CRS conversion · distance-based exposure proxy · installed-capacity weighting · regional aggregation · scenario-style risk screening
 
-[`View project`](./physical-climate-risk-uk-energy/intro.html)
+**Project files:** [Data Cleaning](https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/02_asset_data_cleaning.ipynb) · [Spatial Layer](https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/03_create_spatial_asset_layer.ipynb) · [Exposure Features](https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/04_geospatial_exposure_features.ipynb) · [Scoring](https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/05_exposure_scoring.ipynb) · [Results](https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/06_results_and_interpretation.ipynb)
 
+[[View project](climate_risk.html)
 ---
 
 ### Infrastructure Analytics:

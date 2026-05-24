@@ -469,3 +469,65 @@ h6 {
   background: rgba(217, 249, 157, 0.16) !important;
   border-left: 3px solid #d9f99d !important;
 }
+
+/* White code blocks for readability */
+div.highlight,
+div.highlight pre,
+pre,
+code {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Keep inline code readable */
+p code,
+li code,
+td code {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+/* Code block border */
+div.highlight {
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 6px;
+}
+
+/* Copy button still visible */
+.copybtn {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* White code blocks for readability */
+div.highlight,
+div.highlight pre,
+pre,
+code {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+
+/* Keep inline code readable */
+p code,
+li code,
+td code {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+/* Code block border */
+div.highlight {
+  border: 1px solid #d0d0d0 !important;
+  border-radius: 6px;
+}
+
+/* Copy button still visible */
+.copybtn {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}

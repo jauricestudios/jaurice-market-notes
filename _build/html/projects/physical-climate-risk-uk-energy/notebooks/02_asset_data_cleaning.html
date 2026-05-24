@@ -1,0 +1,1135 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>02 Asset Data Cleaning &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=982d7a53" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/physical-climate-risk-uk-energy/notebooks/02_asset_data_cleaning';</script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-light" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-dark pst-js-only" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid_stress.html">UK Grid Stress Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../copper_demand.html">Copper Demand Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colocation.html">Co-location Valuation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../climate_risk.html">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gb-energy-monitor/index.html">GB Energy System Monitor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jauricestudios/jaurice-market-notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/projects/physical-climate-risk-uk-energy/notebooks/02_asset_data_cleaning.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>02 Asset Data Cleaning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-useful-fields">Selecting useful fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-the-development-status-field">Cleaning the development status field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-coordinate-completeness">Checking coordinate completeness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-result">Cleaning result</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="asset-data-cleaning">
+<h1>02 Asset Data Cleaning<a class="headerlink" href="#asset-data-cleaning" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>This notebook creates the clean asset dataset used for the climate exposure-screening project.</p>
+<p>The raw REPD dataset contains 13,995 project records and 53 fields. Not all fields are needed for this first version of the project.</p>
+<p>This notebook focuses on:</p>
+<ol class="arabic simple">
+<li><p>selecting the fields needed to identify, describe and locate assets,</p></li>
+<li><p>cleaning the <code class="docutils literal notranslate"><span class="pre">Development</span> <span class="pre">Status</span></code> field,</p></li>
+<li><p>filtering to operational assets,</p></li>
+<li><p>removing assets without valid coordinates,</p></li>
+<li><p>saving a cleaned dataset for later geospatial analysis.</p></li>
+</ol>
+<p>The output of this notebook is a cleaned table of operational renewable energy assets with valid coordinate data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+<span class="n">DATA_RAW</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;raw&quot;</span>
+<span class="n">DATA_INTERIM</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;interim&quot;</span>
+<span class="n">DATA_PROCESSED</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;processed&quot;</span>
+
+<span class="n">DATA_INTERIM</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">DATA_PROCESSED</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">csv_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.csv&quot;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">csv_files</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No CSV files found in </span><span class="si">{</span><span class="n">DATA_RAW</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">raw_asset_file</span> <span class="o">=</span> <span class="n">csv_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using:&quot;</span><span class="p">,</span> <span class="n">raw_asset_file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">raw_asset_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw rows:&quot;</span><span class="p">,</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw columns:&quot;</span><span class="p">,</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using: repd_publication_q4_2025_raw.csv
+Raw rows: 13995
+Raw columns: 53
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-useful-fields">
+<h2>Selecting useful fields<a class="headerlink" href="#selecting-useful-fields" title="Link to this heading">#</a></h2>
+<p>The raw dataset includes project identifiers, planning history, technology information, capacity, location fields and administrative geography.</p>
+<p>For this Version 1 exposure-screening model, I keep only the fields needed to answer four questions:</p>
+<ol class="arabic simple">
+<li><p>What is the asset?</p></li>
+<li><p>What type of technology is it?</p></li>
+<li><p>Is it operational?</p></li>
+<li><p>Where is it located?</p></li>
+</ol>
+<p>I also keep installed capacity because it can be used as a simple proxy for asset scale or infrastructure importance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">useful_columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Ref ID&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operator (or Applicant)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status (short)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;County&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Post Code&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Planning Authority&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Under Construction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Solar Site Area (sqm)&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">assets</span> <span class="o">=</span> <span class="n">df_raw</span><span class="p">[</span><span class="n">useful_columns</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected rows:&quot;</span><span class="p">,</span> <span class="n">assets</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected columns:&quot;</span><span class="p">,</span> <span class="n">assets</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">assets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected rows: 13995
+Selected columns: 17
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>RWE npower</td>
+      <td>Aberthaw Power Station Biomass</td>
+      <td>Biomass (co-firing)</td>
+      <td>35.00</td>
+      <td>Decommissioned</td>
+      <td>Decommissioned</td>
+      <td>South Glamorgan</td>
+      <td>Wales</td>
+      <td>Wales</td>
+      <td>CF62 4ZW</td>
+      <td>302219</td>
+      <td>166320</td>
+      <td>Vale of Glamorgan</td>
+      <td>01/05/2006</td>
+      <td>01/05/2007</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Orsted (formerly Dong Energy) / Peel Energy</td>
+      <td>Hunterston - cofiring</td>
+      <td>Biomass (co-firing)</td>
+      <td>170.00</td>
+      <td>Planning Application Withdrawn</td>
+      <td>Application Withdrawn</td>
+      <td>Strathclyde</td>
+      <td>Scotland</td>
+      <td>Scotland</td>
+      <td>NaN</td>
+      <td>218740</td>
+      <td>652937</td>
+      <td>Scottish Government (S36)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Agrigen</td>
+      <td>Nunn Mills Road Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>8.80</td>
+      <td>Planning Permission Refused</td>
+      <td>Application Refused</td>
+      <td>Northamptonshire</td>
+      <td>East Midlands</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>476500</td>
+      <td>259700</td>
+      <td>West Northamptonshire</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="cleaning-the-development-status-field">
+<h2>Cleaning the development status field<a class="headerlink" href="#cleaning-the-development-status-field" title="Link to this heading">#</a></h2>
+<p>Before filtering the dataset, I inspect and clean the <code class="docutils literal notranslate"><span class="pre">Development</span> <span class="pre">Status</span></code> field.</p>
+<p>Real-world datasets often contain inconsistent spelling, capitalisation or hidden whitespace. For example, values such as <code class="docutils literal notranslate"><span class="pre">Operational</span></code>, <code class="docutils literal notranslate"><span class="pre">Operational</span> </code> and <code class="docutils literal notranslate"><span class="pre">operational</span></code> may look similar to a person, but Python treats them as different categories unless they are standardised.</p>
+<p>To avoid accidentally excluding valid operational assets, I clean the status field by:</p>
+<ol class="arabic simple">
+<li><p>converting values to text,</p></li>
+<li><p>removing leading and trailing spaces,</p></li>
+<li><p>converting all values to lowercase.</p></li>
+</ol>
+<p>Only after this cleaning step do I filter the dataset to operational assets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;Development Status&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>development_status_clean
+planning permission granted       5111
+operational                       3060
+planning application submitted    1745
+planning permission refused        870
+revised                            803
+planning application withdrawn     637
+under construction                 418
+abandoned                          386
+planning permission expired        336
+appeal refused                     315
+appeal granted                     190
+appeal withdrawn                    49
+decommissioned                      32
+secretary of state - refusal        21
+no application required             14
+secretary of state - granted         5
+appeal lodged                        3
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">operational_assets</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span>
+    <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;operational&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">))</span>
+
+<span class="n">operational_assets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operational assets: 3060
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="checking-coordinate-completeness">
+<h2>Checking coordinate completeness<a class="headerlink" href="#checking-coordinate-completeness" title="Link to this heading">#</a></h2>
+<p>Geospatial exposure analysis depends on asset location.</p>
+<p>If an asset does not have an <code class="docutils literal notranslate"><span class="pre">X-coordinate</span></code> and <code class="docutils literal notranslate"><span class="pre">Y-coordinate</span></code>, it cannot be converted into a map point and cannot be used in distance-based exposure calculations.</p>
+<p>For this project, operational assets without valid coordinates are removed from the geospatial modelling dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinate_check</span> <span class="o">=</span> <span class="n">operational_assets</span><span class="p">[[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span> <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">coordinate_check</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X-coordinate    2
+Y-coordinate    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">operational_assets_with_coords</span> <span class="o">=</span> <span class="n">operational_assets</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span>
+    <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span> <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets before coordinate filter:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets with coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets_with_coords</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Dropped due to missing coordinates:&quot;</span><span class="p">,</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets_with_coords</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">operational_assets_with_coords</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operational assets before coordinate filter: 3060
+Operational assets with coordinates: 3058
+Dropped due to missing coordinates: 2
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="cleaning-result">
+<h2>Cleaning result<a class="headerlink" href="#cleaning-result" title="Link to this heading">#</a></h2>
+<p>After filtering to operational assets, the dataset contains 3,060 records.</p>
+<p>Two operational assets are missing coordinate values. These records are removed because they cannot be converted into map points or used in geospatial exposure analysis.</p>
+<p>The working dataset therefore contains 3,058 operational renewable energy assets with valid coordinate data.</p>
+<p>This cleaned dataset defines the asset universe for the first version of the project.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cleaned_csv_path</span> <span class="o">=</span> <span class="n">DATA_INTERIM</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_clean.csv&quot;</span>
+
+<span class="n">operational_assets_with_coords</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">cleaned_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved cleaned asset table to:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cleaned_csv_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved cleaned asset table to:
+/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/interim/operational_energy_assets_clean.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projects/physical-climate-risk-uk-energy/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-useful-fields">Selecting useful fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-the-development-status-field">Cleaning the development status field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-coordinate-completeness">Checking coordinate completeness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-result">Cleaning result</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jaurice O'Connor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

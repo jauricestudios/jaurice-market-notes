@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=a228b768" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=982d7a53" />
   
   <!-- So that users can add custom icons -->
   <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -168,7 +168,10 @@
 <li class="toctree-l1"><a class="reference internal" href="grid_stress.html">UK Grid Stress Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copper_demand.html">Copper Demand Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="colocation.html">Co-location Valuation Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="climate_risk.html">Climate Infrastructure Risk Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="climate_risk.html">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="projects/gb-energy-monitor/index.html">GB Energy System Monitor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -332,9 +335,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-pricing-economic-analytics">Risk, Pricing &amp; Economic Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#featured-work">Featured Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-insurance-analytics">Risk &amp; Insurance Analytics:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-exposure-risk-map-transport-energy-assets">Climate Exposure Risk Map: Transport &amp; Energy Assets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-exposure-risk-map-uk-energy-infrastructure-prototype">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-project">[<span class="xref myst">View project</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-analytics">Infrastructure Analytics:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-stress-dashboard-data-centres-power-systems">Infrastructure Stress Dashboard: Data Centres &amp; Power Systems</a></li>
 </ul>
@@ -380,16 +386,18 @@
 <h2>Featured Work<a class="headerlink" href="#featured-work" title="Link to this heading">#</a></h2>
 <section id="risk-insurance-analytics">
 <h3>Risk &amp; Insurance Analytics:<a class="headerlink" href="#risk-insurance-analytics" title="Link to this heading">#</a></h3>
-<section id="climate-exposure-risk-map-transport-energy-assets">
-<h4>Climate Exposure Risk Map: Transport &amp; Energy Assets<a class="headerlink" href="#climate-exposure-risk-map-transport-energy-assets" title="Link to this heading">#</a></h4>
-<p>Which transport and energy assets are most exposed to climate stress?</p>
-<p>A Python based geospatial exposure model identifying infrastructure assets most exposed to flood, heat and coastal hazards.</p>
-<p><strong>Output:</strong> asset-level exposure rankings and regional risk views for insurance, infrastructure and portfolio risk decisions.</p>
-<p><strong>Methods:</strong> Python · GeoPandas · exposure scoring · geospatial joins · scenario analysis</p>
-<p><a class="reference internal" href="#./physical-climate-risk-uk-energy/intro.html"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">project</span></code></span></a></p>
+<section id="climate-exposure-risk-map-uk-energy-infrastructure-prototype">
+<h4>Climate Exposure Risk Map: UK Energy Infrastructure Prototype<a class="headerlink" href="#climate-exposure-risk-map-uk-energy-infrastructure-prototype" title="Link to this heading">#</a></h4>
+<p>Where might physical climate exposure be concentrated across UK renewable energy infrastructure?</p>
+<p>A Python-based geospatial exposure-screening project using operational renewable energy asset data, regional geography and installed capacity to identify assets and regions that may warrant closer climate-risk review.</p>
+<p><strong>Output:</strong> asset-level exposure rankings, Low / Medium / High screening categories, and regional portfolio summaries for infrastructure, insurance and risk analysis.</p>
+<p><strong>Methods:</strong> Python · pandas · GeoPandas · CRS conversion · distance-based exposure proxy · installed-capacity weighting · regional aggregation · scenario-style risk screening</p>
+<p><strong>Project files:</strong> <a class="reference external" href="https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/02_asset_data_cleaning.ipynb">Data Cleaning</a> · <a class="reference external" href="https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/03_create_spatial_asset_layer.ipynb">Spatial Layer</a> · <a class="reference external" href="https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/04_geospatial_exposure_features.ipynb">Exposure Features</a> · <a class="reference external" href="https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/05_exposure_scoring.ipynb">Scoring</a> · <a class="reference external" href="https://github.com/jauricestudios/jaurice-market-notes/blob/main/projects/physical-climate-risk-uk-energy/notebooks/06_results_and_interpretation.ipynb">Results</a></p>
 </section>
 </section>
-<hr class="docutils" />
+</section>
+<section id="view-project">
+<h2>[<a class="reference internal" href="#climate_risk.html"><span class="xref myst">View project</span></a><a class="headerlink" href="#view-project" title="Link to this heading">#</a></h2>
 <section id="infrastructure-analytics">
 <h3>Infrastructure Analytics:<a class="headerlink" href="#infrastructure-analytics" title="Link to this heading">#</a></h3>
 <section id="infrastructure-stress-dashboard-data-centres-power-systems">
@@ -546,9 +554,12 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-pricing-economic-analytics">Risk, Pricing &amp; Economic Analytics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#featured-work">Featured Work</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-insurance-analytics">Risk &amp; Insurance Analytics:</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-exposure-risk-map-transport-energy-assets">Climate Exposure Risk Map: Transport &amp; Energy Assets</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#climate-exposure-risk-map-uk-energy-infrastructure-prototype">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-project">[<span class="xref myst">View project</span></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-analytics">Infrastructure Analytics:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#infrastructure-stress-dashboard-data-centres-power-systems">Infrastructure Stress Dashboard: Data Centres &amp; Power Systems</a></li>
 </ul>

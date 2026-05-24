@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GB Energy Stress Monitor</title>
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #031f18;
+        color: #f4fff8;
+    }
+
+    .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+    .hero {
+        border: 1px solid rgba(32, 227, 178, 0.35);
+        background: linear-gradient(135deg, #062d23, #020f0c);
+        border-radius: 22px;
+        padding: 28px;
+        box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    }
+
+    .eyebrow {
+        color: #20e3b2;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    h1 {
+        margin: 8px 0 8px;
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .subtitle {
+        color: #c7e9dc;
+        max-width: 850px;
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .signal {
+        margin-top: 18px;
+        display: inline-block;
+        background: rgba(32, 227, 178, 0.12);
+        border: 1px solid rgba(32, 227, 178, 0.4);
+        color: #ffffff;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 14px;
+        margin: 22px 0;
+    }
+
+    .card {
+        background: #071b16;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 18px;
+        padding: 16px;
+        min-height: 92px;
+    }
+
+    .card-label {
+        color: #9fb8af;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .card-value {
+        font-size: 27px;
+        font-weight: 800;
+    }
+
+    .card-note {
+        color: #b9d4ca;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    .panel {
+        background: #061814;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    h2 {
+        margin-top: 0;
+        font-size: 22px;
+    }
+
+    p {
+        line-height: 1.58;
+        color: #e5fff4;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    th, td {
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    th {
+        color: #20e3b2;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .tag {
+        display: inline-block;
+        border: 1px solid rgba(32,227,178,0.35);
+        color: #dcfff2;
+        border-radius: 999px;
+        padding: 6px 10px;
+        margin: 4px 4px 0 0;
+        font-size: 12px;
+        background: rgba(32,227,178,0.08);
+    }
+
+    .chart {
+        margin-top: 18px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-note {
+        color: #abc8bd;
+        font-size: 13px;
+        margin-top: 18px;
+    }
+
+    @media (max-width: 950px) {
+        .cards {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+    <section class="hero">
+        <div class="eyebrow">GB power · gas · LNG · storage · interconnectors</div>
+        <h1>GB Energy Stress Monitor</h1>
+        <div class="subtitle">
+            A Python-built market monitor tracking the physical drivers behind UK energy tightness:
+            demand, wind output, gas burn, LNG availability, interconnector flows, storage and European benchmark pressure.
+        </div>
+        <div class="signal">System signal: Balanced but watchful · Prototype score 55/100</div>
+    </section>
+
+    <section class="cards">
+        <div class="card">
+            <div class="card-label">GB demand</div>
+            <div class="card-value">34.0 GW</div>
+            <div class="card-note">How much electricity the system needs.</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Wind share</div>
+            <div class="card-value">42.6%</div>
+            <div class="card-note">High wind reduces gas burn.</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Gas / CCGT</div>
+            <div class="card-value">9.0 GW</div>
+            <div class="card-note">Gas being burned for power.</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Net imports</div>
+            <div class="card-value">1.2 GW</div>
+            <div class="card-note">Interconnector dependence.</div>
+        </div>
+        <div class="card">
+            <div class="card-label">UK gas signal</div>
+            <div class="card-value">Elevated</div>
+            <div class="card-note">NBP/UK gas still needs monitoring.</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Stress score</div>
+            <div class="card-value">55/100</div>
+            <div class="card-note">Composite prototype signal.</div>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="panel">
+            <h2>Today’s market read</h2>
+            <p>
+                The prototype signal is <b>balanced but watchful</b>. Wind output is assumed to be strong enough
+                to reduce gas-fired generation, which lowers immediate gas burn from the power sector.
+                The main risk to monitor is whether lower wind, higher demand, weaker LNG sendout or tighter
+                European storage conditions push the system toward higher gas and power stress.
+            </p>
+            <p>
+                The purpose of this dashboard is not just to show prices. It is to explain whether the GB energy
+                system is becoming <b>looser or tighter</b>, and which physical driver is responsible.
+            </p>
+        </div>
+
+        <div class="panel">
+            <h2>Skills demonstrated</h2>
+            <span class="tag">Python data pipeline</span>
+            <span class="tag">pandas cleaning</span>
+            <span class="tag">Plotly dashboard</span>
+            <span class="tag">SQL / SQLite layer</span>
+            <span class="tag">GIS / GeoPandas map</span>
+            <span class="tag">Excel analyst workbook</span>
+            <span class="tag">Market commentary</span>
+            <p class="footer-note">
+                This project is designed as a full analyst workflow: Python collects data, SQL stores it,
+                GIS maps infrastructure, Excel provides a business-facing workbook, and the website communicates the market signal.
+            </p>
+        </div>
+    </section>
+
+    <section class="chart">
+        <div>                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js" integrity="sha256-fHbNLP+GlIXN+efbQec78UkemUz3NJp7UmfGxC1tNxs=" crossorigin="anonymous"></script>                <div id="bdf7660a-9ca5-49ab-bc6d-54f73b201090" class="plotly-graph-div" style="height:420px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bdf7660a-9ca5-49ab-bc6d-54f73b201090")) {                    Plotly.newPlot(                        "bdf7660a-9ca5-49ab-bc6d-54f73b201090",                        [{"marker":{"color":"#20e3b2"},"text":{"dtype":"f8","bdata":"AAAAAABSzEAAAAAAAJTBQAAAAAAAULRAAAAAAAAgnEAAAAAAAPihQAAAAAAAwJJA"},"textposition":"auto","x":["Wind","Gas \u002f CCGT","Nuclear","Solar","Biomass","Imports"],"y":{"dtype":"i2","bdata":"pDgoI1AUCAf8CLAE"},"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#f2f5fa"},"error_y":{"color":"#f2f5fa"},"marker":{"line":{"color":"rgb(17,17,17)","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"baxis":{"endlinecolor":"#A2B1C6","gridcolor":"#506784","linecolor":"#506784","minorgridcolor":"#506784","startlinecolor":"#A2B1C6"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"line":{"color":"#283442"}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"marker":{"line":{"color":"#283442"}},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#506784"},"line":{"color":"rgb(17,17,17)"}},"header":{"fill":{"color":"#2a3f5f"},"line":{"color":"rgb(17,17,17)"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#f2f5fa","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#f2f5fa"},"geo":{"bgcolor":"rgb(17,17,17)","lakecolor":"rgb(17,17,17)","landcolor":"rgb(17,17,17)","showlakes":true,"showland":true,"subunitcolor":"#506784"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"dark"},"paper_bgcolor":"rgb(17,17,17)","plot_bgcolor":"rgb(17,17,17)","polar":{"angularaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","radialaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"yaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"},"zaxis":{"backgroundcolor":"rgb(17,17,17)","gridcolor":"#506784","gridwidth":2,"linecolor":"#506784","showbackground":true,"ticks":"","zerolinecolor":"#C8D4E3"}},"shapedefaults":{"line":{"color":"#f2f5fa"}},"sliderdefaults":{"bgcolor":"#C8D4E3","bordercolor":"rgb(17,17,17)","borderwidth":1,"tickwidth":0},"ternary":{"aaxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"baxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""},"bgcolor":"rgb(17,17,17)","caxis":{"gridcolor":"#506784","linecolor":"#506784","ticks":""}},"title":{"x":0.05},"updatemenudefaults":{"bgcolor":"#506784","borderwidth":0},"xaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#283442","linecolor":"#506784","ticks":"","title":{"standoff":15},"zerolinecolor":"#283442","zerolinewidth":2}}},"margin":{"l":45,"r":25,"t":60,"b":40},"font":{"color":"#f3fff8"},"title":{"text":"Generation by fuel type"},"height":420,"paper_bgcolor":"#071b16","plot_bgcolor":"#071b16","yaxis":{"title":{"text":"MW"}}},                        {"responsive": true}                    )                };            </script>        </div>
+    </section>
+
+    <section class="grid">
+        <div class="panel">
+            <h2>Driver framework</h2>
+            <table>
+                <tr><th>Driver</th><th>Stress rises when...</th><th>Stress falls when...</th></tr>
+                <tr><td>Weather</td><td>Cold and low wind</td><td>Warm and windy</td></tr>
+                <tr><td>Wind output</td><td>Wind is weak, CCGTs run harder</td><td>Wind is strong, gas burn falls</td></tr>
+                <tr><td>LNG</td><td>Cargoes are scarce or Asia bids higher</td><td>Cargoes are abundant into Europe/UK</td></tr>
+                <tr><td>Storage</td><td>Storage is low for the season</td><td>Storage is full or injections are ahead</td></tr>
+                <tr><td>Interconnectors</td><td>GB relies heavily on imports</td><td>GB has surplus and exports</td></tr>
+                <tr><td>TTF / Europe</td><td>European gas rallies</td><td>European gas weakens</td></tr>
+            </table>
+        </div>
+
+        <div class="panel">
+            <h2>Pipeline architecture</h2>
+            <table>
+                <tr><th>Layer</th><th>Tool</th><th>Output</th></tr>
+                <tr><td>Ingestion</td><td>Python</td><td>Elexon, National Gas, GIE, market CSVs</td></tr>
+                <tr><td>Storage</td><td>SQL / SQLite</td><td>Queryable time-series database</td></tr>
+                <tr><td>Spatial layer</td><td>GeoPandas / Folium</td><td>LNG terminals, gas entry points, interconnectors</td></tr>
+                <tr><td>Business layer</td><td>Excel</td><td>Pivot tables, weekly summary, scenario checks</td></tr>
+                <tr><td>Publishing</td><td>GitHub Pages</td><td>Interactive public monitor</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <p class="footer-note">
+        Prototype note: current values are illustrative. The next version replaces them with public/live datasets and adds the GIS map and downloadable Excel workbook.
+    </p>
+
+</div>
+</body>
+</html>
