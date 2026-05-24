@@ -8,7 +8,7 @@ chapters:
   - file: colocation
   - file: climate_risk
   - file: projects/gb-energy-monitor/index
-    title: GB Energy System Monitor
+    title: GB Energy Tightness Monitor
     sections:
       - file: projects/gb-energy-monitor/methodology
         title: Methodology
