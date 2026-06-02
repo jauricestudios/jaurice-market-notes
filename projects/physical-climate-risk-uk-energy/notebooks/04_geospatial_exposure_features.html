@@ -1,0 +1,1234 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>04 Geospatial Exposure Features &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ddf9934e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_final_homepage_polish.css?v=83d5f6c7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_colour_experiments.css?v=a8039654" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/physical-climate-risk-uk-energy/notebooks/04_geospatial_exposure_features';</script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-light" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-dark pst-js-only" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid_stress.html">UK Grid Stress Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../copper_demand.html">Copper Demand Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colocation.html">Co-location Valuation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../climate_risk.html">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gb-energy-monitor/index.html">GB Energy Tightness Monitor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jauricestudios/jaurice-market-notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/projects/physical-climate-risk-uk-energy/notebooks/04_geospatial_exposure_features.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>04 Geospatial Exposure Features</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-distribution">Regional distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-first-pass-exposure-proxy">Creating a first-pass exposure proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-boundary-proxy">Distance to boundary proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-proximity-flags">Creating proximity flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-check-of-the-boundary-proxy">Visual check of the boundary proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-exposure-features">Saving exposure features</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="geospatial-exposure-features">
+<h1>04 Geospatial Exposure Features<a class="headerlink" href="#geospatial-exposure-features" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>This notebook creates the first geospatial exposure features for the project.</p>
+<p>The previous notebook created a spatial asset layer containing 3,058 operational renewable energy assets represented as map points.</p>
+<p>This notebook asks:</p>
+<ol class="arabic simple">
+<li><p>Where are the assets located?</p></li>
+<li><p>How are they distributed by region?</p></li>
+<li><p>Can we create a first-pass geographic exposure proxy?</p></li>
+<li><p>Which assets may warrant closer review?</p></li>
+</ol>
+<p>This is still a Version 1 screening model. The exposure feature created here is a proxy, not a formal flood, heat or coastal hazard layer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+<span class="n">DATA_PROCESSED</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;processed&quot;</span>
+<span class="n">OUTPUTS</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;outputs&quot;</span>
+<span class="n">FIGURES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;figures&quot;</span>
+<span class="n">TABLES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;tables&quot;</span>
+
+<span class="n">FIGURES</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">TABLES</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">assets_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_27700.geojson&quot;</span>
+
+<span class="n">assets_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">assets_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">assets_gdf</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">assets_gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="n">assets_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="regional-distribution">
+<h2>Regional distribution<a class="headerlink" href="#regional-distribution" title="Link to this heading">#</a></h2>
+<p>Before creating exposure features, I first summarise the asset dataset by region.</p>
+<p>This gives a basic view of where operational renewable energy assets are concentrated.</p>
+<p>Regional summaries are useful because exposure analysis is often interpreted at more than one level:</p>
+<ul class="simple">
+<li><p>individual asset level,</p></li>
+<li><p>regional level,</p></li>
+<li><p>portfolio level.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regional_summary</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets_gdf</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Region&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">asset_count</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Ref ID&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">),</span>
+        <span class="n">total_capacity_mw</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">),</span>
+        <span class="n">mean_capacity_mw</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;asset_count&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">regional_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Region</th>
+      <th>asset_count</th>
+      <th>total_capacity_mw</th>
+      <th>mean_capacity_mw</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>Scotland</td>
+      <td>565</td>
+      <td>12382.83</td>
+      <td>22.311405</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>South West</td>
+      <td>529</td>
+      <td>3907.90</td>
+      <td>7.500768</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Eastern</td>
+      <td>326</td>
+      <td>3378.04</td>
+      <td>10.490807</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>South East</td>
+      <td>312</td>
+      <td>3468.95</td>
+      <td>11.226375</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>East Midlands</td>
+      <td>268</td>
+      <td>2010.06</td>
+      <td>7.585132</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Wales</td>
+      <td>243</td>
+      <td>4549.00</td>
+      <td>19.033473</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North West</td>
+      <td>194</td>
+      <td>1572.56</td>
+      <td>8.147979</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yorkshire and Humber</td>
+      <td>167</td>
+      <td>4408.32</td>
+      <td>26.717091</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>West Midlands</td>
+      <td>145</td>
+      <td>1309.11</td>
+      <td>9.486304</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Northern Ireland</td>
+      <td>118</td>
+      <td>1453.50</td>
+      <td>12.317797</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>North East</td>
+      <td>103</td>
+      <td>1319.61</td>
+      <td>12.937353</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Offshore</td>
+      <td>53</td>
+      <td>14713.50</td>
+      <td>277.613208</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>London</td>
+      <td>35</td>
+      <td>388.62</td>
+      <td>11.776364</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regional_summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+    <span class="n">TABLES</span> <span class="o">/</span> <span class="s2">&quot;regional_asset_summary.csv&quot;</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved regional summary to:&quot;</span><span class="p">,</span> <span class="n">TABLES</span> <span class="o">/</span> <span class="s2">&quot;regional_asset_summary.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved regional summary to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/outputs/tables/regional_asset_summary.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-first-pass-exposure-proxy">
+<h2>Creating a first-pass exposure proxy<a class="headerlink" href="#creating-a-first-pass-exposure-proxy" title="Link to this heading">#</a></h2>
+<p>A full physical climate risk model would ideally use dedicated hazard data, such as flood zones, heat stress layers, coastal erosion data or climate scenario rasters.</p>
+<p>This Version 1 project does not yet use formal hazard layers. Instead, it creates a simple distance-based geographic proxy to demonstrate the exposure-screening workflow.</p>
+<p>The proxy asks:</p>
+<blockquote>
+<div><p>How close is each asset to the edge of the asset geography?</p>
+</div></blockquote>
+<p>This should not be interpreted as a true flood, heat or coastal hazard score. It is a placeholder feature used to learn the geospatial method.</p>
+<p>In a stronger version, this proxy would be replaced with formal hazard layers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a combined boundary from the asset distribution area</span>
+<span class="c1"># This creates a broad convex hull around all operational assets.</span>
+<span class="n">asset_area</span> <span class="o">=</span> <span class="n">assets_gdf</span><span class="o">.</span><span class="n">unary_union</span><span class="o">.</span><span class="n">convex_hull</span>
+
+<span class="n">asset_boundary</span> <span class="o">=</span> <span class="n">asset_area</span><span class="o">.</span><span class="n">boundary</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Asset area type:&quot;</span><span class="p">,</span> <span class="n">asset_area</span><span class="o">.</span><span class="n">geom_type</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Boundary type:&quot;</span><span class="p">,</span> <span class="n">asset_boundary</span><span class="o">.</span><span class="n">geom_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Asset area type: Polygon
+Boundary type: LineString
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/n0/d6hc7dkn4qq945r580z9xnlm0000gn/T/ipykernel_3295/889617951.py:3: DeprecationWarning: The &#39;unary_union&#39; attribute is deprecated, use the &#39;union_all()&#39; method instead.
+  asset_area = assets_gdf.unary_union.convex_hull
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distance-to-boundary-proxy">
+<h2>Distance to boundary proxy<a class="headerlink" href="#distance-to-boundary-proxy" title="Link to this heading">#</a></h2>
+<p>The next step calculates the distance from each asset to the boundary proxy.</p>
+<p>Because the asset layer uses <code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code>, distances are measured in metres.</p>
+<p>This creates a new field:</p>
+<p><code class="docutils literal notranslate"><span class="pre">distance_to_boundary_m</span></code></p>
+<p>This field measures how far each asset is from the boundary proxy in metres.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_exposure</span> <span class="o">=</span> <span class="n">assets_gdf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets_exposure</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">asset_boundary</span><span class="p">)</span>
+
+<span class="n">assets_exposure</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;distance_to_boundary_m&quot;</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Region</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>distance_to_boundary_m</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>Yorkshire and Humber</td>
+      <td>70.0</td>
+      <td>191191.372956</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>Eastern</td>
+      <td>38.5</td>
+      <td>90187.542957</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>North East</td>
+      <td>18.0</td>
+      <td>184875.461233</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>South East</td>
+      <td>1.5</td>
+      <td>29462.766557</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>Northern Ireland</td>
+      <td>2.0</td>
+      <td>99471.331514</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="creating-proximity-flags">
+<h2>Creating proximity flags<a class="headerlink" href="#creating-proximity-flags" title="Link to this heading">#</a></h2>
+<p>To make the distance feature easier to interpret, I create two simple proximity flags:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">within_5km_boundary_proxy</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">within_10km_boundary_proxy</span></code></p></li>
+</ul>
+<p>These flags identify assets that are relatively close to the boundary proxy.</p>
+<p>Again, these are not formal hazard indicators. They are first-pass screening features that demonstrate how distance-based exposure variables can be created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;within_5km_boundary_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5_000</span>
+<span class="p">)</span>
+
+<span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;within_10km_boundary_proxy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">10_000</span>
+<span class="p">)</span>
+
+<span class="n">assets_exposure</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;within_5km_boundary_proxy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;within_10km_boundary_proxy&quot;</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Region</th>
+      <th>distance_to_boundary_m</th>
+      <th>within_5km_boundary_proxy</th>
+      <th>within_10km_boundary_proxy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>Yorkshire and Humber</td>
+      <td>191191.372956</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thetford Biomass Power Station</td>
+      <td>Eastern</td>
+      <td>90187.542957</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Chilton Energy Plant</td>
+      <td>North East</td>
+      <td>184875.461233</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>South East</td>
+      <td>29462.766557</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Northern Ireland</td>
+      <td>99471.331514</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proximity_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Total assets&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Assets within 5km boundary proxy&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Assets within 10km boundary proxy&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">assets_exposure</span><span class="p">),</span>
+        <span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;within_5km_boundary_proxy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+        <span class="n">assets_exposure</span><span class="p">[</span><span class="s2">&quot;within_10km_boundary_proxy&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">proximity_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>metric</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Total assets</td>
+      <td>3058</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Assets within 5km boundary proxy</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Assets within 10km boundary proxy</td>
+      <td>45</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="visual-check-of-the-boundary-proxy">
+<h2>Visual check of the boundary proxy<a class="headerlink" href="#visual-check-of-the-boundary-proxy" title="Link to this heading">#</a></h2>
+<p>This plot shows the asset points and the boundary proxy.</p>
+<p>The purpose is to check that the distance feature has been calculated against a sensible geometry.</p>
+<p>This is still an analytical prototype, not a final climate hazard map.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+
+<span class="n">assets_exposure</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+
+<span class="n">gpd</span><span class="o">.</span><span class="n">GeoSeries</span><span class="p">([</span><span class="n">asset_boundary</span><span class="p">],</span> <span class="n">crs</span><span class="o">=</span><span class="n">assets_exposure</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Operational Energy Assets and Boundary Proxy&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;British National Grid X-coordinate&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;British National Grid Y-coordinate&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">figure_path</span> <span class="o">=</span> <span class="n">FIGURES</span> <span class="o">/</span> <span class="s2">&quot;asset_boundary_proxy_map.png&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">figure_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved figure to:&quot;</span><span class="p">,</span> <span class="n">figure_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/0e61a46b065b497f055d0e44f4160f25917228e9f26cd4745b70cbd8ac144779.png" src="../../../_images/0e61a46b065b497f055d0e44f4160f25917228e9f26cd4745b70cbd8ac144779.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved figure to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/outputs/figures/asset_boundary_proxy_map.png
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-exposure-features">
+<h2>Saving exposure features<a class="headerlink" href="#saving-exposure-features" title="Link to this heading">#</a></h2>
+<p>The exposure-enhanced asset layer is saved to the processed data folder.</p>
+<p>This output contains the original cleaned asset information plus the first-pass geospatial exposure features.</p>
+<p>The next notebook will use these fields to create a transparent preliminary exposure score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exposure_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_exposure_features.geojson&quot;</span>
+
+<span class="n">assets_exposure</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">exposure_path</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved exposure feature layer to:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exposure_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved exposure feature layer to:
+/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/processed/operational_energy_assets_exposure_features.geojson
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">exposure_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">check</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">check</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="n">check</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 3058
+CRS: EPSG:27700
+[&#39;Ref ID&#39;, &#39;Operator (or Applicant)&#39;, &#39;Site Name&#39;, &#39;Technology Type&#39;, &#39;Installed Capacity (MWelec)&#39;, &#39;Development Status&#39;, &#39;Development Status (short)&#39;, &#39;County&#39;, &#39;Region&#39;, &#39;Country&#39;, &#39;Post Code&#39;, &#39;X-coordinate&#39;, &#39;Y-coordinate&#39;, &#39;Planning Authority&#39;, &#39;Under Construction&#39;, &#39;Operational&#39;, &#39;Solar Site Area (sqm)&#39;, &#39;development_status_clean&#39;, &#39;distance_to_boundary_m&#39;, &#39;within_5km_boundary_proxy&#39;, &#39;within_10km_boundary_proxy&#39;, &#39;geometry&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>...</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+      <th>distance_to_boundary_m</th>
+      <th>within_5km_boundary_proxy</th>
+      <th>within_10km_boundary_proxy</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.0</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>...</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>191191.372956</td>
+      <td>False</td>
+      <td>False</td>
+      <td>POINT (447490 424684)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.5</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>...</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>90187.542957</td>
+      <td>False</td>
+      <td>False</td>
+      <td>POINT (585300 286900)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.0</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>...</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>184875.461233</td>
+      <td>False</td>
+      <td>False</td>
+      <td>POINT (428049 530414)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.5</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>...</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>29462.766557</td>
+      <td>False</td>
+      <td>False</td>
+      <td>POINT (422804 94625)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.0</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>...</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>99471.331514</td>
+      <td>False</td>
+      <td>False</td>
+      <td>POINT (117392 488885)</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 22 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projects/physical-climate-risk-uk-energy/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-distribution">Regional distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-first-pass-exposure-proxy">Creating a first-pass exposure proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distance-to-boundary-proxy">Distance to boundary proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-proximity-flags">Creating proximity flags</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-check-of-the-boundary-proxy">Visual check of the boundary proxy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-exposure-features">Saving exposure features</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jaurice O'Connor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

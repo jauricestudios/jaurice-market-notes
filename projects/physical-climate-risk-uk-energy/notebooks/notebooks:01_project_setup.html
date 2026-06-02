@@ -1,0 +1,2252 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>01 Project Setup &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ddf9934e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_final_homepage_polish.css?v=83d5f6c7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_colour_experiments.css?v=a8039654" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/physical-climate-risk-uk-energy/notebooks/notebooks:01_project_setup';</script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-light" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-dark pst-js-only" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid_stress.html">UK Grid Stress Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../copper_demand.html">Copper Demand Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colocation.html">Co-location Valuation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../climate_risk.html">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gb-energy-monitor/index.html">GB Energy Tightness Monitor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jauricestudios/jaurice-market-notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/projects/physical-climate-risk-uk-energy/notebooks/notebooks:01_project_setup.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01 Project Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-question">Project question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-project-is">What this project is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-project-is-not">What this project is not</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-goal">Notebook goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-selection-logic">Column selection logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-the-development-status-field">Cleaning the development status field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-location-fields">Checking location fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-completeness-result">Coordinate completeness result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-geospatial-asset-layer">Creating a geospatial asset layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-geospatial-asset-layer">Saving the geospatial asset layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-epsg-27700-is-used">Why EPSG:27700 is used</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="project-setup">
+<h1>01 Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h1>
+<section id="project-question">
+<h2>Project question<a class="headerlink" href="#project-question" title="Link to this heading">#</a></h2>
+<p>Where might physical climate exposure be concentrated across UK renewable energy infrastructure?</p>
+</section>
+<section id="what-this-project-is">
+<h2>What this project is<a class="headerlink" href="#what-this-project-is" title="Link to this heading">#</a></h2>
+<p>This project is a Version 1 geospatial exposure-screening model. It uses public renewable energy asset data to demonstrate how infrastructure assets can be cleaned, mapped, scored and summarised for physical climate risk review.</p>
+</section>
+<section id="what-this-project-is-not">
+<h2>What this project is not<a class="headerlink" href="#what-this-project-is-not" title="Link to this heading">#</a></h2>
+<p>This is not a production catastrophe model. It does not estimate financial loss, probability of asset failure, insured loss or engineering damage.</p>
+<p>The first version focuses on UK renewable energy assets. Future versions could add transport infrastructure, formal flood zones, heat stress layers, coastal erosion data and asset value estimates.</p>
+</section>
+<section id="notebook-goal">
+<h2>Notebook goal<a class="headerlink" href="#notebook-goal" title="Link to this heading">#</a></h2>
+<p>This notebook checks the project folder structure, confirms the Python environment, and inspects the raw asset dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+<span class="n">DATA_RAW</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;raw&quot;</span>
+<span class="n">DATA_INTERIM</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;interim&quot;</span>
+<span class="n">DATA_PROCESSED</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;processed&quot;</span>
+
+<span class="n">OUTPUTS</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;outputs&quot;</span>
+<span class="n">FIGURES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;figures&quot;</span>
+<span class="n">TABLES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;tables&quot;</span>
+<span class="n">MAPS</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;maps&quot;</span>
+
+<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="p">[</span><span class="n">DATA_RAW</span><span class="p">,</span> <span class="n">DATA_INTERIM</span><span class="p">,</span> <span class="n">DATA_PROCESSED</span><span class="p">,</span> <span class="n">FIGURES</span><span class="p">,</span> <span class="n">TABLES</span><span class="p">,</span> <span class="n">MAPS</span><span class="p">]:</span>
+    <span class="n">folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Project root:&quot;</span><span class="p">,</span> <span class="n">PROJECT_ROOT</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw data folder:&quot;</span><span class="p">,</span> <span class="n">DATA_RAW</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Processed data folder:&quot;</span><span class="p">,</span> <span class="n">DATA_PROCESSED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">DATA_RAW</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;raw&quot;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">DATA_RAW</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/raw&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DATA_RAW path:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Does this folder exist?&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Files using os.listdir:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">CSV files using glob:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.csv&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DATA_RAW path:
+/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/raw
+
+Does this folder exist?
+True
+
+Files using os.listdir:
+[&#39;repd_publication_q4_2025_raw.csv&#39;]
+
+CSV files using glob:
+[PosixPath(&#39;/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/raw/repd_publication_q4_2025_raw.csv&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">DATA_RAW</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/raw&quot;</span><span class="p">)</span>
+
+<span class="n">csv_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">DATA_RAW</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.csv&quot;</span><span class="p">))</span>
+<span class="n">raw_asset_file</span> <span class="o">=</span> <span class="n">csv_files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using:&quot;</span><span class="p">,</span> <span class="n">raw_asset_file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">raw_asset_file</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;latin1&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columns:&quot;</span><span class="p">,</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">df_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using: repd_publication_q4_2025_raw.csv
+Rows: 13995
+Columns: 53
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Old Ref ID</th>
+      <th>Ref ID</th>
+      <th>Record Last Updated (dd/mm/yyyy)</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Storage Type</th>
+      <th>Storage Co-location REPD Ref ID</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Share Community Scheme</th>
+      <th>...</th>
+      <th>Appeal Granted</th>
+      <th>Planning Permission&nbsp;&nbsp;Granted</th>
+      <th>Secretary of State - Intervened</th>
+      <th>Secretary of State - Refusal</th>
+      <th>Secretary of State - Granted</th>
+      <th>Planning Permission Expired</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Heat Network Ref</th>
+      <th>Solar Site Area (sqm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>N00053B</td>
+      <td>1</td>
+      <td>16/01/2026</td>
+      <td>RWE npower</td>
+      <td>Aberthaw Power Station Biomass</td>
+      <td>Biomass (co-firing)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>35.00</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>03/09/2004</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>01/05/2006</td>
+      <td>01/05/2007</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AA110</td>
+      <td>2</td>
+      <td>20/11/2017</td>
+      <td>Orsted (formerly Dong Energy) / Peel Energy</td>
+      <td>Hunterston - cofiring</td>
+      <td>Biomass (co-firing)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>170.00</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B0730</td>
+      <td>3</td>
+      <td>20/12/2019</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>70.00</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>28/10/2015</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>28/10/2020</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1106000</td>
+      <td>4</td>
+      <td>18/12/2003</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>38.50</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>05/05/1995</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td></td>
+      <td>5</td>
+      <td>29/09/2005</td>
+      <td>Agrigen</td>
+      <td>Nunn Mills Road Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>8.80</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Old Ref ID&#39;,
+ &#39;Ref ID&#39;,
+ &#39;Record Last Updated (dd/mm/yyyy)&#39;,
+ &#39;Operator (or Applicant)&#39;,
+ &#39;Site Name&#39;,
+ &#39;Technology Type&#39;,
+ &#39;Storage Type&#39;,
+ &#39;Storage Co-location REPD Ref ID&#39;,
+ &#39;Installed Capacity (MWelec)&#39;,
+ &#39;Share Community Scheme&#39;,
+ &#39;CHP Enabled&#39;,
+ &#39;CfD Allocation Round&#39;,
+ &#39;RO Banding (ROC/MWh)&#39;,
+ &#39;FiT Tariff (p/kWh)&#39;,
+ &#39;CfD Capacity (MW)&#39;,
+ &#39;Turbine Capacity (MW)&#39;,
+ &#39;No. of Turbines&#39;,
+ &#39;Height of Turbines (m)&#39;,
+ &#39;Mounting Type for Solar&#39;,
+ &#39;Development Status&#39;,
+ &#39;Development Status (short)&#39;,
+ &#39;Are they re-applying (New REPD Ref)&#39;,
+ &#39;Are they re-applying (Old REPD Ref) &#39;,
+ &#39;Address&#39;,
+ &#39;County&#39;,
+ &#39;Region&#39;,
+ &#39;Country&#39;,
+ &#39;Post Code&#39;,
+ &#39;X-coordinate&#39;,
+ &#39;Y-coordinate&#39;,
+ &#39;Planning Authority&#39;,
+ &#39;Planning Application Reference&#39;,
+ &#39;Appeal Reference&#39;,
+ &#39;Secretary of State Reference&#39;,
+ &#39;Type of Secretary of State Intervention&#39;,
+ &#39;Judicial Review&#39;,
+ &#39;Offshore Wind Round&#39;,
+ &#39;Planning Application Submitted&#39;,
+ &#39;Planning Application Withdrawn&#39;,
+ &#39;Planning Permission Refused&#39;,
+ &#39;Appeal Lodged&#39;,
+ &#39;Appeal Withdrawn&#39;,
+ &#39;Appeal Refused&#39;,
+ &#39;Appeal Granted&#39;,
+ &#39;Planning Permission  Granted&#39;,
+ &#39;Secretary of State - Intervened&#39;,
+ &#39;Secretary of State - Refusal&#39;,
+ &#39;Secretary of State - Granted&#39;,
+ &#39;Planning Permission Expired&#39;,
+ &#39;Under Construction&#39;,
+ &#39;Operational&#39;,
+ &#39;Heat Network Ref&#39;,
+ &#39;Solar Site Area (sqm)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_raw</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">col</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 Old Ref ID
+1 Ref ID
+2 Record Last Updated (dd/mm/yyyy)
+3 Operator (or Applicant)
+4 Site Name
+5 Technology Type
+6 Storage Type
+7 Storage Co-location REPD Ref ID
+8 Installed Capacity (MWelec)
+9 Share Community Scheme
+10 CHP Enabled
+11 CfD Allocation Round
+12 RO Banding (ROC/MWh)
+13 FiT Tariff (p/kWh)
+14 CfD Capacity (MW)
+15 Turbine Capacity (MW)
+16 No. of Turbines
+17 Height of Turbines (m)
+18 Mounting Type for Solar
+19 Development Status
+20 Development Status (short)
+21 Are they re-applying (New REPD Ref)
+22 Are they re-applying (Old REPD Ref) 
+23 Address
+24 County
+25 Region
+26 Country
+27 Post Code
+28 X-coordinate
+29 Y-coordinate
+30 Planning Authority
+31 Planning Application Reference
+32 Appeal Reference
+33 Secretary of State Reference
+34 Type of Secretary of State Intervention
+35 Judicial Review
+36 Offshore Wind Round
+37 Planning Application Submitted
+38 Planning Application Withdrawn
+39 Planning Permission Refused
+40 Appeal Lodged
+41 Appeal Withdrawn
+42 Appeal Refused
+43 Appeal Granted
+44 Planning Permission  Granted
+45 Secretary of State - Intervened
+46 Secretary of State - Refusal
+47 Secretary of State - Granted
+48 Planning Permission Expired
+49 Under Construction
+50 Operational
+51 Heat Network Ref
+52 Solar Site Area (sqm)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="column-selection-logic">
+<h2>Column selection logic<a class="headerlink" href="#column-selection-logic" title="Link to this heading">#</a></h2>
+<p>The raw REPD dataset contains 53 columns covering project identifiers, planning status, technology type, capacity, location and planning history.</p>
+<p>For this Version 1 exposure-screening project, I keep the columns needed to answer four questions:</p>
+<ol class="arabic simple">
+<li><p>What is the asset?</p></li>
+<li><p>What type of technology is it?</p></li>
+<li><p>Is it operational?</p></li>
+<li><p>Where is it located?</p></li>
+</ol>
+<p>I also keep installed capacity because it can be used as a simple proxy for asset scale. Planning appeal and legal-status columns are excluded from the first version because the project is focused on physical exposure screening rather than planning policy analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">useful_columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Ref ID&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operator (or Applicant)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status (short)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;County&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Post Code&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Planning Authority&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Under Construction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operational&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Solar Site Area (sqm)&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">assets_raw</span> <span class="o">=</span> <span class="n">df_raw</span><span class="p">[</span><span class="n">useful_columns</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected rows:&quot;</span><span class="p">,</span> <span class="n">assets_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selected columns:&quot;</span><span class="p">,</span> <span class="n">assets_raw</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">assets_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selected rows: 13995
+Selected columns: 17
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>RWE npower</td>
+      <td>Aberthaw Power Station Biomass</td>
+      <td>Biomass (co-firing)</td>
+      <td>35.00</td>
+      <td>Decommissioned</td>
+      <td>Decommissioned</td>
+      <td>South Glamorgan</td>
+      <td>Wales</td>
+      <td>Wales</td>
+      <td>CF62 4ZW</td>
+      <td>302219</td>
+      <td>166320</td>
+      <td>Vale of Glamorgan</td>
+      <td>01/05/2006</td>
+      <td>01/05/2007</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Orsted (formerly Dong Energy) / Peel Energy</td>
+      <td>Hunterston - cofiring</td>
+      <td>Biomass (co-firing)</td>
+      <td>170.00</td>
+      <td>Planning Application Withdrawn</td>
+      <td>Application Withdrawn</td>
+      <td>Strathclyde</td>
+      <td>Scotland</td>
+      <td>Scotland</td>
+      <td>NaN</td>
+      <td>218740</td>
+      <td>652937</td>
+      <td>Scottish Government (S36)</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Agrigen</td>
+      <td>Nunn Mills Road Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>8.80</td>
+      <td>Planning Permission Refused</td>
+      <td>Application Refused</td>
+      <td>Northamptonshire</td>
+      <td>East Midlands</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>476500</td>
+      <td>259700</td>
+      <td>West Northamptonshire</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_raw</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Development Status (short)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Country&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Operational&quot;</span><span class="p">,</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Operational</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Aberthaw Power Station Biomass</td>
+      <td>Biomass (co-firing)</td>
+      <td>35.00</td>
+      <td>Decommissioned</td>
+      <td>Decommissioned</td>
+      <td>Wales</td>
+      <td>Wales</td>
+      <td>302219</td>
+      <td>166320</td>
+      <td>01/05/2007</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hunterston - cofiring</td>
+      <td>Biomass (co-firing)</td>
+      <td>170.00</td>
+      <td>Planning Application Withdrawn</td>
+      <td>Application Withdrawn</td>
+      <td>Scotland</td>
+      <td>Scotland</td>
+      <td>218740</td>
+      <td>652937</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>20/12/2019</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>02/10/1998</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Nunn Mills Road Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>8.80</td>
+      <td>Planning Permission Refused</td>
+      <td>Application Refused</td>
+      <td>East Midlands</td>
+      <td>England</td>
+      <td>476500</td>
+      <td>259700</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Kingmoor Marshalling Yard</td>
+      <td>Biomass (dedicated)</td>
+      <td>20.00</td>
+      <td>Abandoned</td>
+      <td>Abandoned</td>
+      <td>North West</td>
+      <td>England</td>
+      <td>337200</td>
+      <td>559800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>North Wiltshire Biomass Power Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>5.50</td>
+      <td>Planning Permission Refused</td>
+      <td>Application Refused</td>
+      <td>South West</td>
+      <td>England</td>
+      <td>411500</td>
+      <td>192500</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>NaN</td>
+      <td>Biomass (dedicated)</td>
+      <td>15.00</td>
+      <td>Planning Application Withdrawn</td>
+      <td>Application Withdrawn</td>
+      <td>Wales</td>
+      <td>Wales</td>
+      <td>302400</td>
+      <td>256000</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Poole Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>10.90</td>
+      <td>Planning Application Withdrawn</td>
+      <td>Application Withdrawn</td>
+      <td>South West</td>
+      <td>England</td>
+      <td>314900</td>
+      <td>121800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Eggborough Biomass Power Station</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>10.60</td>
+      <td>Abandoned</td>
+      <td>Abandoned</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>457200</td>
+      <td>424000</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;Development Status&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Development Status
+Planning Permission Granted       5083
+Operational                       3057
+Planning Application Submitted    1745
+Planning Permission Refused        870
+Revised                            803
+Planning Application Withdrawn     637
+Under Construction                 417
+Abandoned                          386
+Planning Permission Expired        336
+Appeal Refused                     315
+Appeal Granted                     190
+Appeal Withdrawn                    49
+Decommissioned                      32
+Secretary of State - Refusal        21
+No Application Required             14
+Planning Permission Granted         14
+Planning permission Granted          8
+Planning permission granted          6
+Secretary of State - Granted         5
+Appeal Lodged                        3
+Operational                          3
+Under Construction                   1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;Development Status (short)&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Development Status (short)
+Awaiting Construction          5310
+Operational                    3060
+Application Submitted          1744
+Application Refused             889
+Revised                         803
+Application Withdrawn           637
+Under Construction              418
+Abandoned                       386
+Planning Permission Expired     336
+Appeal Refused                  314
+Appeal Withdrawn                 49
+Decommissioned                   32
+No Application Required          14
+Appeal Lodged                     3
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;Development Status&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>development_status_clean
+planning permission granted       5111
+operational                       3060
+planning application submitted    1745
+planning permission refused        870
+revised                            803
+planning application withdrawn     637
+under construction                 418
+abandoned                          386
+planning permission expired        336
+appeal refused                     315
+appeal granted                     190
+appeal withdrawn                    49
+decommissioned                      32
+secretary of state - refusal        21
+no application required             14
+secretary of state - granted         5
+appeal lodged                        3
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">operational_assets</span> <span class="o">=</span> <span class="n">assets_raw</span><span class="p">[</span>
+    <span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;operational&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">))</span>
+<span class="n">operational_assets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operational assets: 3060
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="cleaning-the-development-status-field">
+<h2>Cleaning the development status field<a class="headerlink" href="#cleaning-the-development-status-field" title="Link to this heading">#</a></h2>
+<p>Before filtering the dataset, I inspected the <code class="docutils literal notranslate"><span class="pre">Development</span> <span class="pre">Status</span></code> field because real-world datasets often contain inconsistent spelling, capitalisation or hidden whitespace.</p>
+<p>For example, values such as <code class="docutils literal notranslate"><span class="pre">Operational</span></code>, <code class="docutils literal notranslate"><span class="pre">Operational</span> </code> and <code class="docutils literal notranslate"><span class="pre">operational</span></code> may look similar to a person, but Python treats them as different categories unless they are standardised.</p>
+<p>To avoid accidentally excluding valid operational assets, I first clean the status field by:</p>
+<ol class="arabic simple">
+<li><p>converting values to text,</p></li>
+<li><p>removing leading and trailing spaces,</p></li>
+<li><p>converting all values to lowercase.</p></li>
+</ol>
+<p>Only after this cleaning step do I filter the dataset to operational assets.</p>
+<p>This matters because the exposure-screening model is focused on existing infrastructure, so the operational filter defines the asset universe used in the analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;Development Status&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>development_status_clean
+planning permission granted       5111
+operational                       3060
+planning application submitted    1745
+planning permission refused        870
+revised                            803
+planning application withdrawn     637
+under construction                 418
+abandoned                          386
+planning permission expired        336
+appeal refused                     315
+appeal granted                     190
+appeal withdrawn                    49
+decommissioned                      32
+secretary of state - refusal        21
+no application required             14
+secretary of state - granted         5
+appeal lodged                        3
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">operational_assets</span> <span class="o">=</span> <span class="n">assets_raw</span><span class="p">[</span>
+    <span class="n">assets_raw</span><span class="p">[</span><span class="s2">&quot;development_status_clean&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;operational&quot;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">))</span>
+
+<span class="n">operational_assets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operational assets: 3060
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="checking-location-fields">
+<h2>Checking location fields<a class="headerlink" href="#checking-location-fields" title="Link to this heading">#</a></h2>
+<p>The next step is to check whether operational assets have valid coordinates.</p>
+<p>Geospatial exposure analysis depends on asset location. If an asset does not have an <code class="docutils literal notranslate"><span class="pre">X-coordinate</span></code> and <code class="docutils literal notranslate"><span class="pre">Y-coordinate</span></code>, it cannot be converted into a map point and cannot be included in distance-based exposure analysis.</p>
+<p>For this project, assets without valid coordinates are removed from the geospatial modelling dataset. This is a necessary limitation because the model requires physical asset locations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinate_check</span> <span class="o">=</span> <span class="n">operational_assets</span><span class="p">[[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span> <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="n">coordinate_check</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X-coordinate    2
+Y-coordinate    2
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">operational_assets_with_coords</span> <span class="o">=</span> <span class="n">operational_assets</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span>
+    <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span> <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets before coordinate filter:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Operational assets with coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets_with_coords</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dropped due to missing coordinates:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets_with_coords</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operational assets before coordinate filter: 3060
+Operational assets with coordinates: 3058
+Dropped due to missing coordinates: 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinate_check</span> <span class="o">=</span> <span class="n">operational_assets</span><span class="p">[[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">,</span> <span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dropped</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets_with_coords</span><span class="p">)</span>
+<span class="n">dropped_pct</span> <span class="o">=</span> <span class="n">dropped</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">operational_assets</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dropped assets: </span><span class="si">{</span><span class="n">dropped</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dropped percentage: </span><span class="si">{</span><span class="n">dropped_pct</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dropped assets: 2
+Dropped percentage: 0.065%
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="coordinate-completeness-result">
+<h2>Coordinate completeness result<a class="headerlink" href="#coordinate-completeness-result" title="Link to this heading">#</a></h2>
+<p>After filtering to operational assets, the dataset contains 3,060 records.</p>
+<p>I then checked the <code class="docutils literal notranslate"><span class="pre">X-coordinate</span></code> and <code class="docutils literal notranslate"><span class="pre">Y-coordinate</span></code> fields because geospatial exposure analysis requires physical asset locations. Two operational assets were missing coordinate values.</p>
+<p>These two records are removed from the geospatial modelling dataset because they cannot be converted into map points or used in distance-based exposure calculations.</p>
+<p>After this filter, the working dataset contains 3,058 operational assets with valid coordinates.</p>
+<p>This means the geospatial model retains almost all operational assets while clearly excluding records that cannot support location-based analysis.</p>
+</section>
+<section id="creating-a-geospatial-asset-layer">
+<h2>Creating a geospatial asset layer<a class="headerlink" href="#creating-a-geospatial-asset-layer" title="Link to this heading">#</a></h2>
+<p>The cleaned operational asset table still behaves like a normal pandas DataFrame. To perform geospatial analysis, each asset needs to become a map point.</p>
+<p>The REPD dataset provides <code class="docutils literal notranslate"><span class="pre">X-coordinate</span></code> and <code class="docutils literal notranslate"><span class="pre">Y-coordinate</span></code> fields. These are British National Grid coordinates, so I assign the coordinate reference system <code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code>.</p>
+<p>This step converts the cleaned asset table into a GeoDataFrame. A GeoDataFrame is similar to a pandas DataFrame, but it has a special <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column that stores spatial objects such as points, lines or polygons.</p>
+<p>In this project:</p>
+<ul class="simple">
+<li><p>each renewable energy asset becomes a point,</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">geometry</span></code> column stores its physical location,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code> is used because it is suitable for UK-based distance calculations.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+
+<span class="n">assets_gdf_27700</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
+    <span class="n">operational_assets_with_coords</span><span class="p">,</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span>
+        <span class="n">operational_assets_with_coords</span><span class="p">[</span><span class="s2">&quot;X-coordinate&quot;</span><span class="p">],</span>
+        <span class="n">operational_assets_with_coords</span><span class="p">[</span><span class="s2">&quot;Y-coordinate&quot;</span><span class="p">]</span>
+    <span class="p">),</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:27700&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">assets_gdf_27700</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">assets_gdf_27700</span><span class="p">))</span>
+
+<span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+CRS: EPSG:27700
+Rows: 3058
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (447490 424684)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (585300 286900)</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (428049 530414)</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (422804 94625)</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (117392 488885)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="../../../_images/028422b25524ba749f4b76c242ecd38f7d5aa7e7e5c06b5bdee0596867a1801b.png" src="../../../_images/028422b25524ba749f4b76c242ecd38f7d5aa7e7e5c06b5bdee0596867a1801b.png" />
+</div>
+</div>
+</section>
+<section id="saving-the-geospatial-asset-layer">
+<h2>Saving the geospatial asset layer<a class="headerlink" href="#saving-the-geospatial-asset-layer" title="Link to this heading">#</a></h2>
+<p>After creating the GeoDataFrame, I save the cleaned spatial asset layer to the processed data folder.</p>
+<p>This makes the workflow reproducible: later notebooks can load the cleaned geospatial dataset directly instead of repeating the raw-data cleaning steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">processed_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_27700.geojson&quot;</span>
+
+<span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved to:&quot;</span><span class="p">,</span> <span class="n">processed_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/processed/operational_energy_assets_27700.geojson
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saved_check</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">processed_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">saved_check</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">saved_check</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="n">saved_check</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 3058
+CRS: EPSG:27700
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Ref ID</th>
+      <th>Operator (or Applicant)</th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>Development Status</th>
+      <th>Development Status (short)</th>
+      <th>County</th>
+      <th>Region</th>
+      <th>Country</th>
+      <th>Post Code</th>
+      <th>X-coordinate</th>
+      <th>Y-coordinate</th>
+      <th>Planning Authority</th>
+      <th>Under Construction</th>
+      <th>Operational</th>
+      <th>Solar Site Area (sqm)</th>
+      <th>development_status_clean</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>Scottish and Southern Energy (SSE)</td>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>West Yorkshire</td>
+      <td>Yorkshire and Humber</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>447490</td>
+      <td>424684</td>
+      <td>The Planning Inspectorate - National Infrastru...</td>
+      <td>01/09/2016</td>
+      <td>20/12/2019</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (447490 424684)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4</td>
+      <td>Energy Power Resources</td>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Norfolk</td>
+      <td>Eastern</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>585300</td>
+      <td>286900</td>
+      <td>Breckland</td>
+      <td>NaN</td>
+      <td>02/10/1998</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (585300 286900)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>14</td>
+      <td>Dalkia</td>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>County Durham</td>
+      <td>North East</td>
+      <td>England</td>
+      <td>NaN</td>
+      <td>428049</td>
+      <td>530414</td>
+      <td>County Durham</td>
+      <td>01/03/2010</td>
+      <td>12/03/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (428049 530414)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>22</td>
+      <td>Double H Nurseries</td>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.50</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Hampshire</td>
+      <td>South East</td>
+      <td>England</td>
+      <td>BH25 5NQ</td>
+      <td>422804</td>
+      <td>94625</td>
+      <td>New Forest</td>
+      <td>NaN</td>
+      <td>15/12/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (422804 94625)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>23</td>
+      <td>REACT Energy (Kedco)</td>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.00</td>
+      <td>Operational</td>
+      <td>Operational</td>
+      <td>Co. Down</td>
+      <td>Northern Ireland</td>
+      <td>Northern Ireland</td>
+      <td>NaN</td>
+      <td>117392</td>
+      <td>488885</td>
+      <td>Newry, Mourne and Down</td>
+      <td>NaN</td>
+      <td>27/06/2012</td>
+      <td>NaN</td>
+      <td>operational</td>
+      <td>POINT (117392 488885)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">assets_gdf_27700</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Geometry type:&quot;</span><span class="p">,</span> <span class="n">assets_gdf_27700</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">geom_type</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 3058
+CRS: EPSG:27700
+Geometry type: Point    3058
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-epsg-27700-is-used">
+<h2>Why EPSG:27700 is used<a class="headerlink" href="#why-epsg-27700-is-used" title="Link to this heading">#</a></h2>
+<p>The REPD dataset provides <code class="docutils literal notranslate"><span class="pre">X-coordinate</span></code> and <code class="docutils literal notranslate"><span class="pre">Y-coordinate</span></code> values using the British National Grid coordinate system.</p>
+<p>This coordinate system is identified in Python as <code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code>.</p>
+<p>A coordinate reference system, or CRS, tells Python how to interpret location values. Without a CRS, the numbers in the coordinate columns are just numbers. With the correct CRS, Python understands that each pair of coordinates represents a real location in Great Britain.</p>
+<p>For this project, <code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code> is useful because it is designed for mapping Great Britain and supports distance calculations in metres.</p>
+<p>This matters because later parts of the project may ask questions such as:</p>
+<ul class="simple">
+<li><p>how far an asset is from a boundary,</p></li>
+<li><p>whether an asset is near a hazard layer,</p></li>
+<li><p>which region an asset belongs to,</p></li>
+<li><p>where exposure may be geographically concentrated.</p></li>
+</ul>
+<p>Using the correct CRS is important because distance-based exposure analysis depends on accurate spatial measurement.</p>
+<p>In this notebook, I assign <code class="docutils literal notranslate"><span class="pre">EPSG:27700</span></code> when creating the GeoDataFrame so that the renewable energy assets are represented as spatial points in the correct UK coordinate system.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projects/physical-climate-risk-uk-energy/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-question">Project question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-project-is">What this project is</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-this-project-is-not">What this project is not</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-goal">Notebook goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#column-selection-logic">Column selection logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning-the-development-status-field">Cleaning the development status field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-location-fields">Checking location fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-completeness-result">Coordinate completeness result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-geospatial-asset-layer">Creating a geospatial asset layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-geospatial-asset-layer">Saving the geospatial asset layer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-epsg-27700-is-used">Why EPSG:27700 is used</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jaurice O'Connor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1501 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>05 Exposure Scoring &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ddf9934e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_final_homepage_polish.css?v=83d5f6c7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom_backup_before_colour_experiments.css?v=a8039654" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/physical-climate-risk-uk-energy/notebooks/05_exposure_scoring';</script>
+    <link rel="author" title="About these documents" href="../../../about.html" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-light" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+    <img src="../../../_static/random_walk_3d.png" class="logo__image only-dark pst-js-only" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grid_stress.html">UK Grid Stress Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../copper_demand.html">Copper Demand Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../colocation.html">Co-location Valuation Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../climate_risk.html">Climate Exposure Risk Map: UK Energy Infrastructure Prototype</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../gb-energy-monitor/index.html">GB Energy Tightness Monitor</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jauricestudios/jaurice-market-notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/projects/physical-climate-risk-uk-energy/notebooks/05_exposure_scoring.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>05 Exposure Scoring</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-exposure-scoring">What is exposure scoring?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity-score">Proximity score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installed-capacity-score">Installed-capacity score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-exposure-score">Preliminary exposure score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening-categories">Screening categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-exposure-summary">Regional exposure summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-the-screening-categories">Visualising the screening categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-scored-asset-layer">Saving the scored asset layer</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exposure-scoring">
+<h1>05 Exposure Scoring<a class="headerlink" href="#exposure-scoring" title="Link to this heading">#</a></h1>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Link to this heading">#</a></h2>
+<p>This notebook creates a simple preliminary exposure score for operational UK renewable energy assets.</p>
+<p>The previous notebook created first-pass geospatial exposure features, including distance to a boundary proxy and proximity flags.</p>
+<p>This notebook combines:</p>
+<ol class="arabic simple">
+<li><p>a proximity score,</p></li>
+<li><p>an installed-capacity score,</p></li>
+<li><p>a final preliminary exposure score,</p></li>
+<li><p>Low / Medium / High screening categories.</p></li>
+</ol>
+<p>This is not a production catastrophe model. The score is a transparent screening tool used to rank assets for further review.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+
+<span class="n">DATA_PROCESSED</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;processed&quot;</span>
+<span class="n">OUTPUTS</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;outputs&quot;</span>
+<span class="n">FIGURES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;figures&quot;</span>
+<span class="n">TABLES</span> <span class="o">=</span> <span class="n">OUTPUTS</span> <span class="o">/</span> <span class="s2">&quot;tables&quot;</span>
+
+<span class="n">FIGURES</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">TABLES</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">exposure_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_exposure_features.geojson&quot;</span>
+
+<span class="n">assets</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">exposure_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">assets</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">assets</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geopandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-is-exposure-scoring">
+<h2>What is exposure scoring?<a class="headerlink" href="#what-is-exposure-scoring" title="Link to this heading">#</a></h2>
+<p>Exposure scoring converts several risk-relevant features into a simple ranking system.</p>
+<p>In this project, the score is not estimating financial loss, probability of failure or insured damage. Instead, it answers a simpler screening question:</p>
+<blockquote>
+<div><p>Which assets might deserve closer review first?</p>
+</div></blockquote>
+<p>The score combines two ideas:</p>
+<ol class="arabic simple">
+<li><p><strong>Proximity</strong> — assets closer to the boundary proxy receive a higher exposure flag.</p></li>
+<li><p><strong>Scale</strong> — assets with higher installed capacity receive a higher scale flag.</p></li>
+</ol>
+<p>This creates a transparent preliminary score that can be explained, challenged and improved later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;within_5km_boundary_proxy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;within_10km_boundary_proxy&quot;</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>distance_to_boundary_m</th>
+      <th>within_5km_boundary_proxy</th>
+      <th>within_10km_boundary_proxy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>EfW Incineration</td>
+      <td>70.0</td>
+      <td>191191.372956</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thetford Biomass Power Station</td>
+      <td>Biomass (dedicated)</td>
+      <td>38.5</td>
+      <td>90187.542957</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Chilton Energy Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>18.0</td>
+      <td>184875.461233</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>Biomass (dedicated)</td>
+      <td>1.5</td>
+      <td>29462.766557</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Advanced Conversion Technologies</td>
+      <td>2.0</td>
+      <td>99471.331514</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="proximity-score">
+<h2>Proximity score<a class="headerlink" href="#proximity-score" title="Link to this heading">#</a></h2>
+<p>The proximity score is based on distance to the boundary proxy.</p>
+<p>The logic is:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Condition</p></th>
+<th class="head text-right"><p>Score</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>within 5 km</p></td>
+<td class="text-right"><p>2</p></td>
+<td><p>higher proximity flag</p></td>
+</tr>
+<tr class="row-odd"><td><p>within 10 km</p></td>
+<td class="text-right"><p>1</p></td>
+<td><p>moderate proximity flag</p></td>
+</tr>
+<tr class="row-even"><td><p>outside 10 km</p></td>
+<td class="text-right"><p>0</p></td>
+<td><p>lower proximity flag</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This is a simple screening rule. It should not be interpreted as a true flood, coastal or heat hazard score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">assign_proximity_score</span><span class="p">(</span><span class="n">distance_m</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">distance_m</span> <span class="o">&lt;=</span> <span class="mi">5_000</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">distance_m</span> <span class="o">&lt;=</span> <span class="mi">10_000</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;proximity_score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">assign_proximity_score</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;proximity_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proximity_score
+0    3013
+1      21
+2      24
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="installed-capacity-score">
+<h2>Installed-capacity score<a class="headerlink" href="#installed-capacity-score" title="Link to this heading">#</a></h2>
+<p>Installed capacity is used as a simple proxy for asset scale.</p>
+<p>A larger generation asset may matter more for infrastructure, portfolio or system-risk analysis than a very small asset.</p>
+<p>However, installed capacity is not the same as replacement cost, insured value, revenue exposure or criticality. It is only a first-pass scale proxy.</p>
+<p>The capacity score divides assets into three groups using terciles:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Capacity group</p></th>
+<th class="head text-right"><p>Score</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>lower third</p></td>
+<td class="text-right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>middle third</p></td>
+<td class="text-right"><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>upper third</p></td>
+<td class="text-right"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity_col</span> <span class="o">=</span> <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="n">capacity_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">assets</span><span class="p">[</span><span class="n">capacity_col</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="n">capacity_col</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    3013.00000
+mean       18.20843
+std        72.83629
+min         0.10000
+25%         2.20000
+50%         5.00000
+75%        12.00000
+max      1728.00000
+Name: Installed Capacity (MWelec), dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets</span><span class="p">[</span><span class="s2">&quot;capacity_score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">qcut</span><span class="p">(</span>
+    <span class="n">assets</span><span class="p">[</span><span class="n">capacity_col</span><span class="p">],</span>
+    <span class="n">q</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="n">duplicates</span><span class="o">=</span><span class="s2">&quot;drop&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;capacity_score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;capacity_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;capacity_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>capacity_score
+0    1061
+1     993
+2    1004
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preliminary-exposure-score">
+<h2>Preliminary exposure score<a class="headerlink" href="#preliminary-exposure-score" title="Link to this heading">#</a></h2>
+<p>The final score combines proximity and capacity:</p>
+<p>[
+\text{preliminary exposure score} = \text{proximity score} + \text{capacity score}
+]</p>
+<p>The maximum score is 4 and the minimum score is 0.</p>
+<p>This score is used only for ranking and screening. It is not a probability, loss estimate or engineering risk measure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets</span><span class="p">[</span><span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;proximity_score&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;capacity_score&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>preliminary_exposure_score
+0    1048
+1     983
+2    1002
+3      17
+4       8
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="screening-categories">
+<h2>Screening categories<a class="headerlink" href="#screening-categories" title="Link to this heading">#</a></h2>
+<p>To make the score easier to communicate, I convert the numeric score into Low, Medium and High screening categories.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Score</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0–1</p></td>
+<td><p>Low</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2–3</p></td>
+<td><p>Medium</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>4</p></td>
+<td><p>High</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These categories are communication labels. They do not represent validated risk bands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">assign_screening_category</span><span class="p">(</span><span class="n">score</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;High&quot;</span>
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Medium&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Low&quot;</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;screening_category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">assign_screening_category</span><span class="p">)</span>
+
+<span class="n">assets</span><span class="p">[</span><span class="s2">&quot;screening_category&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>screening_category
+Low       2031
+Medium    1019
+High         8
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">assets</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Technology Type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;distance_to_boundary_m&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;proximity_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;capacity_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;screening_category&quot;</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+    <span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">,</span>
+    <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Technology Type</th>
+      <th>Region</th>
+      <th>Installed Capacity (MWelec)</th>
+      <th>distance_to_boundary_m</th>
+      <th>proximity_score</th>
+      <th>capacity_score</th>
+      <th>preliminary_exposure_score</th>
+      <th>screening_category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1354</th>
+      <td>Rampion Offshore Wind Farm (Hastings Zone)</td>
+      <td>Wind Offshore</td>
+      <td>Offshore</td>
+      <td>400.0</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1342</th>
+      <td>Hornsea 2 - Optimus and Breesea</td>
+      <td>Wind Offshore</td>
+      <td>Offshore</td>
+      <td>1320.0</td>
+      <td>3896.293647</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1357</th>
+      <td>East Anglia 1 (EA 1)</td>
+      <td>Wind Offshore</td>
+      <td>Offshore</td>
+      <td>714.0</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1842</th>
+      <td>Pentland Road Wind Farm</td>
+      <td>Wind Onshore</td>
+      <td>Scotland</td>
+      <td>13.8</td>
+      <td>4353.640811</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1359</th>
+      <td>Galloper Wind Farm</td>
+      <td>Wind Offshore</td>
+      <td>Offshore</td>
+      <td>353.0</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1464</th>
+      <td>Goonhilly Downs Wind Farm Repower</td>
+      <td>Wind Onshore</td>
+      <td>South West</td>
+      <td>12.0</td>
+      <td>442.458716</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1340</th>
+      <td>Thanet</td>
+      <td>Wind Offshore</td>
+      <td>Offshore</td>
+      <td>300.0</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>2087</th>
+      <td>Callagheen</td>
+      <td>Wind Onshore</td>
+      <td>Northern Ireland</td>
+      <td>22.8</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <th>1100</th>
+      <td>Tilmanstone Colliery</td>
+      <td>Solar Photovoltaics</td>
+      <td>South East</td>
+      <td>10.0</td>
+      <td>6819.019163</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1937</th>
+      <td>Point Wind / Beinn Ghrideag Farm</td>
+      <td>Wind Onshore</td>
+      <td>Scotland</td>
+      <td>9.0</td>
+      <td>8064.887187</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>2068</th>
+      <td>Ora More</td>
+      <td>Wind Onshore</td>
+      <td>Northern Ireland</td>
+      <td>15.0</td>
+      <td>8802.775543</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>778</th>
+      <td>Goonhilly Downs - PV</td>
+      <td>Solar Photovoltaics</td>
+      <td>South West</td>
+      <td>4.5</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1071</th>
+      <td>Natewood Farm</td>
+      <td>Solar Photovoltaics</td>
+      <td>South East</td>
+      <td>8.9</td>
+      <td>9275.391070</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1297</th>
+      <td>Pashley Farm</td>
+      <td>Solar Photovoltaics</td>
+      <td>South East</td>
+      <td>11.5</td>
+      <td>6848.841394</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>914</th>
+      <td>Sycamore Farm</td>
+      <td>Solar Photovoltaics</td>
+      <td>South East</td>
+      <td>20.0</td>
+      <td>6434.185570</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>2874</th>
+      <td>Richborough Energy Park</td>
+      <td>Battery</td>
+      <td>South East</td>
+      <td>49.9</td>
+      <td>9339.382516</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>Discovery Park</td>
+      <td>Biomass (dedicated)</td>
+      <td>South East</td>
+      <td>16.0</td>
+      <td>7434.449574</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1698</th>
+      <td>North Yell Wind Farm (Garth Community Wind Farm)</td>
+      <td>Wind Onshore</td>
+      <td>Scotland</td>
+      <td>4.5</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1473</th>
+      <td>Little Cheyne Court Wind Farm</td>
+      <td>Wind Onshore</td>
+      <td>South East</td>
+      <td>59.8</td>
+      <td>5310.587335</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1655</th>
+      <td>Lochcarnan Community Windfarm</td>
+      <td>Wind Onshore</td>
+      <td>Scotland</td>
+      <td>6.9</td>
+      <td>0.000000</td>
+      <td>2</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="regional-exposure-summary">
+<h2>Regional exposure summary<a class="headerlink" href="#regional-exposure-summary" title="Link to this heading">#</a></h2>
+<p>After scoring individual assets, I summarise results by region.</p>
+<p>This creates a portfolio-style view showing where higher-scored assets are concentrated.</p>
+<p>The regional view is useful because risk is often managed at several levels:</p>
+<ul class="simple">
+<li><p>individual asset level,</p></li>
+<li><p>regional level,</p></li>
+<li><p>portfolio level.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regional_scoring_summary</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Region&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">asset_count</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Ref ID&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">),</span>
+        <span class="n">total_capacity_mw</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Installed Capacity (MWelec)&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">),</span>
+        <span class="n">mean_exposure_score</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">),</span>
+        <span class="n">high_screening_count</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;screening_category&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;High&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+        <span class="n">medium_screening_count</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;screening_category&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Medium&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span>
+        <span class="n">low_screening_count</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;screening_category&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="s2">&quot;Low&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;high_screening_count&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">regional_scoring_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Region</th>
+      <th>asset_count</th>
+      <th>total_capacity_mw</th>
+      <th>mean_exposure_score</th>
+      <th>high_screening_count</th>
+      <th>medium_screening_count</th>
+      <th>low_screening_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>Offshore</td>
+      <td>53</td>
+      <td>14713.50</td>
+      <td>2.056604</td>
+      <td>5</td>
+      <td>43</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Northern Ireland</td>
+      <td>118</td>
+      <td>1453.50</td>
+      <td>1.372881</td>
+      <td>1</td>
+      <td>62</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Scotland</td>
+      <td>565</td>
+      <td>12382.83</td>
+      <td>1.097345</td>
+      <td>1</td>
+      <td>254</td>
+      <td>310</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>South West</td>
+      <td>529</td>
+      <td>3907.90</td>
+      <td>0.922495</td>
+      <td>1</td>
+      <td>119</td>
+      <td>409</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>East Midlands</td>
+      <td>268</td>
+      <td>2010.06</td>
+      <td>0.914179</td>
+      <td>0</td>
+      <td>73</td>
+      <td>195</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Eastern</td>
+      <td>326</td>
+      <td>3378.04</td>
+      <td>1.021472</td>
+      <td>0</td>
+      <td>120</td>
+      <td>206</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>London</td>
+      <td>35</td>
+      <td>388.62</td>
+      <td>0.657143</td>
+      <td>0</td>
+      <td>8</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>North East</td>
+      <td>103</td>
+      <td>1319.61</td>
+      <td>0.912621</td>
+      <td>0</td>
+      <td>28</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>North West</td>
+      <td>194</td>
+      <td>1572.56</td>
+      <td>0.711340</td>
+      <td>0</td>
+      <td>38</td>
+      <td>156</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>South East</td>
+      <td>312</td>
+      <td>3468.95</td>
+      <td>1.009615</td>
+      <td>0</td>
+      <td>100</td>
+      <td>212</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Wales</td>
+      <td>243</td>
+      <td>4549.00</td>
+      <td>1.037037</td>
+      <td>0</td>
+      <td>76</td>
+      <td>167</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>West Midlands</td>
+      <td>145</td>
+      <td>1309.11</td>
+      <td>0.896552</td>
+      <td>0</td>
+      <td>41</td>
+      <td>104</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yorkshire and Humber</td>
+      <td>167</td>
+      <td>4408.32</td>
+      <td>0.964072</td>
+      <td>0</td>
+      <td>57</td>
+      <td>110</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regional_scoring_summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+    <span class="n">TABLES</span> <span class="o">/</span> <span class="s2">&quot;regional_exposure_scoring_summary.csv&quot;</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved regional scoring summary to:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">TABLES</span> <span class="o">/</span> <span class="s2">&quot;regional_exposure_scoring_summary.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved regional scoring summary to:
+/Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/outputs/tables/regional_exposure_scoring_summary.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualising-the-screening-categories">
+<h2>Visualising the screening categories<a class="headerlink" href="#visualising-the-screening-categories" title="Link to this heading">#</a></h2>
+<p>The chart below shows how many assets fall into each screening category.</p>
+<p>This helps communicate whether the score is classifying most assets as Low, Medium or High.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">category_counts</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">assets</span><span class="p">[</span><span class="s2">&quot;screening_category&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">reindex</span><span class="p">([</span><span class="s2">&quot;Low&quot;</span><span class="p">,</span> <span class="s2">&quot;Medium&quot;</span><span class="p">,</span> <span class="s2">&quot;High&quot;</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">category_counts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Asset Count by Screening Category&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Screening category&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of assets&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">figure_path</span> <span class="o">=</span> <span class="n">FIGURES</span> <span class="o">/</span> <span class="s2">&quot;screening_category_counts.png&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">figure_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved figure to:&quot;</span><span class="p">,</span> <span class="n">figure_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1455eaa15ca82038c20e6c44cb89de9d1d67a8491b6b8a24f691f86b2e7af91f.png" src="../../../_images/1455eaa15ca82038c20e6c44cb89de9d1d67a8491b6b8a24f691f86b2e7af91f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved figure to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/outputs/figures/screening_category_counts.png
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-the-scored-asset-layer">
+<h2>Saving the scored asset layer<a class="headerlink" href="#saving-the-scored-asset-layer" title="Link to this heading">#</a></h2>
+<p>The scored asset layer is saved for the final results and interpretation notebook.</p>
+<p>This output contains the original asset information, geospatial exposure features, scores and screening categories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scored_geojson_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_scored.geojson&quot;</span>
+<span class="n">scored_csv_path</span> <span class="o">=</span> <span class="n">DATA_PROCESSED</span> <span class="o">/</span> <span class="s2">&quot;operational_energy_assets_scored.csv&quot;</span>
+
+<span class="n">assets</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">scored_geojson_path</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;GeoJSON&quot;</span><span class="p">)</span>
+<span class="n">assets</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">scored_csv_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved scored GeoJSON to:&quot;</span><span class="p">,</span> <span class="n">scored_geojson_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saved scored CSV to:&quot;</span><span class="p">,</span> <span class="n">scored_csv_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved scored GeoJSON to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/processed/operational_energy_assets_scored.geojson
+Saved scored CSV to: /Users/oconnor/jaurice-market-notes/projects/physical-climate-risk-uk-energy/data/processed/operational_energy_assets_scored.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">scored_geojson_path</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rows:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">check</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CRS:&quot;</span><span class="p">,</span> <span class="n">check</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Columns:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">check</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
+
+<span class="n">check</span><span class="p">[[</span>
+    <span class="s2">&quot;Site Name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Region&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;preliminary_exposure_score&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;screening_category&quot;</span>
+<span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rows: 3058
+CRS: EPSG:27700
+Columns: 26
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Site Name</th>
+      <th>Region</th>
+      <th>preliminary_exposure_score</th>
+      <th>screening_category</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Ferrybridge Multifuel 2 (FM2)</td>
+      <td>Yorkshire and Humber</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Thetford Biomass Power Station</td>
+      <td>Eastern</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Chilton Energy Plant</td>
+      <td>North East</td>
+      <td>2</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Double H Nurseries Biomass Plant</td>
+      <td>South East</td>
+      <td>0</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Newry Biomass Phase 1 (Gasification)</td>
+      <td>Northern Ireland</td>
+      <td>0</td>
+      <td>Low</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projects/physical-climate-risk-uk-energy/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#goal">Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-exposure-scoring">What is exposure scoring?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proximity-score">Proximity score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installed-capacity-score">Installed-capacity score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-exposure-score">Preliminary exposure score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#screening-categories">Screening categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regional-exposure-summary">Regional exposure summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-the-screening-categories">Visualising the screening categories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-scored-asset-layer">Saving the scored asset layer</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jaurice O'Connor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
