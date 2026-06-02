@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>supply monitor &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+    <title>Supply Monitor &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
   
   
   
@@ -150,6 +150,10 @@
   
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -357,7 +361,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,11 +374,29 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>supply monitor</h1>
+    <h1>Supply Monitor</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-question">Core question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-supply-channels">Main supply channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-indicators">Key indicators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-lng-matters">Why LNG matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-norway-matters">Why Norway matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-storage-matters">Why storage matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supply-tightness-logic">Supply tightness logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-prototype-table">First prototype table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyst-commentary-template">Analyst commentary template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-outputs">Planned outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-status">Current status</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -383,8 +407,171 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="supply-monitor">
-<h1>supply monitor<a class="headerlink" href="#supply-monitor" title="Link to this heading">#</a></h1>
-<p>This page is part of the UK Gas &amp; LNG Market Monitor research site.</p>
+<h1>Supply Monitor<a class="headerlink" href="#supply-monitor" title="Link to this heading">#</a></h1>
+<p>This page tracks the supply side of the UK Gas &amp; LNG Market Monitor.</p>
+<p>The purpose is to understand whether the UK gas system is receiving enough gas from domestic production, Norway, LNG imports, storage withdrawals and interconnector flows.</p>
+<section id="core-question">
+<h2>Core question<a class="headerlink" href="#core-question" title="Link to this heading">#</a></h2>
+<p>Is UK gas supply becoming tighter or looser, and which supply channel is driving the change?</p>
+</section>
+<section id="main-supply-channels">
+<h2>Main supply channels<a class="headerlink" href="#main-supply-channels" title="Link to this heading">#</a></h2>
+<p>The UK gas system is supplied through several physical channels.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Supply channel</p></th>
+<th class="head"><p>Meaning</p></th>
+<th class="head"><p>Why it matters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UK continental shelf production</p></td>
+<td><p>Domestic gas production from the North Sea</p></td>
+<td><p>Local supply reduces import dependence</p></td>
+</tr>
+<tr class="row-odd"><td><p>Norwegian pipeline flows</p></td>
+<td><p>Gas imported from Norway through pipelines</p></td>
+<td><p>Norway is one of the most important UK supply sources</p></td>
+</tr>
+<tr class="row-even"><td><p>LNG sendout</p></td>
+<td><p>Regasified LNG entering the grid from terminals</p></td>
+<td><p>Flexible but globally competitive supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage withdrawals</p></td>
+<td><p>Gas withdrawn from storage sites</p></td>
+<td><p>Important in winter or during supply stress</p></td>
+</tr>
+<tr class="row-even"><td><p>Interconnector imports</p></td>
+<td><p>Gas entering Britain from Europe or Ireland</p></td>
+<td><p>Links UK tightness to European conditions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="key-indicators">
+<h2>Key indicators<a class="headerlink" href="#key-indicators" title="Link to this heading">#</a></h2>
+<p>The first version of the supply monitor should track:</p>
+<ol class="arabic simple">
+<li><p>UK domestic gas production.</p></li>
+<li><p>Norwegian pipeline imports.</p></li>
+<li><p>LNG sendout.</p></li>
+<li><p>Storage withdrawals/injections.</p></li>
+<li><p>Interconnector imports and exports.</p></li>
+<li><p>Total supply.</p></li>
+<li><p>Share of supply from LNG.</p></li>
+<li><p>Share of supply from Norway.</p></li>
+<li><p>Supply concentration risk.</p></li>
+<li><p>Supply stress commentary.</p></li>
+</ol>
+</section>
+<section id="why-lng-matters">
+<h2>Why LNG matters<a class="headerlink" href="#why-lng-matters" title="Link to this heading">#</a></h2>
+<p>LNG is flexible because cargoes can move globally. However, that flexibility also means the UK competes with Europe and Asia for cargoes.</p>
+<p>If Asian demand rises, or if shipping routes become riskier, LNG may become more expensive or less available to Europe. This can feed into UK NBP prices and wider power-market costs.</p>
+</section>
+<section id="why-norway-matters">
+<h2>Why Norway matters<a class="headerlink" href="#why-norway-matters" title="Link to this heading">#</a></h2>
+<p>Norwegian pipeline flows are central to UK supply. Outages, maintenance or reduced flows can tighten the market quickly, especially during high-demand periods.</p>
+<p>For a UK gas analyst, Norwegian flows are one of the first things to monitor.</p>
+</section>
+<section id="why-storage-matters">
+<h2>Why storage matters<a class="headerlink" href="#why-storage-matters" title="Link to this heading">#</a></h2>
+<p>Storage does not create new supply, but it changes timing. High storage gives the system flexibility. Low storage increases winter vulnerability.</p>
+<p>Storage is especially important when:</p>
+<ul class="simple">
+<li><p>demand is high,</p></li>
+<li><p>wind generation is low,</p></li>
+<li><p>LNG arrivals are weak,</p></li>
+<li><p>pipeline supply is disrupted,</p></li>
+<li><p>European gas balances are tight.</p></li>
+</ul>
+</section>
+<section id="supply-tightness-logic">
+<h2>Supply tightness logic<a class="headerlink" href="#supply-tightness-logic" title="Link to this heading">#</a></h2>
+<p>A simple supply stress score can be built from:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Indicator</p></th>
+<th class="head"><p>Tightness signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Falling domestic production</p></td>
+<td><p>Tighter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lower Norwegian flows</p></td>
+<td><p>Tighter</p></td>
+</tr>
+<tr class="row-even"><td><p>Lower LNG sendout</p></td>
+<td><p>Tighter</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage withdrawals rising sharply</p></td>
+<td><p>Tighter</p></td>
+</tr>
+<tr class="row-even"><td><p>Interconnector exports rising</p></td>
+<td><p>Tighter for UK</p></td>
+</tr>
+<tr class="row-odd"><td><p>High LNG share of supply</p></td>
+<td><p>More exposed to global LNG competition</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="first-prototype-table">
+<h2>First prototype table<a class="headerlink" href="#first-prototype-table" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head text-right"><p>Domestic supply</p></th>
+<th class="head text-right"><p>Norway flows</p></th>
+<th class="head text-right"><p>LNG sendout</p></th>
+<th class="head text-right"><p>Storage flow</p></th>
+<th class="head text-right"><p>Interconnector net flow</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Example</p></td>
+<td class="text-right"><p>TBD</p></td>
+<td class="text-right"><p>TBD</p></td>
+<td class="text-right"><p>TBD</p></td>
+<td class="text-right"><p>TBD</p></td>
+<td class="text-right"><p>TBD</p></td>
+<td><p>Placeholder until live data is added</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="analyst-commentary-template">
+<h2>Analyst commentary template<a class="headerlink" href="#analyst-commentary-template" title="Link to this heading">#</a></h2>
+<p>Each weekly update should answer:</p>
+<ol class="arabic simple">
+<li><p>What changed in UK gas supply this week?</p></li>
+<li><p>Was the change driven by Norway, LNG, storage or interconnectors?</p></li>
+<li><p>Did the supply mix make the UK system tighter or looser?</p></li>
+<li><p>What should be watched next week?</p></li>
+</ol>
+</section>
+<section id="planned-outputs">
+<h2>Planned outputs<a class="headerlink" href="#planned-outputs" title="Link to this heading">#</a></h2>
+<p>The final version of this page should include:</p>
+<ol class="arabic simple">
+<li><p>A supply stack chart.</p></li>
+<li><p>LNG sendout time series.</p></li>
+<li><p>Norwegian flow time series.</p></li>
+<li><p>Storage injection/withdrawal chart.</p></li>
+<li><p>Interconnector net flow chart.</p></li>
+<li><p>A short analyst note explaining the latest supply picture.</p></li>
+</ol>
+</section>
+<section id="current-status">
+<h2>Current status<a class="headerlink" href="#current-status" title="Link to this heading">#</a></h2>
+<p>This page is at the structure and research design stage.</p>
+<p>Next step: identify the first reliable data sources for UK gas flows, LNG sendout and storage levels.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,6 +628,33 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-question">Core question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-supply-channels">Main supply channels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-indicators">Key indicators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-lng-matters">Why LNG matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-norway-matters">Why Norway matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-storage-matters">Why storage matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supply-tightness-logic">Supply tightness logic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-prototype-table">First prototype table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyst-commentary-template">Analyst commentary template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-outputs">Planned outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-status">Current status</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

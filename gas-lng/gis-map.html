@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>gis map &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+    <title>GIS Infrastructure Map &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
   
   
   
@@ -150,6 +150,10 @@
   
   
 
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
   
 </div>
 
@@ -357,7 +361,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,11 +374,27 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>gis map</h1>
+    <h1>GIS Infrastructure Map</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-question">Core question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-geography-matters">Why geography matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-layers-to-build">Map layers to build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-map-design">First map design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-fields">Data fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-infrastructure-table">Example infrastructure table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyst-interpretation">Analyst interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-outputs">Planned outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-status">Current status</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -382,9 +404,207 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="gis-map">
-<h1>gis map<a class="headerlink" href="#gis-map" title="Link to this heading">#</a></h1>
-<p>This page is part of the UK Gas &amp; LNG Market Monitor research site.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="gis-infrastructure-map">
+<h1>GIS Infrastructure Map<a class="headerlink" href="#gis-infrastructure-map" title="Link to this heading">#</a></h1>
+<p>This page develops the geographic layer of the UK Gas &amp; LNG Market Monitor.</p>
+<p>The purpose is to understand the UK gas market as a physical network, not just a set of price charts. Gas and LNG prices are shaped by terminals, pipelines, interconnectors, storage sites, shipping routes, weather patterns and geopolitical chokepoints.</p>
+<section id="core-question">
+<h2>Core question<a class="headerlink" href="#core-question" title="Link to this heading">#</a></h2>
+<p>Where are the key physical points in the UK and European gas system, and how could stress at these locations affect market tightness?</p>
+</section>
+<section id="why-geography-matters">
+<h2>Why geography matters<a class="headerlink" href="#why-geography-matters" title="Link to this heading">#</a></h2>
+<p>Gas markets are spatial systems. A price move in NBP or TTF is often linked to a physical constraint somewhere in the network.</p>
+<p>Examples include:</p>
+<ol class="arabic simple">
+<li><p>LNG cargoes being diverted away from Europe.</p></li>
+<li><p>Low storage levels before winter.</p></li>
+<li><p>Pipeline outages from Norway.</p></li>
+<li><p>Interconnector flows changing between Britain and continental Europe.</p></li>
+<li><p>Shipping risk around chokepoints such as Hormuz, Suez or Bab el-Mandeb.</p></li>
+<li><p>High UK power-sector gas demand during low wind periods.</p></li>
+</ol>
+</section>
+<section id="map-layers-to-build">
+<h2>Map layers to build<a class="headerlink" href="#map-layers-to-build" title="Link to this heading">#</a></h2>
+<p>The first version of the map will focus on the following layers.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Examples</p></th>
+<th class="head"><p>Why it matters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>UK LNG terminals</p></td>
+<td><p>South Hook, Isle of Grain, Dragon</p></td>
+<td><p>Shows where imported LNG enters the UK system</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gas interconnectors</p></td>
+<td><p>BBL, IUK, Moffat</p></td>
+<td><p>Shows links between Britain, Europe and Ireland</p></td>
+</tr>
+<tr class="row-even"><td><p>Norwegian supply routes</p></td>
+<td><p>Langeled, Vesterled, FLAGS</p></td>
+<td><p>Norway is a key source of UK gas supply</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage sites</p></td>
+<td><p>Rough, Hornsea, Aldbrough, Holford</p></td>
+<td><p>Storage affects seasonal tightness and winter risk</p></td>
+</tr>
+<tr class="row-even"><td><p>Power demand centres</p></td>
+<td><p>London, Midlands, North West</p></td>
+<td><p>Gas burn for power can tighten the system</p></td>
+</tr>
+<tr class="row-odd"><td><p>European hubs</p></td>
+<td><p>TTF, Zeebrugge, Dunkirk</p></td>
+<td><p>Links UK gas to wider European pricing</p></td>
+</tr>
+<tr class="row-even"><td><p>Chokepoints</p></td>
+<td><p>Hormuz, Suez, Bab el-Mandeb</p></td>
+<td><p>LNG route risk and geopolitical exposure</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="first-map-design">
+<h2>First map design<a class="headerlink" href="#first-map-design" title="Link to this heading">#</a></h2>
+<p>The first prototype should be simple.</p>
+<ul class="simple">
+<li><p>Green markers: supply/import points</p></li>
+<li><p>Red markers: demand or consumption zones</p></li>
+<li><p>Blue lines: pipelines and interconnectors</p></li>
+<li><p>Purple markers: LNG terminals</p></li>
+<li><p>Yellow markers: geopolitical or shipping chokepoints</p></li>
+</ul>
+<p>The goal is not to create a perfect infrastructure map immediately. The goal is to create an analyst-style visual that explains how physical flows connect to market risk.</p>
+</section>
+<section id="data-fields">
+<h2>Data fields<a class="headerlink" href="#data-fields" title="Link to this heading">#</a></h2>
+<p>Each infrastructure point should eventually have:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>Name of terminal, pipeline, storage site or hub</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>LNG terminal, storage, interconnector, hub, chokepoint</p></td>
+</tr>
+<tr class="row-even"><td><p>country</p></td>
+<td><p>Country or region</p></td>
+</tr>
+<tr class="row-odd"><td><p>latitude</p></td>
+<td><p>Geographic latitude</p></td>
+</tr>
+<tr class="row-even"><td><p>longitude</p></td>
+<td><p>Geographic longitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>role</p></td>
+<td><p>What the asset does in the gas system</p></td>
+</tr>
+<tr class="row-even"><td><p>market relevance</p></td>
+<td><p>Why this point matters for prices or risk</p></td>
+</tr>
+<tr class="row-odd"><td><p>source</p></td>
+<td><p>Where the information came from</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="example-infrastructure-table">
+<h2>Example infrastructure table<a class="headerlink" href="#example-infrastructure-table" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Asset</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Market relevance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>South Hook</p></td>
+<td><p>LNG terminal</p></td>
+<td><p>Milford Haven, Wales</p></td>
+<td><p>Major UK LNG import point</p></td>
+</tr>
+<tr class="row-odd"><td><p>Isle of Grain</p></td>
+<td><p>LNG terminal</p></td>
+<td><p>Kent, England</p></td>
+<td><p>Important LNG terminal close to South East demand</p></td>
+</tr>
+<tr class="row-even"><td><p>Dragon LNG</p></td>
+<td><p>LNG terminal</p></td>
+<td><p>Milford Haven, Wales</p></td>
+<td><p>Adds flexibility to UK LNG imports</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rough</p></td>
+<td><p>Storage</p></td>
+<td><p>North Sea</p></td>
+<td><p>Historically important UK seasonal storage</p></td>
+</tr>
+<tr class="row-even"><td><p>IUK</p></td>
+<td><p>Interconnector</p></td>
+<td><p>UK-Belgium</p></td>
+<td><p>Links NBP and continental European gas markets</p></td>
+</tr>
+<tr class="row-odd"><td><p>BBL</p></td>
+<td><p>Interconnector</p></td>
+<td><p>Netherlands-UK</p></td>
+<td><p>Connects UK with Dutch gas system</p></td>
+</tr>
+<tr class="row-even"><td><p>Moffat</p></td>
+<td><p>Interconnector</p></td>
+<td><p>UK-Ireland</p></td>
+<td><p>Connects GB gas system to Ireland</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTF</p></td>
+<td><p>Gas hub</p></td>
+<td><p>Netherlands</p></td>
+<td><p>European benchmark gas price</p></td>
+</tr>
+<tr class="row-even"><td><p>NBP</p></td>
+<td><p>Gas hub</p></td>
+<td><p>UK</p></td>
+<td><p>UK benchmark gas price</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="analyst-interpretation">
+<h2>Analyst interpretation<a class="headerlink" href="#analyst-interpretation" title="Link to this heading">#</a></h2>
+<p>A GIS map helps answer questions such as:</p>
+<ul class="simple">
+<li><p>Is the UK relying heavily on LNG?</p></li>
+<li><p>Are interconnector flows supporting the UK or exporting gas away?</p></li>
+<li><p>Is European storage comfortable or stressed?</p></li>
+<li><p>Could a chokepoint disruption affect LNG availability?</p></li>
+<li><p>Is UK gas tightness being driven by supply, demand, storage or international competition?</p></li>
+</ul>
+</section>
+<section id="planned-outputs">
+<h2>Planned outputs<a class="headerlink" href="#planned-outputs" title="Link to this heading">#</a></h2>
+<p>The final version of this page should include:</p>
+<ol class="arabic simple">
+<li><p>A static map of UK and European gas infrastructure.</p></li>
+<li><p>An interactive Folium map.</p></li>
+<li><p>A route table for LNG and pipeline flows.</p></li>
+<li><p>Short commentary explaining what the map shows.</p></li>
+<li><p>A link between infrastructure points and the tightness index.</p></li>
+</ol>
+</section>
+<section id="current-status">
+<h2>Current status<a class="headerlink" href="#current-status" title="Link to this heading">#</a></h2>
+<p>This page is at the research design stage.</p>
+<p>Next step: create a small CSV of UK gas infrastructure points and use Python/Folium to generate the first interactive map.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,6 +661,31 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-question">Core question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-geography-matters">Why geography matters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#map-layers-to-build">Map layers to build</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-map-design">First map design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-fields">Data fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-infrastructure-table">Example infrastructure table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analyst-interpretation">Analyst interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planned-outputs">Planned outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-status">Current status</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
