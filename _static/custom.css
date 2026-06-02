@@ -421,3 +421,93 @@ hr {
   margin: 2rem 0 !important;
 }
 
+
+/* Keep only one clean sidebar logo */
+.bd-sidebar-primary a.logo,
+.bd-sidebar-primary .navbar-brand {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Hide accidental duplicate logo images */
+.bd-sidebar-primary img.logo__image + img,
+.bd-sidebar-primary .navbar-brand img + img,
+.bd-sidebar-primary img:nth-of-type(n+2) {
+  display: none !important;
+}
+
+/* Final sidebar logo sizing */
+.bd-sidebar-primary img,
+.bd-sidebar-primary .logo__image,
+.bd-sidebar-primary .navbar-brand img {
+  width: 150px !important;
+  max-width: 150px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1.2rem auto !important;
+}
+
+/* Softer notebook feel */
+body {
+  background: #fafafa !important;
+}
+
+/* Softer main article panel */
+.bd-article,
+.bd-content,
+.bd-article-container {
+  background: #ffffff !important;
+}
+
+/* Slightly softer text */
+p,
+li {
+  color: #4b5563 !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+}
+
+/* Headings less heavy */
+h1 {
+  font-size: 2rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+h2 {
+  font-size: 1.6rem !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+/* Slightly narrower article like the reference */
+.bd-main .bd-content .bd-article-container {
+  max-width: 760px !important;
+}
+
+/* Softer sidebar */
+.bd-sidebar-primary {
+  background: #f5f6f8 !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+
+/* Softer links */
+a,
+.bd-article a,
+.bd-content a {
+  color: #2563eb !important;
+  text-decoration: underline !important;
+}
+
+/* Cleaner horizontal separators */
+hr {
+  border: none !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 2rem 0 !important;
+}
