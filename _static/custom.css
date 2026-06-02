@@ -1,100 +1,117 @@
-/* Clean white research notebook style */
+/* Full clean white Jupyter Book style override */
 
-/* Force light mode globally */
+/* PyData / Jupyter Book theme colour variables */
+:root,
 html,
-html[data-theme="dark"],
 html[data-theme="light"],
+html[data-theme="dark"] {
+  --pst-color-background: #ffffff !important;
+  --pst-color-on-background: #ffffff !important;
+  --pst-color-surface: #ffffff !important;
+  --pst-color-on-surface: #ffffff !important;
+  --pst-color-text-base: #1f2937 !important;
+  --pst-color-text-muted: #4b5563 !important;
+  --pst-color-link: #0066cc !important;
+  --pst-color-link-hover: #004999 !important;
+  --pst-color-primary: #0066cc !important;
+  --pst-color-secondary: #0066cc !important;
+  --pst-color-border: #e5e7eb !important;
+}
+
+/* Force all major containers white */
+html,
 body,
 .bd-container,
+.bd-container__inner,
 .bd-page-width,
 .bd-main,
 .bd-content,
 .bd-article-container,
 .bd-article,
+.bd-main .bd-content,
 article,
 main,
 section {
-    background-color: #ffffff !important;
-    color: #222222 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
 }
 
-/* Sidebars */
+/* Left sidebar */
 .bd-sidebar-primary,
-.bd-sidebar-secondary,
+.bd-sidebar-primary .sidebar-primary-items,
 .bd-sidebar,
-.sidebar-primary-items,
-.sidebar-secondary-items,
+.sidebar-primary-items {
+  background: #f7f7f7 !important;
+  background-color: #f7f7f7 !important;
+  color: #1f2937 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* Right contents sidebar */
+.bd-sidebar-secondary,
+.bd-sidebar-secondary .sidebar-secondary-items,
 .bd-toc,
 .tocsection,
 .page-toc {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #dddddd !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #e5e7eb !important;
 }
 
-/* Navbar/header */
+/* Top header */
 .bd-header,
 .navbar,
 .navbar-header-items,
-.navbar-brand,
 header {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #dddddd !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #e5e7eb !important;
 }
 
-/* Text */
-p,
-li,
-ol,
-ul,
-td,
-th,
-span,
-div,
-label,
-caption {
-    color: #222222 !important;
+/* Normal text */
+p, li, ol, ul, td, th, span, div {
+  color: #1f2937 !important;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #222222 !important;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
-    font-weight: 600 !important;
+/* Headings like the example */
+h1, h2, h3, h4, h5, h6 {
+  color: #1f2937 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  font-weight: 600 !important;
 }
 
-/* Normal blue hyperlinks */
-a,
-a:visited,
-a.reference,
-a.reference.internal,
-a.reference.external,
+/* Main page links: blue hyperlinks */
 .bd-content a,
 .bd-article a,
 article a,
 main a,
 section a,
+p a,
 li a,
-p a {
-    color: #0066cc !important;
-    background: none !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 0 !important;
-    text-decoration: underline !important;
-    font-weight: 400 !important;
+a.reference.internal,
+a.reference.external {
+  color: #0066cc !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  text-decoration: underline !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
 }
 
-/* Kill orange button/badge styling */
+/* Kill orange button styling on contents links */
+.bd-content a.reference.internal,
+.bd-article a.reference.internal,
+article a.reference.internal,
+main a.reference.internal,
+section a.reference.internal,
 a.btn,
 a.sd-btn,
 .sd-btn,
@@ -104,83 +121,151 @@ a.sd-btn,
 .btn-secondary,
 a[class*="btn"],
 a[class*="button"],
-a[class*="badge"],
-.reference.internal {
-    color: #0066cc !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    text-decoration: underline !important;
-    font-weight: 400 !important;
+a[class*="badge"] {
+  color: #0066cc !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  text-decoration: underline !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
 }
 
-/* Sidebar links should be dark, active blue */
+/* Sidebar links should look like normal navigation */
 .bd-sidebar-primary a,
 .bd-sidebar a,
 .sidebar-primary-items a {
-    color: #222222 !important;
-    background: transparent !important;
-    border: none !important;
-    text-decoration: none !important;
+  color: #1f2937 !important;
+  background: transparent !important;
+  border: none !important;
+  text-decoration: none !important;
 }
 
 .bd-sidebar-primary a:hover,
 .bd-sidebar a:hover {
-    color: #0066cc !important;
-    text-decoration: underline !important;
+  color: #0066cc !important;
+  text-decoration: underline !important;
 }
 
 .bd-sidebar-primary .active > a,
 .bd-sidebar .active > a,
 .current > a {
-    color: #0066cc !important;
-    border-left: 3px solid #0066cc !important;
-    background: transparent !important;
+  color: #0066cc !important;
+  border-left: 3px solid #0066cc !important;
+  background: transparent !important;
 }
 
-/* Tables */
-table,
-thead,
-tbody,
-tr,
-td,
-th {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #dddddd !important;
-}
-
-/* Search */
+/* Search box */
 .search-button,
 input,
 .form-control {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #cccccc !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #d0d7de !important;
 }
 
-/* Code */
-pre,
-code {
-    background-color: #f6f8fa !important;
-    color: #24292f !important;
+/* Tables and code */
+table, thead, tbody, tr, td, th {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #d0d7de !important;
 }
 
-/* Remove dark cards */
+pre, code {
+  background: #f6f8fa !important;
+  color: #24292f !important;
+}
+
+/* Remove cards/dark blocks */
 .card,
 .sd-card,
 .admonition {
-    background-color: #ffffff !important;
-    color: #222222 !important;
-    border-color: #dddddd !important;
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #d0d7de !important;
 }
 
-/* Hide theme toggle if it keeps dark mode behaviour */
+/* Hide dark/light toggle */
 .theme-switch-button,
 button[title*="theme"],
 button[aria-label*="theme"] {
-    display: none !important;
+  display: none !important;
+}
+
+/* Fix oversized logo / image in left sidebar */
+.bd-sidebar-primary img,
+.sidebar-primary-items img,
+.bd-sidebar img,
+img.logo,
+.logo__image,
+.navbar-brand img {
+    max-width: 170px !important;
+    width: 170px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+}
+
+/* Make normal content images not explode */
+.bd-article img,
+article img,
+main img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Keep page centred like a notebook */
+.bd-main .bd-content .bd-article-container {
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Sidebar width similar to example */
+.bd-sidebar-primary {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
+}
+
+/* Make main text readable */
+.bd-article {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* Make Contents links look exactly like plain hyperlinks */
+.bd-article ol li a,
+.bd-article ul li a,
+.bd-content ol li a,
+.bd-content ul li a {
+    color: #0066cc !important;
+    text-decoration: underline !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Remove huge top whitespace caused by image alignment */
+.bd-main,
+.bd-content {
+    padding-top: 1rem !important;
+}
+
+/* Right contents box should be simple */
+.bd-sidebar-secondary {
+    width: 220px !important;
+    background: #ffffff !important;
+}
+
+/* Remove weird dark strip on far left/right */
+.bd-container,
+.bd-container__inner {
+    background: #ffffff !important;
 }
