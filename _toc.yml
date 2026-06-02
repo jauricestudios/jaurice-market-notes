@@ -1,19 +1,58 @@
 format: jb-book
 root: intro
 
-chapters:
-  - file: about
-  - file: grid_stress
-  - file: copper_demand
-  - file: colocation
-  - file: climate_risk
-  - file: projects/gb-energy-monitor/index
-    title: GB Energy Tightness Monitor
-    sections:
-      - file: projects/gb-energy-monitor/methodology
-        title: Methodology
-      - file: projects/gb-energy-monitor/stress_framework
-        title: Stress Framework
-      - file: projects/gb-energy-monitor/data_sources
-        title: Data Sources
-  - file: contact
+parts:
+  - caption: UK Gas & LNG Market Monitor
+    chapters:
+      - file: gas-lng/overview
+        title: Project Overview
+      - file: gas-lng/dashboard
+        title: Dashboard
+      - file: gas-lng/market-structure
+        title: Market Structure
+      - file: gas-lng/supply-monitor
+        title: Supply Monitor
+      - file: gas-lng/demand-monitor
+        title: Demand Monitor
+      - file: gas-lng/storage-monitor
+        title: Storage Monitor
+      - file: gas-lng/lng-monitor
+        title: LNG Monitor
+      - file: gas-lng/interconnector-monitor
+        title: Interconnector Monitor
+      - file: gas-lng/power-burn-link
+        title: Power Burn Link
+      - file: gas-lng/weather-demand-model
+        title: Weather-Demand Model
+      - file: gas-lng/nbp-ttf-spread
+        title: NBP vs TTF Spread
+      - file: gas-lng/tightness-index
+        title: UK Gas Tightness Index
+      - file: gas-lng/gis-map
+        title: GIS Infrastructure Map
+      - file: gas-lng/excel-model
+        title: Excel Model
+      - file: gas-lng/weekly-notes
+        title: Weekly Analyst Notes
+      - file: gas-lng/methodology
+        title: Methodology & Data Sources
+
+  - caption: Additional Market Notes
+    chapters:
+      - file: oil/overview
+        title: Oil
+      - file: power/overview
+        title: Power
+      - file: geopolitics/overview
+        title: Geopolitics
+      - file: metals/overview
+        title: Energy Transition Metals
+      - file: macro/overview
+        title: Macro
+
+  - caption: About
+    chapters:
+      - file: about
+        title: About
+      - file: contact
+        title: Contact

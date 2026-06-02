@@ -1,33 +1,32 @@
 title: Jaurice Research Notes
 author: Jaurice O'Connor
-logo: assets/random_walk_3d.png
-
+logo: assets/sidebar-logo.png
 execute:
   execute_notebooks: force
-
 repository:
   url: https://github.com/jauricestudios/jaurice-market-notes
   branch: main
-
 html:
-  use_issues_button: false
-  use_repository_button: true
-  use_edit_page_button: false
-  use_download_button: false
-  home_page_in_navbar: false
-  extra_navbar: ""
-  extra_footer: ""
+  theme_options:
+    use_repository_button: true
+    use_download_button: true
+    use_fullscreen_button: true
+  extra_css:
+  - custom.css
 xtra_css:
-    - _static/custom.css
+- _static/custom.css
 theme:
   name: sphinx_book_theme
   options:
     default_mode: dark
-
 sphinx:
   config:
     html_static_path:
-      - "_static"
+    - _static
     html_css_files:
-      - "custom.css"
-    html_title: "Jaurice O'Connor | Risk Analytics Portfolio"
+    - custom.css
+    html_title: Jaurice O'Connor | Risk Analytics Portfolio
+    html_theme_options:
+      default_mode: light
+      navbar_start:
+      - navbar-logo
