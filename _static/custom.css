@@ -269,3 +269,24 @@ main img {
 .bd-container__inner {
     background: #ffffff !important;
 }
+
+/* Final logo size fix */
+.bd-sidebar-primary img,
+.bd-sidebar-primary .logo__image,
+.bd-sidebar-primary .navbar-brand img,
+.bd-sidebar-primary .sidebar-logo,
+.bd-sidebar-primary a img {
+    width: 180px !important;
+    max-width: 180px !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto 1rem auto !important;
+}
+
+/* Prevent any image from overflowing the page */
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
