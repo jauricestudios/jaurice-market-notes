@@ -14,22 +14,16 @@ The current flagship project is the **UK Gas & LNG Market Monitor**, a research 
 
 1. [Project Overview](gas-lng/overview.md)  
 2. [Dashboard](gas-lng/dashboard.md)  
-3. [Market Structure: How the GB Gas Market Works](gas-lng/market-structure.md)  
-4. [Supply Monitor](gas-lng/supply-monitor.md)  
-5. [Demand Monitor](gas-lng/demand-monitor.md)  
-6. [Storage Monitor](gas-lng/storage-monitor.md)  
-7. [LNG Monitor](gas-lng/lng-monitor.md)  
-8. [Interconnector Monitor](gas-lng/interconnector-monitor.md)  
-9. [Power Burn Link](gas-lng/power-burn-link.md)  
-10. [Weather-Demand Model](gas-lng/weather-demand-model.md)  
-11. [NBP vs TTF Spread Monitor](gas-lng/nbp-ttf-spread.md)  
-12. [UK Gas Tightness Index](gas-lng/tightness-index.md)  
-13. [GIS Infrastructure Map](gas-lng/gis-map.md)  
-14. [Excel Model](gas-lng/excel-model.md)  
-15. [Weekly Analyst Notes](gas-lng/weekly-notes.md)  
-16. [Methodology & Data Sources](gas-lng/methodology.md)  
+3. [Market Structure](gas-lng/market-structure.md)  
+4. [Supply, Demand and Storage](gas-lng/supply-monitor.md)  
+5. [LNG and Interconnectors](gas-lng/lng-monitor.md)  
+6. [Weather-Demand Model](gas-lng/weather-demand-model.md)  
+7. [NBP vs TTF Spread](gas-lng/nbp-ttf-spread.md)  
+8. [GIS Infrastructure Map](gas-lng/gis-map.md)  
+9. [Weekly Analyst Notes](gas-lng/weekly-notes.md)  
+10. [Methodology & Data Sources](gas-lng/methodology.md)  
 
-## Other Topics
+## Additional Market Notes
 
 1. [Oil Dashboard Overview](oil/overview.md)  
 2. [Power Dashboard Overview](power/overview.md)  
