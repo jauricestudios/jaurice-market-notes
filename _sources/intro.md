@@ -1,16 +1,16 @@
-# Jaurice O’Connor — Commodity Market Notes
+# Welcome
 
-This site is a collection of energy and commodity market notes, dashboards and modelling projects.
+This is a collection of notes, dashboards and modelling projects exploring energy markets, commodities, infrastructure risk and applied market analytics.
 
-The main project is the **UK Gas & LNG Market Monitor**, a public research project tracking whether the UK gas market is becoming tighter or looser using physical market data, price signals, weather, storage, LNG flows and power-sector demand.
+The main idea is to use **Python**, **Excel**, **GIS** and market reasoning to understand how physical energy systems become financial and commercial risks.
 
-The aim is to use Python, Excel, GIS and market reasoning to turn energy data into analyst-style interpretation.
+The current flagship project is the **UK Gas & LNG Market Monitor**, a research notebook and dashboard system tracking whether the UK gas market is becoming tighter or looser using gas flows, LNG sendout, storage, weather, power demand and price signals.
 
 ---
 
-## Contents
+# Contents
 
-### Flagship Project: UK Gas & LNG Market Monitor
+## UK Gas & LNG Market Monitor
 
 1. [Project Overview](gas-lng/overview.md)  
 2. [Dashboard](gas-lng/dashboard.md)  
@@ -29,40 +29,25 @@ The aim is to use Python, Excel, GIS and market reasoning to turn energy data in
 15. [Weekly Analyst Notes](gas-lng/weekly-notes.md)  
 16. [Methodology & Data Sources](gas-lng/methodology.md)  
 
----
-
-## Other Commodity Dashboard Ideas
-
-### Oil
+## Other Topics
 
 1. [Oil Dashboard Overview](oil/overview.md)  
-
-### Power
-
-1. [Power Dashboard Overview](power/overview.md)  
-
-### Geopolitics
-
-1. [Geopolitics and Chokepoint Dashboard](geopolitics/overview.md)  
-
-### Metals
-
-1. [Energy Transition Metals Dashboard](metals/overview.md)  
-
-### Macro
-
-1. [Macro and Commodity Sensitivity Notes](macro/overview.md)  
+2. [Power Dashboard Overview](power/overview.md)  
+3. [Geopolitics and Chokepoint Dashboard](geopolitics/overview.md)  
+4. [Energy Transition Metals Dashboard](metals/overview.md)  
+5. [Macro and Commodity Sensitivity Notes](macro/overview.md)  
 
 ---
 
-## Current focus
+# Author
 
-My current focus is the **UK Gas & LNG Market Monitor**.
+I am Jaurice O’Connor, a final-year Mathematics student building practical research tools around energy markets, commodity risk, infrastructure exposure and applied modelling.
 
-The core question is:
+My work combines Python, Excel, GIS and economic reasoning to turn market data into clearer analyst-style interpretation.
 
-> Is the UK gas market becoming tighter or looser, and what physical drivers explain it?
+I am especially interested in UK and European gas and power markets, LNG, storage, energy infrastructure, commodity risk and the way physical systems affect prices.
 
-The monitor combines supply, demand, LNG sendout, Norwegian flows, storage, linepack, electricity demand, wind generation, CCGT gas burn, interconnector flows, NBP/TTF spreads, JKM/TTF spreads, carbon prices and weather indicators.
+Connect with me:
 
-The purpose is not simply to display market data. The purpose is to connect physical gas and power fundamentals to price pressure, commodity risk and weekly market interpretation.
+- [GitHub](https://github.com/jauricestudios)
+- [LinkedIn](https://www.linkedin.com/)
