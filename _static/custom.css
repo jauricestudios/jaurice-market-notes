@@ -534,3 +534,24 @@ hr {
   text-align: center !important;
   margin-bottom: 1rem !important;
 }
+
+/* Remove duplicate sidebar logo images and keep only one */
+.bd-sidebar-primary .sidebar-primary-items > img:not(:first-of-type),
+.bd-sidebar-primary .sidebar-primary-items > a.logo:not(:first-of-type),
+.bd-sidebar-primary .navbar-brand:not(:first-of-type) {
+  display: none !important;
+}
+
+/* Keep only the first visible image in the sidebar */
+.bd-sidebar-primary img {
+  width: 135px !important;
+  max-width: 135px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1rem auto !important;
+}
+
+/* Hide any extra images that appear before/after the main logo */
+.bd-sidebar-primary img:nth-of-type(n+2) {
+  display: none !important;
+}
