@@ -511,3 +511,26 @@ hr {
   border-top: 1px solid #e5e7eb !important;
   margin: 2rem 0 !important;
 }
+
+/* Keep the sidebar image clean: one small logo only */
+.bd-sidebar-primary img {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1rem auto !important;
+}
+
+/* Hide repeated logo/image copies in the sidebar */
+.bd-sidebar-primary img:nth-of-type(n+2),
+.sidebar-primary-items img:nth-of-type(n+2) {
+  display: none !important;
+}
+
+/* Give the logo area a cleaner notebook look */
+.bd-sidebar-primary .navbar-brand,
+.bd-sidebar-primary a.logo {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
