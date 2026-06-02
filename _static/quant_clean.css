@@ -1,0 +1,112 @@
+/* Clean research-notebook style */
+
+html[data-theme="dark"],
+html[data-theme="light"],
+body {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+/* Main page */
+.bd-main,
+.bd-content,
+.bd-article-container,
+.bd-article,
+main,
+article {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+/* Sidebar */
+.bd-sidebar-primary,
+.bd-sidebar,
+.sidebar-primary-items,
+.sidebar-secondary-items {
+    background: #f7f7f7 !important;
+    color: #1f2937 !important;
+}
+
+/* Header / top */
+.bd-header,
+.navbar,
+.navbar-header-items {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+/* Text */
+p, li, td, th, span, div {
+    color: #1f2937 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #1f2937 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Links should look like normal notebook hyperlinks */
+a,
+a.reference,
+a.internal,
+a.external {
+    color: #0066cc !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+/* Remove button/badge feel from content links */
+article a,
+.bd-article a,
+main a {
+    color: #0066cc !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* Tables */
+table {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+tr, td, th {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #dddddd !important;
+}
+
+/* Right table of contents */
+.bd-toc,
+.tocsection,
+.page-toc {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+}
+
+/* Code blocks */
+pre, code {
+    background: #f6f8fa !important;
+    color: #24292f !important;
+}
+
+/* Search box */
+.search-button,
+input {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d0d7de !important;
+}
