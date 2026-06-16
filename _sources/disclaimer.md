@@ -1,8 +1,7 @@
 # Disclaimer
 
-The content presented in this research notebook is under constrcution and notes are ogoing .
+This site is a student research portfolio. It is for educational and portfolio purposes only.
 
----
-Thank you for visting
+Nothing on this site should be treated as financial advice, investment advice, trading advice or a recommendation to buy or sell any commodity, security or financial instrument.
 
-© Jaurice O'Connor
+Some pages are prototypes or work in progress. Data sources, assumptions and limitations are stated where possible.
