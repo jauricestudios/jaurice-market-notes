@@ -1,65 +1,55 @@
+<div class="home-hero">
+  <h1>Commodity & Energy Transition Research</h1>
+  <p>A research portfolio analysing energy markets, commodity supply chains, infrastructure risk and industrial strategy in a fragmenting global economy.</p>
+</div>
 
-# Commodity & Energy Transition Research
+<div class="home-intro">
+  <p>This site brings together static market dashboards, research notes and modelling prototypes exploring energy, commodities and applied market analytics.</p>
 
-A research portfolio analysing energy markets, commodity supply chains, infrastructure risk and industrial strategy in a fragmenting global economy.
+  <p>The main idea is to use <strong>Python, Excel, GIS and market reasoning</strong> to understand how physical energy systems become financial and commercial risks.</p>
+</div>
+
+<h2>Featured Research</h2>
+
+<div class="research-list">
+
+  <div class="research-box">
+    <h3>UK Gas & LNG Market Monitor</h3>
+    <p>A static dashboard prototype tracking UK gas market tightness using storage, LNG send-out, interconnector flows, weather-demand indicators and price signals.</p>
+    <p><a href="energy_monitor/project_overview.html">Open project</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>Energy Transition Metals</h3>
+    <p>A research note and market-monitoring framework for copper, lithium, cobalt, uranium and rare earths through the lens of energy security and industrial policy.</p>
+    <p><a href="energy_transition_metals.html">Open notes</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>Geopolitics and Chokepoints</h3>
+    <p>A dashboard-style framework for tracking sanctions, shipping risk, chokepoints, resource nationalism and energy security.</p>
+    <p><a href="geopolitics.html">Open notes</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>Macro and Commodity Sensitivity</h3>
+    <p>A watchlist for how oil, gas, metals, rates, the dollar and global demand interact across commodity markets.</p>
+    <p><a href="macro.html">Open notes</a></p>
+  </div>
 
 </div>
 
-This site brings together market monitors, dashboards and research notes on energy, commodities and applied market analytics.
+<h2>Author</h2>
 
-The main idea is to use **Python, Excel, GIS and market reasoning** to understand how physical energy systems become financial and commercial risks.
+<p>I am Jaurice O’Connor, a final-year Mathematics student building practical research tools around energy markets, commodity risk, infrastructure exposure and applied modelling.</p>
 
-## Featured Research
+<p>My work combines Python, Excel, GIS and economic reasoning to turn market data into clearer analyst-style interpretation.</p>
 
-<div class="card">
+<p>I am especially interested in UK and European gas and power markets, LNG, storage, energy infrastructure, commodity risk and the way physical systems affect prices.</p>
 
-### UK Gas & LNG Market Monitor
+<p>Connect with me:</p>
 
-A dashboard tracking UK gas market tightness using storage, LNG send-out, interconnector flows, weather-demand indicators and price signals.
-
-[Open project](energy_monitor/project_overview.html)
-
-</div>
-
-<div class="card">
-
-### Energy Transition Metals
-
-A monitor for copper, lithium, cobalt, uranium and rare earths through the lens of energy security and industrial policy.
-
-[Open notes](energy_transition_metals.html)
-
-</div>
-
-<div class="card">
-
-### Geopolitics and Chokepoints
-
-A dashboard-style framework for tracking sanctions, shipping risk, chokepoints, resource nationalism and energy security.
-
-[Open notes](geopolitics.html)
-
-</div>
-
-<div class="card">
-
-### Macro and Commodity Sensitivity
-
-A watchlist for how oil, gas, metals, rates, the dollar and global demand interact across commodity markets.
-
-[Open notes](macro.html)
-
-</div>
-
-# Author
-
-I am Jaurice O’Connor, a final-year Mathematics student building practical research tools around energy markets, commodity risk, infrastructure exposure and applied modelling.
-
-My work combines Python, Excel, GIS and economic reasoning to turn market data into clearer analyst-style interpretation.
-
-I am especially interested in UK and European gas and power markets, LNG, storage, energy infrastructure, commodity risk and the way physical systems affect prices.
-
-Connect with me:
-
-- [GitHub](https://github.com/jauricestudios)
-- [LinkedIn](https://www.linkedin.com/)
+<ul>
+  <li><a href="https://github.com/jauricestudios">GitHub</a></li>
+  <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+</ul>
