@@ -1,6 +1,13 @@
-/* Full clean white Jupyter Book style override */
+/* =========================================================
+   Clean Jupyter Book / PyData theme override
+   Style: white notebook, blue hyperlinks, soft sidebar
+   ========================================================= */
 
-/* PyData / Jupyter Book theme colour variables */
+
+/* ---------------------------------------------------------
+   1. Theme colour variables
+   --------------------------------------------------------- */
+
 :root,
 html,
 html[data-theme="light"],
@@ -9,18 +16,29 @@ html[data-theme="dark"] {
   --pst-color-on-background: #ffffff !important;
   --pst-color-surface: #ffffff !important;
   --pst-color-on-surface: #ffffff !important;
+
   --pst-color-text-base: #1f2937 !important;
   --pst-color-text-muted: #4b5563 !important;
-  --pst-color-link: #0066cc !important;
-  --pst-color-link-hover: #004999 !important;
-  --pst-color-primary: #0066cc !important;
-  --pst-color-secondary: #0066cc !important;
+
+  --pst-color-link: #2563eb !important;
+  --pst-color-link-hover: #1d4ed8 !important;
+  --pst-color-primary: #2563eb !important;
+  --pst-color-secondary: #2563eb !important;
+
   --pst-color-border: #e5e7eb !important;
 }
 
-/* Force all major containers white */
+
+/* ---------------------------------------------------------
+   2. Page background and main layout
+   --------------------------------------------------------- */
+
 html,
-body,
+body {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+}
+
 .bd-container,
 .bd-container__inner,
 .bd-page-width,
@@ -28,62 +46,83 @@ body,
 .bd-content,
 .bd-article-container,
 .bd-article,
-.bd-main .bd-content,
 article,
 main,
 section {
   background: #ffffff !important;
-  background-color: #ffffff !important;
   color: #1f2937 !important;
 }
 
-/* Left sidebar */
-.bd-sidebar-primary,
-.bd-sidebar-primary .sidebar-primary-items,
-.bd-sidebar,
-.sidebar-primary-items {
-  background: #f7f7f7 !important;
-  background-color: #f7f7f7 !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
+/* Keep page centred and readable */
+.bd-main .bd-content .bd-article-container {
+  max-width: 820px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
-/* Right contents sidebar */
-.bd-sidebar-secondary,
-.bd-sidebar-secondary .sidebar-secondary-items,
-.bd-toc,
-.tocsection,
-.page-toc {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
+/* Main article reading feel */
+.bd-article {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
 }
 
-/* Top header */
-.bd-header,
-.navbar,
-.navbar-header-items,
-header {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
+
+/* ---------------------------------------------------------
+   3. Typography
+   --------------------------------------------------------- */
+
+.bd-article p,
+.bd-article li,
+.bd-content p,
+.bd-content li {
+  color: #4b5563 !important;
+  line-height: 1.7 !important;
 }
 
-/* Normal text */
-p, li, ol, ul, td, th, span, div {
-  color: #1f2937 !important;
-}
-
-/* Headings like the example */
-h1, h2, h3, h4, h5, h6 {
-  color: #1f2937 !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  color: #1f2937 !important;
   font-weight: 600 !important;
 }
 
-/* Main page links: blue hyperlinks */
+h1 {
+  font-size: 2.1rem !important;
+  line-height: 1.15 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+h2 {
+  font-size: 1.55rem !important;
+  line-height: 1.25 !important;
+  margin-top: 2.4rem !important;
+  margin-bottom: 1rem !important;
+  border-bottom: none !important;
+}
+
+h3 {
+  font-size: 1.2rem !important;
+  line-height: 1.3 !important;
+  margin-top: 1.6rem !important;
+}
+
+hr {
+  border: none !important;
+  border-top: 1px solid #e5e7eb !important;
+  margin: 2rem 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   4. Links - blue hyperlink look
+   --------------------------------------------------------- */
+
+a,
+a:visited,
 .bd-content a,
 .bd-article a,
 article a,
@@ -93,25 +132,15 @@ p a,
 li a,
 a.reference.internal,
 a.reference.external {
-  color: #0066cc !important;
+  color: #2563eb !important;
+  text-decoration: underline !important;
   background: transparent !important;
-  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  text-decoration: underline !important;
   font-weight: 400 !important;
-  opacity: 1 !important;
 }
 
-/* Kill orange button styling on contents links */
-.bd-content a.reference.internal,
-.bd-article a.reference.internal,
-article a.reference.internal,
-main a.reference.internal,
-section a.reference.internal,
+/* Remove button-like styling from internal links */
 a.btn,
 a.sd-btn,
 .sd-btn,
@@ -122,9 +151,8 @@ a.sd-btn,
 a[class*="btn"],
 a[class*="button"],
 a[class*="badge"] {
-  color: #0066cc !important;
+  color: #2563eb !important;
   background: transparent !important;
-  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
@@ -132,61 +160,111 @@ a[class*="badge"] {
   border-radius: 0 !important;
   text-decoration: underline !important;
   font-weight: 400 !important;
-  opacity: 1 !important;
 }
 
-/* Sidebar links should look like normal navigation */
+
+/* ---------------------------------------------------------
+   5. Left sidebar
+   --------------------------------------------------------- */
+
+.bd-sidebar-primary,
+.bd-sidebar-primary .sidebar-primary-items,
+.bd-sidebar,
+.sidebar-primary-items {
+  background: #f5f6f8 !important;
+  color: #374151 !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+
+/* Sidebar width */
+.bd-sidebar-primary {
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+}
+
+/* Sidebar links */
 .bd-sidebar-primary a,
 .bd-sidebar a,
 .sidebar-primary-items a {
-  color: #1f2937 !important;
+  color: #374151 !important;
   background: transparent !important;
   border: none !important;
   text-decoration: none !important;
+  font-weight: 400 !important;
 }
 
 .bd-sidebar-primary a:hover,
 .bd-sidebar a:hover {
-  color: #0066cc !important;
+  color: #2563eb !important;
   text-decoration: underline !important;
 }
 
 .bd-sidebar-primary .active > a,
 .bd-sidebar .active > a,
 .current > a {
-  color: #0066cc !important;
-  border-left: 3px solid #0066cc !important;
+  color: #2563eb !important;
+  border-left: 2px solid #2563eb !important;
   background: transparent !important;
 }
 
-/* Search box */
-.search-button,
-input,
-.form-control {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #d0d7de !important;
+/* Sidebar logo */
+.bd-sidebar-primary .navbar-brand,
+.bd-sidebar-primary a.logo {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
 }
 
-/* Tables and code */
-table, thead, tbody, tr, td, th {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #d0d7de !important;
+.bd-sidebar-primary img,
+.bd-sidebar-primary .logo__image,
+.bd-sidebar-primary .navbar-brand img,
+.bd-sidebar-primary a img {
+  width: 140px !important;
+  max-width: 140px !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 1rem auto !important;
+  object-fit: contain !important;
 }
 
-pre, code {
-  background: #f6f8fa !important;
-  color: #24292f !important;
+/* Hide accidental duplicate sidebar images */
+.bd-sidebar-primary img:nth-of-type(n+2),
+.sidebar-primary-items img:nth-of-type(n+2) {
+  display: none !important;
 }
 
-/* Remove cards/dark blocks */
-.card,
-.sd-card,
-.admonition {
+
+/* ---------------------------------------------------------
+   6. Right table of contents
+   --------------------------------------------------------- */
+
+.bd-sidebar-secondary,
+.bd-sidebar-secondary .sidebar-secondary-items,
+.bd-toc,
+.tocsection,
+.page-toc {
+  background: #ffffff !important;
+  color: #4b5563 !important;
+  border-color: #e5e7eb !important;
+}
+
+.bd-sidebar-secondary {
+  width: 220px !important;
+}
+
+
+/* ---------------------------------------------------------
+   7. Header / navbar
+   --------------------------------------------------------- */
+
+.bd-header,
+.navbar,
+.navbar-header-items,
+header {
   background: #ffffff !important;
   color: #1f2937 !important;
-  border-color: #d0d7de !important;
+  border-color: #e5e7eb !important;
 }
 
 /* Hide dark/light toggle */
@@ -196,497 +274,156 @@ button[aria-label*="theme"] {
   display: none !important;
 }
 
-/* Fix oversized logo / image in left sidebar */
-.bd-sidebar-primary img,
-.sidebar-primary-items img,
-.bd-sidebar img,
-img.logo,
-.logo__image,
-.navbar-brand img {
-    max-width: 170px !important;
-    width: 170px !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto 1rem auto !important;
+
+/* ---------------------------------------------------------
+   8. Search, tables, code
+   --------------------------------------------------------- */
+
+.search-button,
+input,
+.form-control {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #d0d7de !important;
 }
 
-/* Make normal content images not explode */
+table,
+thead,
+tbody,
+tr,
+td,
+th {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border-color: #d0d7de !important;
+}
+
+pre,
+code {
+  background: #f6f8fa !important;
+  color: #24292f !important;
+}
+
+
+/* ---------------------------------------------------------
+   9. Images
+   --------------------------------------------------------- */
+
 .bd-article img,
 article img,
 main img {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* Keep page centred like a notebook */
-.bd-main .bd-content .bd-article-container {
-    max-width: 900px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* Sidebar width similar to example */
-.bd-sidebar-primary {
-    width: 280px !important;
-    min-width: 280px !important;
-    max-width: 280px !important;
-}
-
-/* Make main text readable */
-.bd-article {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-}
-
-/* Make Contents links look exactly like plain hyperlinks */
-.bd-article ol li a,
-.bd-article ul li a,
-.bd-content ol li a,
-.bd-content ul li a {
-    color: #0066cc !important;
-    text-decoration: underline !important;
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-
-/* Remove huge top whitespace caused by image alignment */
-.bd-main,
-.bd-content {
-    padding-top: 1rem !important;
-}
-
-/* Right contents box should be simple */
-.bd-sidebar-secondary {
-    width: 220px !important;
-    background: #ffffff !important;
-}
-
-/* Remove weird dark strip on far left/right */
-.bd-container,
-.bd-container__inner {
-    background: #ffffff !important;
-}
-
-/* Final logo size fix */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary .navbar-brand img,
-.bd-sidebar-primary .sidebar-logo,
-.bd-sidebar-primary a img {
-    width: 180px !important;
-    max-width: 180px !important;
-    height: auto !important;
-    max-height: 180px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto 1rem auto !important;
-}
-
-/* Prevent any image from overflowing the page */
-img {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* Softer overall look */
-
-/* slightly softer page colours */
-body,
-.bd-main,
-.bd-content,
-.bd-article-container,
-.bd-article,
-article,
-main,
-section {
-  background: #fcfcfc !important;
-  color: #374151 !important;
-}
-
-/* softer left sidebar like Quant Girl */
-.bd-sidebar-primary,
-.bd-sidebar-primary .sidebar-primary-items,
-.bd-sidebar,
-.sidebar-primary-items {
-  background: #f3f4f6 !important;
-  color: #374151 !important;
-}
-
-/* softer right TOC box */
-.bd-sidebar-secondary,
-.bd-toc,
-.tocsection,
-.page-toc {
-  background: #fcfcfc !important;
-  color: #4b5563 !important;
-}
-
-/* body text softer */
-p,
-li,
-ol,
-ul,
-td,
-th,
-span,
-div {
-  color: #4b5563 !important;
-  line-height: 1.75 !important;
-}
-
-/* headings less aggressive */
-h1 {
-  font-size: 2.25rem !important;
-  font-weight: 650 !important;
-  color: #1f2937 !important;
-  margin-bottom: 1.2rem !important;
-}
-
-h2 {
-  font-size: 1.8rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-  margin-top: 2.2rem !important;
-  margin-bottom: 1rem !important;
-}
-
-h3, h4 {
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-/* slightly narrower text area for more elegant reading */
-.bd-main .bd-content .bd-article-container {
-  max-width: 820px !important;
-}
-
-/* add breathing space */
-.bd-article p {
-  margin-bottom: 1.1rem !important;
-}
-
-.bd-article ol,
-.bd-article ul {
-  margin-bottom: 1.2rem !important;
-}
-
-/* links a bit softer blue */
-a,
-a:visited,
-.bd-content a,
-.bd-article a,
-article a,
-main a {
-  color: #2563eb !important;
-  text-decoration: underline !important;
-}
-
-/* sidebar links less harsh */
-.bd-sidebar-primary a,
-.bd-sidebar a {
-  color: #374151 !important;
-}
-
-.bd-sidebar-primary a:hover,
-.bd-sidebar a:hover {
-  color: #2563eb !important;
-}
-
-/* active sidebar item subtle */
-.bd-sidebar-primary .active > a,
-.bd-sidebar .active > a,
-.current > a {
-  color: #2563eb !important;
-  border-left: 2px solid #2563eb !important;
-  background: transparent !important;
-}
-
-/* smaller softer logo */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary a img {
-  width: 150px !important;
-  max-width: 150px !important;
+  max-width: 100% !important;
   height: auto !important;
-  margin: 0 auto 1rem auto !important;
-  opacity: 0.95 !important;
-}
-
-/* subtle separators */
-hr {
-  border-color: #e5e7eb !important;
-  margin: 2rem 0 !important;
 }
 
 
-/* Keep only one clean sidebar logo */
-.bd-sidebar-primary a.logo,
-.bd-sidebar-primary .navbar-brand {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 1rem !important;
-}
-
-/* Hide accidental duplicate logo images */
-.bd-sidebar-primary img.logo__image + img,
-.bd-sidebar-primary .navbar-brand img + img,
-.bd-sidebar-primary img:nth-of-type(n+2) {
-  display: none !important;
-}
-
-/* Final sidebar logo sizing */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary .navbar-brand img {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1.2rem auto !important;
-}
-
-/* Softer notebook feel */
-body {
-  background: #fafafa !important;
-}
-
-/* Softer main article panel */
-.bd-article,
-.bd-content,
-.bd-article-container {
-  background: #ffffff !important;
-}
-
-/* Slightly softer text */
-p,
-li {
-  color: #4b5563 !important;
-  font-size: 15px !important;
-  line-height: 1.7 !important;
-}
-
-/* Headings less heavy */
-h1 {
-  font-size: 2rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-h2 {
-  font-size: 1.6rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-h3 {
-  font-size: 1.25rem !important;
-  font-weight: 600 !important;
-}
-
-/* Slightly narrower article like the reference */
-.bd-main .bd-content .bd-article-container {
-  max-width: 760px !important;
-}
-
-/* Softer sidebar */
-.bd-sidebar-primary {
-  background: #f5f6f8 !important;
-  border-right: 1px solid #e5e7eb !important;
-}
-
-/* Softer links */
-a,
-.bd-article a,
-.bd-content a {
-  color: #2563eb !important;
-  text-decoration: underline !important;
-}
-
-/* Cleaner horizontal separators */
-hr {
-  border: none !important;
-  border-top: 1px solid #e5e7eb !important;
-  margin: 2rem 0 !important;
-}
-
-/* Keep the sidebar image clean: one small logo only */
-.bd-sidebar-primary img {
-  width: 140px !important;
-  max-width: 140px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1rem auto !important;
-}
-
-/* Hide repeated logo/image copies in the sidebar */
-.bd-sidebar-primary img:nth-of-type(n+2),
-.sidebar-primary-items img:nth-of-type(n+2) {
-  display: none !important;
-}
-
-/* Give the logo area a cleaner notebook look */
-.bd-sidebar-primary .navbar-brand,
-.bd-sidebar-primary a.logo {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 1rem !important;
-}
-
-/* Remove duplicate sidebar logo images and keep only one */
-.bd-sidebar-primary .sidebar-primary-items > img:not(:first-of-type),
-.bd-sidebar-primary .sidebar-primary-items > a.logo:not(:first-of-type),
-.bd-sidebar-primary .navbar-brand:not(:first-of-type) {
-  display: none !important;
-}
-
-/* Keep only the first visible image in the sidebar */
-.bd-sidebar-primary img {
-  width: 135px !important;
-  max-width: 135px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1rem auto !important;
-}
-
-/* Hide any extra images that appear before/after the main logo */
-.bd-sidebar-primary img:nth-of-type(n+2) {
-  display: none !important;
-}
-/* Homepage hero panel */
-.hero-panel {
-    padding: 2.5rem 2rem;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #0f172a, #1e3a5f);
-    color: white !important;
-    margin-bottom: 2rem;
-    display: block;
-    width: 100%;
-    clear: both;
-    float: none;
-}
-
-.hero-panel h1 {
-    color: white !important;
-    margin-top: 0;
-    font-size: 2.4rem !important;
-    line-height: 1.1;
-}
-
-.hero-panel p {
-    color: #e5e7eb !important;
-    font-size: 1.05rem !important;
-    max-width: 720px;
-}
-
-/* Research cards - unique class to avoid Bootstrap/Jupyter Book card conflicts */
-.research-card {
-    border: 1px solid #e5e7eb !important;
-    border-radius: 16px !important;
-    padding: 1.4rem 1.5rem !important;
-    margin: 1.2rem 0 !important;
-    background: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    clear: both !important;
-    float: none !important;
-    box-sizing: border-box !important;
-}
-
-.research-card h3 {
-    margin-top: 0 !important;
-    margin-bottom: 0.6rem !important;
-    font-size: 1.25rem !important;
-    color: #1f2937 !important;
-}
-
-.research-card p {
-    margin-bottom: 0.8rem !important;
-    color: #4b5563 !important;
-}
-
-.research-card a {
-    font-weight: 600 !important;
-    color: #2563eb !important;
-}
-
-/* Clean homepage layout */
+/* ---------------------------------------------------------
+   10. Homepage grid layout
+   --------------------------------------------------------- */
 
 .home-hero {
   display: block !important;
   width: 100% !important;
-  padding: 2.4rem 2rem !important;
-  margin: 0 0 2rem 0 !important;
+  padding: 2.2rem 2rem !important;
+  margin-bottom: 1.6rem !important;
   border-radius: 18px !important;
-  background: linear-gradient(135deg, #0f172a, #1e3a5f) !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04) !important;
   box-sizing: border-box !important;
-  clear: both !important;
-  float: none !important;
 }
 
 .home-hero h1 {
-  color: #ffffff !important;
-  font-size: 2.5rem !important;
+  font-size: 2.35rem !important;
   line-height: 1.1 !important;
-  margin: 0 0 1rem 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  color: #1f2937 !important;
 }
 
 .home-hero p {
-  color: #e5e7eb !important;
-  font-size: 1.05rem !important;
-  line-height: 1.6 !important;
-  max-width: 720px !important;
-  margin: 0 !important;
+  max-width: 760px !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  color: #4b5563 !important;
+  margin-bottom: 0 !important;
 }
 
 .home-intro {
-  display: block !important;
-  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.2rem !important;
   margin-bottom: 2rem !important;
-  clear: both !important;
-  float: none !important;
 }
 
+.home-intro p {
+  margin: 0 !important;
+}
+
+/* Featured research grid */
 .research-list {
-  display: block !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 1.2rem !important;
   width: 100% !important;
-  clear: both !important;
-  float: none !important;
+  margin-top: 1rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .research-box {
   display: block !important;
   width: 100% !important;
-  max-width: 100% !important;
-  clear: both !important;
-  float: none !important;
-  box-sizing: border-box !important;
-  padding: 1.35rem 1.5rem !important;
-  margin: 1.1rem 0 !important;
+  min-height: 185px !important;
+  padding: 1.35rem 1.4rem !important;
   border: 1px solid #e5e7eb !important;
-  border-radius: 16px !important;
+  border-radius: 14px !important;
   background: #ffffff !important;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06) !important;
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05) !important;
+  box-sizing: border-box !important;
 }
 
 .research-box h3 {
   margin-top: 0 !important;
-  margin-bottom: 0.6rem !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.18rem !important;
+  line-height: 1.25 !important;
   color: #1f2937 !important;
-  font-size: 1.25rem !important;
 }
 
 .research-box p {
   color: #4b5563 !important;
-  margin-bottom: 0.8rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
 }
 
 .research-box a {
   color: #2563eb !important;
   font-weight: 600 !important;
+}
+
+/* Author section */
+#author {
+  margin-top: 2.5rem !important;
+}
+
+
+/* ---------------------------------------------------------
+   11. Mobile / smaller screens
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .home-intro,
+  .research-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bd-sidebar-primary {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+  }
+
+  .bd-main .bd-content .bd-article-container {
+    max-width: 100% !important;
+  }
 }

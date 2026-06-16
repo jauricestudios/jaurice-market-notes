@@ -9,12 +9,12 @@
   <p>The main idea is to use <strong>Python, Excel, GIS and market reasoning</strong> to understand how physical energy systems become financial and commercial risks.</p>
 </div>
 
-<h2>Featured Research</h2>
+<h2 id="featured-research">Featured Research</h2>
 
 <div class="research-list">
 
   <div class="research-box">
-    <h3>UK Gas & LNG Market Monitor</h3>
+    <h3>UK Gas &amp; LNG Market Monitor</h3>
     <p>A static dashboard prototype tracking UK gas market tightness using storage, LNG send-out, interconnector flows, weather-demand indicators and price signals.</p>
     <p><a href="energy_monitor/project_overview.html">Open project</a></p>
   </div>
@@ -39,7 +39,7 @@
 
 </div>
 
-<h2>Author</h2>
+<h2 id="author">Author</h2>
 
 <p>I am Jaurice O’Connor, a final-year Mathematics student building practical research tools around energy markets, commodity risk, infrastructure exposure and applied modelling.</p>
 
