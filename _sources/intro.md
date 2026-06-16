@@ -1,4 +1,3 @@
-<div class="hero">
 
 # Commodity & Energy Transition Research
 
