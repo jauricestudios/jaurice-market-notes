@@ -1,37 +1,56 @@
-# Welcome
+<div class="hero">
 
-This is a collection of notes, dashboards and modelling projects exploring energy markets, commodities, infrastructure risk and applied market analytics.
+# Commodity & Energy Transition Research
 
-The main idea is to use **Python**, **Excel**, **GIS** and market reasoning to understand how physical energy systems become financial and commercial risks.
+A research portfolio analysing energy markets, commodity supply chains, infrastructure risk and industrial strategy in a fragmenting global economy.
 
-The current flagship project is the **UK Gas & LNG Market Monitor**, a research notebook and dashboard system tracking whether the UK gas market is becoming tighter or looser using gas flows, LNG sendout, storage, weather, power demand and price signals.
+</div>
 
----
+This site brings together market monitors, dashboards and research notes on energy, commodities and applied market analytics.
 
-# Contents
+The main idea is to use **Python, Excel, GIS and market reasoning** to understand how physical energy systems become financial and commercial risks.
 
-## UK Gas & LNG Market Monitor
+## Featured Research
 
-1. [Project Overview](gas-lng/overview.md)  
-2. [Dashboard](gas-lng/dashboard.md)  
-3. [Market Structure](gas-lng/market-structure.md)  
-4. [Supply, Demand and Storage](gas-lng/supply-monitor.md)  
-5. [LNG and Interconnectors](gas-lng/lng-monitor.md)  
-6. [Weather-Demand Model](gas-lng/weather-demand-model.md)  
-7. [NBP vs TTF Spread](gas-lng/nbp-ttf-spread.md)  
-8. [GIS Infrastructure Map](gas-lng/gis-map.md)  
-9. [Weekly Analyst Notes](gas-lng/weekly-notes.md)  
-10. [Methodology & Data Sources](gas-lng/methodology.md)  
+<div class="card">
 
-## Additional Market Notes
+### UK Gas & LNG Market Monitor
 
-1. [Oil Dashboard Overview](oil/overview.md)  
-2. [Power Dashboard Overview](power/overview.md)  
-3. [Geopolitics and Chokepoint Dashboard](geopolitics/overview.md)  
-4. [Energy Transition Metals Dashboard](metals/overview.md)  
-5. [Macro and Commodity Sensitivity Notes](macro/overview.md)  
+A dashboard tracking UK gas market tightness using storage, LNG send-out, interconnector flows, weather-demand indicators and price signals.
 
----
+[Open project](energy_monitor/project_overview.html)
+
+</div>
+
+<div class="card">
+
+### Energy Transition Metals
+
+A monitor for copper, lithium, cobalt, uranium and rare earths through the lens of energy security and industrial policy.
+
+[Open notes](energy_transition_metals.html)
+
+</div>
+
+<div class="card">
+
+### Geopolitics and Chokepoints
+
+A dashboard-style framework for tracking sanctions, shipping risk, chokepoints, resource nationalism and energy security.
+
+[Open notes](geopolitics.html)
+
+</div>
+
+<div class="card">
+
+### Macro and Commodity Sensitivity
+
+A watchlist for how oil, gas, metals, rates, the dollar and global demand interact across commodity markets.
+
+[Open notes](macro.html)
+
+</div>
 
 # Author
 
