@@ -1,93 +1,126 @@
-<h1>Energy &amp; Commodity Market Research Portfolio</h1>
+<h1>Welcome</h1>
 
 <p>
-Static dashboards, indicator frameworks and analyst-style notes focused on UK/EU gas,
-LNG, power-market tightness, critical minerals and commodity-risk monitoring.
+This site is my research portfolio for physical commodity markets, wholesale energy analysis and energy-transition risk.
+The work focuses on how gas, LNG, power, storage, forward curves, infrastructure and policy interact as the energy system changes.
 </p>
 
 <p>
-The aim is to combine <strong>Python</strong>, <strong>Excel</strong>, <strong>GIS</strong> and market research to build
-clear tools for understanding how physical market constraints become financial and commercial risk signals.
+The core idea is simple: the future of energy is not only about replacing fossil fuels with renewables.
+It is also about <strong>security of supply</strong>, <strong>system flexibility</strong>, <strong>storage</strong>,
+<strong>grids</strong>, <strong>LNG competition</strong>, <strong>critical minerals</strong> and the pricing of physical constraints.
+</p>
+
+<p>
+The portfolio combines <strong>Python</strong>, <strong>Excel</strong>, <strong>GIS</strong>, market research and mathematical modelling.
+Most pages are research prototypes rather than live market terminals. The purpose is to show how I structure market data,
+build analytical frameworks and turn physical commodity information into written market interpretation.
 </p>
 
 <p>
 <strong>Start here:</strong>
-<a href="energy_monitor/project_overview.html">UK Gas &amp; LNG Market Monitor</a> —
-my flagship project combining gas prices, storage, LNG send-out, interconnector flows and weather-demand indicators.
+<a href="energy_monitor/project_overview.html">UK Gas Balance &amp; Forward Curve Study</a> —
+my flagship project on UK gas market tightness, storage, LNG send-out, interconnector flows, NBP/TTF spreads and forward-curve interpretation.
 </p>
 
-<p>
-<strong>Tools:</strong> Python · Excel · GIS · Market Research · Dashboard Prototyping · Analyst Notes · Energy Market Analysis
-</p>
-
-<h2 id="featured-research">Featured Research</h2>
+<h2 id="research-pillars">Research Pillars</h2>
 
 <div class="research-list">
 
   <div class="research-box">
-    <h3>Flagship: UK Gas Tightness Dashboard</h3>
+    <h3>UK Gas Balance &amp; Forward Curve Study</h3>
     <p>
-    A static market-monitoring dashboard combining NBP prices, gas storage, LNG send-out,
-    interconnector flows and weather-demand indicators to assess when UK gas balances are tightening
-    and where price risk may emerge.
+    A physical-market study of UK and European gas tightness using supply-demand balances, storage,
+    LNG send-out, interconnector flows, NBP/TTF spreads and forward-curve structure.
     </p>
-    <p><a href="energy_monitor/project_overview.html">Open project</a></p>
+    <p>
+    <strong>Focus:</strong> gas balances, storage economics, curve shape, seasonal scarcity and market tightness.
+    </p>
+    <p><a href="energy_monitor/project_overview.html">View flagship study</a></p>
   </div>
 
   <div class="research-box">
-    <h3>Critical Minerals Supply-Risk Tracker</h3>
+    <h3>GB Power Flexibility &amp; Spark Spread Study</h3>
     <p>
-    Notes and monitoring ideas for copper, lithium, cobalt, uranium and rare earths, focused on
-    supply concentration, industrial policy, China exposure and energy-transition security.
+    A wholesale power-market research project linking residual demand, wind output, gas burn, carbon costs
+    and clean spark spreads to understand when flexibility becomes scarce.
     </p>
-    <p><a href="energy_transition_metals.html">Open notes</a></p>
+    <p>
+    <strong>Focus:</strong> residual demand, gas-fired generation, low-wind stress, carbon pricing and power-market tightness.
+    </p>
+    <p><a href="power.html">Read power-market notes</a></p>
   </div>
 
   <div class="research-box">
-    <h3>Chokepoint &amp; Sanctions Risk Monitor</h3>
+    <h3>Energy Optionality &amp; Risk Models</h3>
     <p>
-    A framework for tracking how sanctions, shipping disruption, chokepoints and resource nationalism
-    transmit into energy security, trade flows and commodity market risk.
+    Mathematical modelling prototypes for commodity-market optionality, including gas storage value,
+    swing-contract logic, spark-spread exposure and Monte Carlo scenario analysis.
     </p>
-    <p><a href="geopolitics.html">Open notes</a></p>
+    <p>
+    <strong>Focus:</strong> storage optionality, volatility, seasonality, stress testing and risk measurement.
+    </p>
+    <p><a href="energy_monitor/excel_model.html">View modelling work</a></p>
   </div>
 
   <div class="research-box">
-    <h3>Macro-Commodity Stress Watchlist</h3>
+    <h3>Strategic Energy Transition &amp; Geoeconomics</h3>
     <p>
-    A watchlist linking oil, gas, metals, rates, the dollar and global demand to commodity-market
-    stress signals and broader macro risk.
+    Research notes on Europe’s energy independence problem, Saudi Vision 2030, critical minerals,
+    chokepoints, resource corridors and the shift from fuel dependency to infrastructure and materials dependency.
     </p>
-    <p><a href="macro.html">Open notes</a></p>
+    <p>
+    <strong>Focus:</strong> energy security, industrial policy, LNG dependency, critical minerals and geopolitical risk.
+    </p>
+    <p><a href="geopolitics.html">Read strategic research</a></p>
   </div>
 
 </div>
 
-<h2 id="what-this-shows">What This Portfolio Demonstrates</h2>
+<h2 id="what-this-portfolio-shows">What This Portfolio Shows</h2>
 
 <ul>
-  <li><strong>Market monitoring:</strong> building indicator frameworks for gas, LNG, power, metals and macro risk.</li>
-  <li><strong>Physical-market reasoning:</strong> linking storage, flows, weather, infrastructure and policy to price risk.</li>
-  <li><strong>Data workflow:</strong> using Excel, Python and GIS to organise market data and communicate signals clearly.</li>
-  <li><strong>Analyst writing:</strong> turning raw indicators into short notes on commercial and geopolitical implications.</li>
+  <li><strong>Physical market reasoning:</strong> analysing how storage, flows, weather, infrastructure and policy affect commodity-market risk.</li>
+  <li><strong>Wholesale market understanding:</strong> using balances, forward curves, spreads, residual demand and clean spark spreads to interpret energy markets.</li>
+  <li><strong>Quantitative modelling:</strong> applying Python, Excel, Monte Carlo simulation, scenario analysis and basic risk models to commodity-market questions.</li>
+  <li><strong>Strategic energy research:</strong> linking Europe’s energy security, Saudi Vision 2030, critical minerals and geopolitics to future energy-market structure.</li>
+  <li><strong>Analyst communication:</strong> turning charts, sources and assumptions into short written market interpretation.</li>
+</ul>
+
+<h2 id="core-questions">Core Questions</h2>
+
+<ul>
+  <li>How do gas storage, LNG flows and interconnectors affect UK and European energy security?</li>
+  <li>What does the forward curve imply about seasonal scarcity, storage value and future market tightness?</li>
+  <li>As renewables grow, when does residual demand make flexibility, storage and gas-fired generation more valuable?</li>
+  <li>How do Monte Carlo models, stress scenarios and optionality concepts apply to physical energy assets?</li>
+  <li>How do Saudi Vision 2030, Europe’s energy independence and critical mineral supply chains reshape the future of energy?</li>
+</ul>
+
+<h2 id="methods-and-tools">Methods and Tools</h2>
+
+<ul>
+  <li><strong>Python:</strong> data cleaning, charts, time-series analysis, Monte Carlo simulation and reproducible notebooks.</li>
+  <li><strong>Excel:</strong> market dashboards, balance tables, sensitivity analysis and analyst-style models.</li>
+  <li><strong>GIS:</strong> infrastructure mapping for terminals, interconnectors, corridors and strategic assets.</li>
+  <li><strong>Market research:</strong> source mapping, policy analysis, data interpretation and short analyst briefs.</li>
+  <li><strong>Mathematical finance:</strong> forward curves, spreads, optionality, volatility, stress testing and risk measurement.</li>
 </ul>
 
 <h2 id="author">Author</h2>
 
 <p>
-I am a final-year Mathematics student building a portfolio for energy and commodity market analysis roles.
-My work focuses on market-monitoring dashboards, physical commodity constraints and analyst-style interpretation
-across gas, LNG, power and transition-critical minerals.
+I am Jaurice O’Connor, a final-year Mathematics student building a portfolio for energy and commodity market analysis roles.
+My work focuses on the intersection of physical commodity markets, quantitative modelling, wholesale energy pricing and strategic energy-transition research.
 </p>
 
 <p>
-I am especially interested in roles involving energy research, commodity market analysis, power and renewables analysis,
-LNG/gas markets and infrastructure risk.
+I am especially interested in gas, LNG, power markets, storage, forward curves, clean spark spreads,
+critical minerals, energy security and the political economy of the future energy system.
 </p>
 
 <p>
-This site is also a learning record: some pages are finished notes, while others are prototypes that I update
-as my understanding of commodity and energy markets develops.
+This site is a working research portfolio. Some pages are finished notes, while others are prototypes that I improve as I build stronger data sources, models and market interpretation.
 </p>
 
 <p>Connect with me:</p>
