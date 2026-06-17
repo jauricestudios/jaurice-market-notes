@@ -1,5 +1,3 @@
 # Contact
 
-You can find my work here:
-
-- [GitHub](https://github.com/jauricestudios)
+This page will contain my contact details, GitHub profile and LinkedIn profile.

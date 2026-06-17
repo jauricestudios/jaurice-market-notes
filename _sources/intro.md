@@ -1,3 +1,5 @@
+_Last updated: 16 June 2026_
+
 <h1>Energy Market Strategy &amp; Risk Portfolio</h1>
 
 <p>
