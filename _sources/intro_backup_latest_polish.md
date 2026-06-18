@@ -1,0 +1,123 @@
+<h1>Energy Strategy &amp; Market Risk Portfolio</h1>
+
+<p>
+This is my research portfolio for UK/EU gas, LNG and wholesale power markets. The work combines
+market research, Python, Excel, GIS and mathematical modelling to study energy security, forward curves,
+storage value, system flexibility and market risk.
+</p>
+
+<p>
+The central idea is that the energy transition does not simply remove fossil-fuel risk. It changes the form
+of risk: security of supply, LNG competition, grids, storage, critical minerals and flexible generation become
+more important as physical constraints are priced into energy markets.
+</p>
+
+<p>
+<strong>Current outputs:</strong> UK gas balance framework · NBP/TTF spread analysis · forward-curve interpretation ·
+Excel dashboard prototype · market notes · modelling prototypes.
+</p>
+
+<p>
+<strong>Start here:</strong>
+<a href="gas-lng/overview.html">UK Gas Balance &amp; Forward Curve Study</a> -
+my flagship project on UK gas tightness, storage, LNG send-out, interconnector flows,
+NBP/TTF spreads and forward-curve interpretation.
+</p>
+
+<h2 id="main-research-areas">Main Research Areas</h2>
+
+<div class="research-list">
+
+  <div class="research-box">
+    <h3>Flagship Study: UK Gas Balance &amp; Forward Curve Analysis</h3>
+    <p>
+    This study asks whether the UK gas market is tightening or loosening by combining supply-demand balances,
+    storage, LNG send-out, interconnector flows, NBP/TTF spreads and forward-curve structure.
+    </p>
+    <p>
+    <strong>Outputs:</strong> gas balance table, spread analysis, curve interpretation, storage economics and analyst note.
+    </p>
+    <p><a href="gas-lng/overview.html">View flagship study</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>GB Power Flexibility &amp; Spark Spread Study</h3>
+    <p>
+    A wholesale power-market project linking residual demand, wind output, gas burn, carbon costs
+    and clean spark spreads to understand when flexibility becomes scarce.
+    </p>
+    <p>
+    <strong>Outputs:</strong> residual demand framework, low-wind stress case, gas-burn interpretation and spark-spread analysis.
+    </p>
+    <p><a href="power/overview.html">Read power-market notes</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>Energy Optionality &amp; Risk Models</h3>
+    <p>
+    Python and Excel modelling prototypes for gas storage value, swing-contract logic,
+    spark-spread exposure, Monte Carlo simulation and stress scenarios.
+    </p>
+    <p>
+    <strong>Outputs:</strong> storage optionality model, scenario analysis, volatility assumptions and risk interpretation.
+    </p>
+    <p><a href="gas-lng/excel-model.html">View modelling work</a></p>
+  </div>
+
+  <div class="research-box">
+    <h3>Energy Strategy &amp; Geopolitical Risk</h3>
+    <p>
+    Research notes connecting gas, power and mineral markets to Europe’s energy independence,
+    Saudi Vision 2030, critical minerals, chokepoints and infrastructure risk.
+    </p>
+    <p>
+    <strong>Outputs:</strong> strategic briefs, source maps, commodity-risk frameworks and geopolitical transmission notes.
+    </p>
+    <p><a href="geopolitics/overview.html">Read strategy and risk research</a></p>
+  </div>
+
+</div>
+
+<h2 id="what-this-portfolio-shows">What This Portfolio Shows</h2>
+
+<ul>
+  <li><strong>Energy market analysis:</strong> UK gas balance, LNG send-out, storage, interconnector flows and wholesale power stress.</li>
+  <li><strong>Curve and spread interpretation:</strong> NBP/TTF spreads, forward curves, storage economics and clean spark spreads.</li>
+  <li><strong>Risk modelling:</strong> Python, Excel, Monte Carlo simulation, scenario analysis, volatility and basic risk measures.</li>
+  <li><strong>Strategy research:</strong> Europe energy security, Saudi Vision 2030, critical minerals, industrial policy and geopolitical risk.</li>
+  <li><strong>Analyst writing:</strong> turning charts, sources and assumptions into short market interpretation.</li>
+</ul>
+
+<h2 id="methods-and-tools">Methods and Tools</h2>
+
+<ul>
+  <li><strong>Python:</strong> data cleaning, charts, time-series analysis and Monte Carlo simulation.</li>
+  <li><strong>Excel:</strong> market dashboards, balance tables and sensitivity analysis.</li>
+  <li><strong>GIS:</strong> infrastructure maps for terminals, interconnectors, corridors and strategic assets.</li>
+  <li><strong>Market research:</strong> source mapping, policy analysis, data interpretation and analyst briefs.</li>
+  <li><strong>Mathematical finance:</strong> forward curves, basis, spreads, optionality, volatility and stress testing.</li>
+</ul>
+
+<h2 id="author">Author</h2>
+
+<p>
+I am Jaurice O’Connor, a final-year Mathematics student building a portfolio for energy and commodity
+market analysis roles. My work focuses on UK/EU gas, LNG, power markets, forward curves, storage,
+market risk and strategic energy-transition themes.
+</p>
+
+<p>
+I am especially interested in how storage, LNG flows, grid limits, flexibility and critical minerals shape
+wholesale prices, market risk and strategic energy security.
+</p>
+
+<p>
+This site is a working research portfolio. Some pages are finished notes, while others are prototypes that I improve
+as I build stronger data sources, models and market interpretation.
+</p>
+
+<p>Connect with me:</p>
+
+<ul>
+  <li><a href="https://github.com/jauricestudios">GitHub</a></li>
+</ul>

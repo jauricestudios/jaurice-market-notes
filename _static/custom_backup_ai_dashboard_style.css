@@ -1,0 +1,233 @@
+/* Hide right-hand contents sidebar */
+.bd-sidebar-secondary,
+.bd-toc,
+.tocsection,
+.onthispage {
+    display: none !important;
+}
+
+/* Hide heading anchor symbols */
+.headerlink {
+    display: none !important;
+}
+
+/* Global font and colour */
+body {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #ffffff;
+}
+
+/* Top header */
+.bd-header {
+    background: #0f172a !important;
+    border-bottom: 1px solid #1e293b;
+}
+
+.bd-header a,
+.bd-header .navbar-brand {
+    color: #f8fafc !important;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+/* Left sidebar */
+.bd-sidebar-primary {
+    background: #f8fafc !important;
+    border-right: 1px solid #e2e8f0;
+}
+
+/* Sidebar title area */
+.sidebar-primary-item .navbar-brand,
+.bd-sidebar-primary .navbar-brand {
+    color: #0f172a !important;
+    font-weight: 800;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+/* Sidebar headings */
+.bd-sidebar-primary .caption {
+    color: #0f172a !important;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 1.1rem;
+}
+
+/* Sidebar links */
+.bd-sidebar-primary a {
+    color: #334155 !important;
+    font-weight: 500;
+}
+
+.bd-sidebar-primary a:hover {
+    color: #0f5e9c !important;
+    text-decoration: none;
+}
+
+/* Active sidebar link */
+.bd-sidebar-primary .active > a,
+.bd-sidebar-primary a.current {
+    color: #0f5e9c !important;
+    font-weight: 800;
+    border-left: 3px solid #0f5e9c;
+    padding-left: 0.45rem;
+}
+
+/* Search box */
+.search-button,
+.bd-search .form-control {
+    border-radius: 999px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+}
+
+/* Main content width */
+.bd-main .bd-content .bd-article-container {
+    max-width: 980px;
+}
+
+/* Typography */
+.bd-article-container h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.035em;
+    margin-bottom: 0.35rem;
+    color: #0f172a;
+    font-weight: 850;
+}
+
+.bd-article-container h2 {
+    margin-top: 2.35rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.4rem;
+    color: #0f172a;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+}
+
+.bd-article-container h3 {
+    color: #172033;
+    font-weight: 750;
+}
+
+.bd-article-container p {
+    line-height: 1.68;
+    color: #263247;
+}
+
+/* Date line */
+.bd-article-container em {
+    color: #64748b;
+    font-size: 0.92rem;
+}
+
+/* Portfolio card grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.portfolio-card {
+    border: 1px solid #d7dee8;
+    border-radius: 14px;
+    padding: 1.2rem 1.25rem;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+    box-shadow: 0 1px 5px rgba(15, 23, 42, 0.06);
+}
+
+.portfolio-card:hover {
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.10);
+    transform: translateY(-1px);
+    transition: 0.15s ease;
+}
+
+.portfolio-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.55rem;
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+.portfolio-card p {
+    margin-bottom: 0.7rem;
+}
+
+.portfolio-card a {
+    font-weight: 750;
+    color: #0f5e9c;
+}
+
+/* Status tags */
+.status-row {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.status {
+    font-size: 0.70rem;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 0.18rem 0.55rem;
+    white-space: nowrap;
+}
+
+.status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status.building {
+    background: #ffedd5;
+    color: #9a3412;
+}
+
+.status.planned {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+/* Research standard pills */
+.standard-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1rem 0 1.4rem 0;
+}
+
+.standard-item {
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    padding: 0.38rem 0.85rem;
+    background: #f8fafc;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #172033;
+}
+
+/* Links */
+a {
+    color: #0f5e9c;
+}
+
+a:hover {
+    color: #063f6b;
+}
+
+/* Tables */
+table {
+    font-size: 0.92rem;
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
