@@ -1,557 +1,538 @@
-/* Full clean white Jupyter Book style override */
+/* =========================================================
+   Final academic-notes layout
+   Aim: closer to Quant Girl-style Jupyter Book page
+   ========================================================= */
 
-/* PyData / Jupyter Book theme colour variables */
-:root,
-html,
-html[data-theme="light"],
-html[data-theme="dark"] {
-  --pst-color-background: #ffffff !important;
-  --pst-color-on-background: #ffffff !important;
-  --pst-color-surface: #ffffff !important;
-  --pst-color-on-surface: #ffffff !important;
-  --pst-color-text-base: #1f2937 !important;
-  --pst-color-text-muted: #4b5563 !important;
-  --pst-color-link: #0066cc !important;
-  --pst-color-link-hover: #004999 !important;
-  --pst-color-primary: #0066cc !important;
-  --pst-color-secondary: #0066cc !important;
-  --pst-color-border: #e5e7eb !important;
+:root {
+    --pst-font-family-base: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --pst-font-family-heading: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --pst-color-link: #0066cc;
+    --pst-color-primary: #0066cc;
 }
 
-/* Force all major containers white */
+/* White background everywhere */
 html,
 body,
-.bd-container,
-.bd-container__inner,
 .bd-page-width,
 .bd-main,
 .bd-content,
-.bd-article-container,
 .bd-article,
-.bd-main .bd-content,
-article,
-main,
-section {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-}
-
-/* Left sidebar */
+.bd-article-container,
 .bd-sidebar-primary,
-.bd-sidebar-primary .sidebar-primary-items,
-.bd-sidebar,
-.sidebar-primary-items {
-  background: #f7f7f7 !important;
-  background-color: #f7f7f7 !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
-}
-
-/* Right contents sidebar */
 .bd-sidebar-secondary,
-.bd-sidebar-secondary .sidebar-secondary-items,
-.bd-toc,
-.tocsection,
-.page-toc {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
+.bd-header {
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
 }
 
-/* Top header */
-.bd-header,
-.navbar,
-.navbar-header-items,
-header {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #e5e7eb !important;
+/* ---------------------------------------------------------
+   Layout: bring main text closer to sidebar
+   --------------------------------------------------------- */
+
+.bd-page-width {
+    max-width: 1280px !important;
 }
 
-/* Normal text */
-p, li, ol, ul, td, th, span, div {
-  color: #1f2937 !important;
+.bd-sidebar-primary {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    border-right: 1px solid #e5e7eb !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
 }
 
-/* Headings like the example */
-h1, h2, h3, h4, h5, h6 {
-  color: #1f2937 !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
-  font-weight: 600 !important;
+.bd-main .bd-content {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
 
-/* Main page links: blue hyperlinks */
-.bd-content a,
-.bd-article a,
-article a,
-main a,
-section a,
-p a,
-li a,
-a.reference.internal,
-a.reference.external {
-  color: #0066cc !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  text-decoration: underline !important;
-  font-weight: 400 !important;
-  opacity: 1 !important;
+.bd-main .bd-content .bd-article-container {
+    max-width: 820px !important;
+    margin-left: -1.15rem !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 2rem !important;
 }
 
-/* Kill orange button styling on contents links */
-.bd-content a.reference.internal,
-.bd-article a.reference.internal,
-article a.reference.internal,
-main a.reference.internal,
-section a.reference.internal,
-a.btn,
-a.sd-btn,
-.sd-btn,
-.btn,
-.btn-primary,
-.btn-outline-primary,
-.btn-secondary,
-a[class*="btn"],
-a[class*="button"],
-a[class*="badge"] {
-  color: #0066cc !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  text-decoration: underline !important;
-  font-weight: 400 !important;
-  opacity: 1 !important;
+/* ---------------------------------------------------------
+   Main text scale
+   --------------------------------------------------------- */
+
+body,
+.bd-article,
+.bd-article p,
+.bd-article li {
+    font-family: var(--pst-font-family-base) !important;
+    font-size: 17px !important;
+    line-height: 1.58 !important;
+    color: #1f2933 !important;
+    font-weight: 400 !important;
 }
 
-/* Sidebar links should look like normal navigation */
+/* Welcome / Author paragraph text: small but not tiny */
+.bd-article .intro-small,
+.bd-article .intro-small p,
+.bd-article .author-small,
+.bd-article .author-small p {
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+    color: #1f2933 !important;
+    font-weight: 400 !important;
+    margin-bottom: 0.85rem !important;
+}
+
+/* Paragraph spacing */
+.bd-article p {
+    margin-top: 0 !important;
+    margin-bottom: 0.85rem !important;
+}
+
+/* ---------------------------------------------------------
+   Heading ratio: softer than dashboard bold
+   --------------------------------------------------------- */
+
+.bd-article h1 {
+    font-family: var(--pst-font-family-heading) !important;
+    font-size: 34px !important;
+    line-height: 1.16 !important;
+    font-weight: 600 !important;
+    color: #27313f !important;
+    letter-spacing: -0.015em !important;
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.85rem !important;
+}
+
+.bd-article h2 {
+    font-family: var(--pst-font-family-heading) !important;
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    color: #27313f !important;
+    letter-spacing: -0.01em !important;
+    margin-top: 1.65rem !important;
+    margin-bottom: 0.45rem !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+.bd-article h3 {
+    font-family: var(--pst-font-family-heading) !important;
+    font-size: 22px !important;
+    line-height: 1.22 !important;
+    font-weight: 400 !important;
+    color: #27313f !important;
+    margin-top: 0.55rem !important;
+    margin-bottom: 0.1rem !important;
+}
+
+/* ---------------------------------------------------------
+   Main page links: blue, underlined, readable
+   --------------------------------------------------------- */
+
+.bd-article a {
+    color: #0066cc !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    font-weight: 400 !important;
+}
+
+/* Contents links slightly larger and stronger */
+.bd-article ol.tight-list,
+.bd-article ol.tight-list li,
+.bd-article ol.tight-list li a {
+    font-size: 18px !important;
+    line-height: 1.33 !important;
+}
+
+/* Softer blue numbers */
+.bd-article ol.tight-list li::marker {
+    color: #0066cc !important;
+    font-weight: 400 !important;
+}
+
+/* Tight lists like the reference */
+.bd-article ol.tight-list {
+    margin-top: 0 !important;
+    margin-bottom: 0.65rem !important;
+    padding-left: 1.35rem !important;
+}
+
+.bd-article ol.tight-list li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.bd-article ol.tight-list li + li {
+    margin-top: 0.04rem !important;
+}
+
+/* Normal lists */
+.bd-article ol,
+.bd-article ul {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.85rem !important;
+    padding-left: 1.35rem !important;
+}
+
+.bd-article li {
+    margin-bottom: 0.12rem !important;
+}
+
+/* ---------------------------------------------------------
+   Sidebar: stronger, professional, numbered
+   --------------------------------------------------------- */
+
+.navbar-brand {
+    font-family: var(--pst-font-family-heading) !important;
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    text-align: center !important;
+    margin-bottom: 1.1rem !important;
+}
+
+/* Sidebar captions */
+.bd-sidebar-primary .caption,
+.bd-sidebar-primary p.caption {
+    font-family: var(--pst-font-family-heading) !important;
+    font-size: 14.5px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    margin-top: 1.05rem !important;
+    margin-bottom: 0.35rem !important;
+}
+
+/* Sidebar links: dark and stronger */
 .bd-sidebar-primary a,
-.bd-sidebar a,
-.sidebar-primary-items a {
-  color: #1f2937 !important;
-  background: transparent !important;
-  border: none !important;
-  text-decoration: none !important;
+.bd-sidebar-primary .nav-link,
+.bd-sidebar-primary .reference {
+    font-family: var(--pst-font-family-base) !important;
+    color: #111827 !important;
+    text-decoration: none !important;
+    font-size: 14.5px !important;
+    line-height: 1.38 !important;
+    font-weight: 400 !important;
 }
 
+/* Sidebar hover */
 .bd-sidebar-primary a:hover,
-.bd-sidebar a:hover {
-  color: #0066cc !important;
-  text-decoration: underline !important;
+.bd-sidebar-primary .nav-link:hover {
+    color: #0066cc !important;
+    text-decoration: none !important;
 }
 
+/* Active sidebar page */
 .bd-sidebar-primary .active > a,
-.bd-sidebar .active > a,
-.current > a {
-  color: #0066cc !important;
-  border-left: 3px solid #0066cc !important;
-  background: transparent !important;
+.bd-sidebar-primary .active .nav-link {
+    color: #0066cc !important;
+    font-weight: 700 !important;
+    border-left: 4px solid #0066cc !important;
+    padding-left: 0.45rem !important;
 }
 
 /* Search box */
 .search-button,
-input,
-.form-control {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #d0d7de !important;
+.bd-search {
+    box-shadow: none !important;
+    border-radius: 4px !important;
 }
 
-/* Tables and code */
-table, thead, tbody, tr, td, th {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #d0d7de !important;
+/* ---------------------------------------------------------
+   Right contents sidebar
+   --------------------------------------------------------- */
+
+.bd-sidebar-secondary {
+    display: block !important;
+    background: #ffffff !important;
+    border-left: none !important;
 }
 
-pre, code {
-  background: #f6f8fa !important;
-  color: #24292f !important;
+.bd-sidebar-secondary a {
+    color: #1f2933 !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
 }
 
-/* Remove cards/dark blocks */
+.bd-sidebar-secondary .active > a {
+    color: #0066cc !important;
+    font-weight: 700 !important;
+    border-left: 3px solid #0066cc !important;
+    padding-left: 0.35rem !important;
+}
+
+/* ---------------------------------------------------------
+   Remove boxes/cards/notebook look
+   --------------------------------------------------------- */
+
 .card,
 .sd-card,
-.admonition {
-  background: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: #d0d7de !important;
-}
-
-/* Hide dark/light toggle */
-.theme-switch-button,
-button[title*="theme"],
-button[aria-label*="theme"] {
-  display: none !important;
-}
-
-/* Fix oversized logo / image in left sidebar */
-.bd-sidebar-primary img,
-.sidebar-primary-items img,
-.bd-sidebar img,
-img.logo,
-.logo__image,
-.navbar-brand img {
-    max-width: 170px !important;
-    width: 170px !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto 1rem auto !important;
-}
-
-/* Make normal content images not explode */
-.bd-article img,
-article img,
-main img {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* Keep page centred like a notebook */
-.bd-main .bd-content .bd-article-container {
-    max-width: 900px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-/* Sidebar width similar to example */
-.bd-sidebar-primary {
-    width: 280px !important;
-    min-width: 280px !important;
-    max-width: 280px !important;
-}
-
-/* Make main text readable */
-.bd-article {
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-}
-
-/* Make Contents links look exactly like plain hyperlinks */
-.bd-article ol li a,
-.bd-article ul li a,
-.bd-content ol li a,
-.bd-content ul li a {
-    color: #0066cc !important;
-    text-decoration: underline !important;
-    background: transparent !important;
+.grid,
+.grid-item,
+div.cell_output,
+div.highlight,
+pre,
+.figure,
+img,
+.bd-content img,
+.bd-article,
+.bd-article-container {
     border: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
     box-shadow: none !important;
 }
 
-/* Remove huge top whitespace caused by image alignment */
-.bd-main,
-.bd-content {
-    padding-top: 1rem !important;
-}
-
-/* Right contents box should be simple */
-.bd-sidebar-secondary {
-    width: 220px !important;
-    background: #ffffff !important;
-}
-
-/* Remove weird dark strip on far left/right */
-.bd-container,
-.bd-container__inner {
-    background: #ffffff !important;
-}
-
-/* Final logo size fix */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary .navbar-brand img,
-.bd-sidebar-primary .sidebar-logo,
-.bd-sidebar-primary a img {
-    width: 180px !important;
-    max-width: 180px !important;
-    height: auto !important;
-    max-height: 180px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 0 auto 1rem auto !important;
-}
-
-/* Prevent any image from overflowing the page */
 img {
-    max-width: 100% !important;
-    height: auto !important;
+    border-radius: 0 !important;
+    background: transparent !important;
 }
 
-/* Softer overall look */
-
-/* slightly softer page colours */
-body,
-.bd-main,
-.bd-content,
-.bd-article-container,
-.bd-article,
-article,
-main,
-section {
-  background: #fcfcfc !important;
-  color: #374151 !important;
+/* Header */
+.bd-header {
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
-/* softer left sidebar like Quant Girl */
-.bd-sidebar-primary,
-.bd-sidebar-primary .sidebar-primary-items,
-.bd-sidebar,
-.sidebar-primary-items {
-  background: #f3f4f6 !important;
-  color: #374151 !important;
+/* Remove bottom Next/Previous */
+.prev-next-area {
+    display: none !important;
 }
 
-/* softer right TOC box */
-.bd-sidebar-secondary,
-.bd-toc,
-.tocsection,
-.page-toc {
-  background: #fcfcfc !important;
-  color: #4b5563 !important;
+/* Footer quiet */
+footer {
+    font-size: 12px !important;
+    color: #555 !important;
 }
 
-/* body text softer */
-p,
-li,
-ol,
-ul,
-td,
-th,
-span,
-div {
-  color: #4b5563 !important;
-  line-height: 1.75 !important;
-}
+/* =========================================================
+   FINAL WIDTH + SOFTER HEADINGS OVERRIDE
+   ========================================================= */
 
-/* headings less aggressive */
-h1 {
-  font-size: 2.25rem !important;
-  font-weight: 650 !important;
-  color: #1f2937 !important;
-  margin-bottom: 1.2rem !important;
-}
-
-h2 {
-  font-size: 1.8rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-  margin-top: 2.2rem !important;
-  margin-bottom: 1rem !important;
-}
-
-h3, h4 {
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-/* slightly narrower text area for more elegant reading */
+/* Make the main text column wider like the reference */
 .bd-main .bd-content .bd-article-container {
-  max-width: 820px !important;
+    max-width: 980px !important;
+    width: 980px !important;
+    margin-left: -0.8rem !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 2rem !important;
 }
 
-/* add breathing space */
+/* Let intro and author paragraphs breathe wider */
+.bd-article .intro-small,
+.bd-article .intro-small p,
+.bd-article .author-small,
+.bd-article .author-small p {
+    max-width: 860px !important;
+    width: 860px !important;
+}
+
+/* Make normal article paragraphs wider too */
 .bd-article p {
-  margin-bottom: 1.1rem !important;
+    max-width: 860px !important;
 }
 
-.bd-article ol,
-.bd-article ul {
-  margin-bottom: 1.2rem !important;
+/* Make the Contents lists not too narrow */
+.bd-article ol.tight-list {
+    max-width: 860px !important;
 }
 
-/* links a bit softer blue */
-a,
-a:visited,
-.bd-content a,
-.bd-article a,
-article a,
-main a {
-  color: #2563eb !important;
-  text-decoration: underline !important;
+/* Softer headings: less dark, less harsh */
+.bd-article h1 {
+    color: #3b4656 !important;
+    font-weight: 500 !important;
 }
 
-/* sidebar links less harsh */
-.bd-sidebar-primary a,
-.bd-sidebar a {
-  color: #374151 !important;
+.bd-article h2 {
+    color: #3b4656 !important;
+    font-weight: 500 !important;
 }
 
-.bd-sidebar-primary a:hover,
-.bd-sidebar a:hover {
-  color: #2563eb !important;
+.bd-article h3 {
+    color: #3f4b5b !important;
+    font-weight: 400 !important;
 }
 
-/* active sidebar item subtle */
-.bd-sidebar-primary .active > a,
-.bd-sidebar .active > a,
-.current > a {
-  color: #2563eb !important;
-  border-left: 2px solid #2563eb !important;
-  background: transparent !important;
+/* Softer body text, not pure black */
+.bd-article p,
+.bd-article li {
+    color: #2f3a49 !important;
 }
 
-/* smaller softer logo */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary a img {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-  margin: 0 auto 1rem auto !important;
-  opacity: 0.95 !important;
+/* Softer sidebar title and captions */
+.navbar-brand,
+.bd-sidebar-primary .caption,
+.bd-sidebar-primary p.caption {
+    color: #2f3a49 !important;
 }
 
-/* subtle separators */
-hr {
-  border-color: #e5e7eb !important;
-  margin: 2rem 0 !important;
+/* Keep links blue but less aggressive */
+.bd-article a {
+    color: #1f66b1 !important;
 }
 
-
-/* Keep only one clean sidebar logo */
-.bd-sidebar-primary a.logo,
-.bd-sidebar-primary .navbar-brand {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 1rem !important;
+.bd-article ol.tight-list li::marker {
+    color: #1f66b1 !important;
 }
 
-/* Hide accidental duplicate logo images */
-.bd-sidebar-primary img.logo__image + img,
-.bd-sidebar-primary .navbar-brand img + img,
-.bd-sidebar-primary img:nth-of-type(n+2) {
-  display: none !important;
+/* Lighter blue for homepage Contents links */
+.bd-article ol.tight-list li a {
+    color: #4f8edc !important;
 }
 
-/* Final sidebar logo sizing */
-.bd-sidebar-primary img,
-.bd-sidebar-primary .logo__image,
-.bd-sidebar-primary .navbar-brand img {
-  width: 150px !important;
-  max-width: 150px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1.2rem auto !important;
+.bd-article ol.tight-list li::marker {
+    color: #4f8edc !important;
 }
 
-/* Softer notebook feel */
-body {
-  background: #fafafa !important;
+.bd-article ol.tight-list li a:hover {
+    color: #2f6fb3 !important;
 }
 
-/* Softer main article panel */
-.bd-article,
-.bd-content,
-.bd-article-container {
-  background: #ffffff !important;
-}
-
-/* Slightly softer text */
-p,
-li {
-  color: #4b5563 !important;
-  font-size: 15px !important;
-  line-height: 1.7 !important;
-}
-
-/* Headings less heavy */
-h1 {
-  font-size: 2rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-h2 {
-  font-size: 1.6rem !important;
-  font-weight: 600 !important;
-  color: #1f2937 !important;
-}
-
-h3 {
-  font-size: 1.25rem !important;
-  font-weight: 600 !important;
-}
-
-/* Slightly narrower article like the reference */
+/* Move homepage/content slightly closer to the top */
 .bd-main .bd-content .bd-article-container {
-  max-width: 760px !important;
+    padding-top: 0.4rem !important;
 }
 
-/* Softer sidebar */
-.bd-sidebar-primary {
-  background: #f5f6f8 !important;
-  border-right: 1px solid #e5e7eb !important;
+.bd-article {
+    padding-top: 0.2rem !important;
+}
+
+/* Reduce the gap above Welcome, but not too much */
+.bd-article h1 {
+    margin-top: 0.25rem !important;
+}
+
+/* Keep spacing after Welcome normal */
+.bd-article h1 + .intro-small,
+.bd-article h1 + p {
+    margin-top: 0.4rem !important;
+}
+
+/* Top-left site name */
+.navbar-brand {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    line-height: 1.2 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Hide logo/image if Jupyter Book tries to show one */
+.navbar-brand img,
+.sidebar-logo {
+    display: none !important;
+}
+
+.navbar-brand img,
+.sidebar-logo,
+.bd-sidebar-primary .navbar-brand img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 155px !important;
+    max-width: 155px !important;
+    height: auto !important;
+    margin: 0.35rem auto 0.75rem auto !important;
+}
+
+.navbar-brand {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* SHOW DUPLICATED SIDEBAR LOGO AGAIN */
+.navbar-brand img,
+.navbar-brand img.only-dark,
+.navbar-brand img.only-light,
+.logo__image.only-dark,
+.logo__image.only-light,
+.sidebar-logo,
+.sidebar-logo.only-dark,
+.sidebar-logo.only-light,
+.navbar-brand img:not(:first-of-type) {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 150px !important;
+    max-width: 150px !important;
+    height: auto !important;
+    margin: 0.35rem auto 0.75rem auto !important;
+}
+
+/* Make the two logos stack neatly */
+.navbar-brand {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.15rem !important;
+}
+
+/* Academic reference-list / methodology page styling */
+.download-strip {
+    margin: 0.7rem 0 1.1rem 0 !important;
+    font-size: 15px !important;
+}
+
+.download-strip a {
+    display: inline-block !important;
+    margin-right: 1.25rem !important;
+    color: #4f8edc !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+}
+
+/* Make methodology pages feel like notes, not dashboards */
+.bd-article h2 {
+    margin-top: 1.55rem !important;
+    margin-bottom: 0.5rem !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+}
+
+.bd-article h3 {
+    margin-top: 1.05rem !important;
+    margin-bottom: 0.25rem !important;
+    color: #4b5563 !important;
+    font-weight: 500 !important;
+}
+
+/* Softer body copy */
+.bd-article p {
+    color: #334155 !important;
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+}
+
+/* Make reference-style paragraphs readable */
+.bd-article p strong:first-child {
+    color: #1f2937 !important;
+    font-weight: 600 !important;
 }
 
 /* Softer links */
-a,
-.bd-article a,
-.bd-content a {
-  color: #2563eb !important;
-  text-decoration: underline !important;
+.bd-article a {
+    color: #4f8edc !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
 }
 
-/* Cleaner horizontal separators */
-hr {
-  border: none !important;
-  border-top: 1px solid #e5e7eb !important;
-  margin: 2rem 0 !important;
+/* Formula spacing */
+.bd-article .math {
+    margin-top: 0.6rem !important;
+    margin-bottom: 0.6rem !important;
 }
 
-/* Keep the sidebar image clean: one small logo only */
-.bd-sidebar-primary img {
-  width: 140px !important;
-  max-width: 140px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1rem auto !important;
-}
-
-/* Hide repeated logo/image copies in the sidebar */
-.bd-sidebar-primary img:nth-of-type(n+2),
-.sidebar-primary-items img:nth-of-type(n+2) {
-  display: none !important;
-}
-
-/* Give the logo area a cleaner notebook look */
-.bd-sidebar-primary .navbar-brand,
-.bd-sidebar-primary a.logo {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 1rem !important;
-}
-
-/* Remove duplicate sidebar logo images and keep only one */
-.bd-sidebar-primary .sidebar-primary-items > img:not(:first-of-type),
-.bd-sidebar-primary .sidebar-primary-items > a.logo:not(:first-of-type),
-.bd-sidebar-primary .navbar-brand:not(:first-of-type) {
-  display: none !important;
-}
-
-/* Keep only the first visible image in the sidebar */
-.bd-sidebar-primary img {
-  width: 135px !important;
-  max-width: 135px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 1rem auto !important;
-}
-
-/* Hide any extra images that appear before/after the main logo */
-.bd-sidebar-primary img:nth-of-type(n+2) {
-  display: none !important;
+/* Lists less bulky */
+.bd-article ul li {
+    margin-bottom: 0.18rem !important;
+    line-height: 1.48 !important;
 }

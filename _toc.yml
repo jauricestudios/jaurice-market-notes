@@ -2,57 +2,26 @@ format: jb-book
 root: intro
 
 parts:
-  - caption: UK Gas & LNG Market Monitor
+  - caption: Projects
     chapters:
-      - file: gas-lng/overview
-        title: Project Overview
-      - file: gas-lng/dashboard
-        title: Dashboard
-      - file: gas-lng/market-structure
-        title: Market Structure
-      - file: gas-lng/supply-monitor
-        title: Supply Monitor
-      - file: gas-lng/demand-monitor
-        title: Demand Monitor
-      - file: gas-lng/storage-monitor
-        title: Storage Monitor
-      - file: gas-lng/lng-monitor
-        title: LNG Monitor
-      - file: gas-lng/interconnector-monitor
-        title: Interconnector Monitor
-      - file: gas-lng/power-burn-link
-        title: Power Burn Link
-      - file: gas-lng/weather-demand-model
-        title: Weather-Demand Model
-      - file: gas-lng/nbp-ttf-spread
-        title: NBP vs TTF Spread
-      - file: gas-lng/tightness-index
-        title: UK Gas Tightness Index
-      - file: gas-lng/gis-map
-        title: GIS Infrastructure Map
-      - file: gas-lng/excel-model
-        title: Excel Model
-      - file: gas-lng/weekly-notes
-        title: Weekly Analyst Notes
-      - file: gas-lng/methodology
-        title: Methodology & Data Sources
+      - file: projects/energy_pricing_model
+        title: 1. Energy Pricing & Commercial Scenario Model
 
-  - caption: Additional Market Notes
+      - file: projects/uk-gas-balance/overview
+        title: 2. UK Gas & LNG Case Study
+
+      - file: gas-lng/uk_gas_price_pressure_exposure_model
+        title: 3. UK Gas Price Pressure and Exposure Model
+
+  - caption: Data & Methods
     chapters:
-      - file: oil/overview
-        title: Oil
-      - file: power/overview
-        title: Power
-      - file: geopolitics/overview
-        title: Geopolitics
-      - file: metals/overview
-        title: Energy Transition Metals
-      - file: macro/overview
-        title: Macro
+      - file: projects/gis-infrastructure-map
+        title: 1. GIS Infrastructure Map
+
+      - file: projects/uk-gas-balance/sources
+        title: 2. Data
 
   - caption: About
     chapters:
       - file: about
         title: About
-      - file: contact
-        title: Contact

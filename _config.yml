@@ -1,32 +1,30 @@
-title: Jaurice Research Notes
-author: Jaurice O'Connor
-logo: assets/sidebar-logo.png
+title: "Jaurice O'Connor"
+logo: logo.png
+author: "Jaurice O'Connor"
+copyright: "2026"
+
 execute:
-  execute_notebooks: force
-repository:
-  url: https://github.com/jauricestudios/jaurice-market-notes
-  branch: main
+  execute_notebooks: off
+
 html:
-  theme_options:
-    use_repository_button: true
-    use_download_button: true
-    use_fullscreen_button: true
-  extra_css:
-  - custom.css
-xtra_css:
-- _static/custom.css
-theme:
-  name: sphinx_book_theme
-  options:
-    default_mode: dark
+  use_repository_button: false
+  use_issues_button: false
+  use_edit_page_button: false
+  extra_footer: ""
+
 sphinx:
   config:
     html_static_path:
-    - _static
+      - _static
+    templates_path:
+      - _templates
     html_css_files:
-    - custom.css
-    html_title: Jaurice O'Connor | Risk Analytics Portfolio
-    html_theme_options:
-      default_mode: light
-      navbar_start:
-      - navbar-logo
+      - custom.css
+
+exclude_patterns:
+  - "_build"
+  - ".venv_energy"
+  - "archive_unused"
+  - "energy_pricing_model copy"
+  - "**.ipynb_checkpoints"
+  - "**/.DS_Store"

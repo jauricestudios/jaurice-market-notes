@@ -1,47 +1,40 @@
 # Welcome
 
-This is a collection of notes, dashboards and modelling projects exploring energy markets, commodities, infrastructure risk and applied market analytics.
+<div class="intro-small">
 
-The main idea is to use **Python**, **Excel**, **GIS** and market reasoning to understand how physical energy systems become financial and commercial risks.
+This is a collection of projects exploring pricing, forecasting, commercial analytics and commodity market risk. The idea is to use Python, Excel and SQL to turn market data into practical commercial analysis.
 
-The current flagship project is the **UK Gas & LNG Market Monitor**, a research notebook and dashboard system tracking whether the UK gas market is becoming tighter or looser using gas flows, LNG sendout, storage, weather, power demand and price signals.
+My aim is to build an open portfolio where energy, commodities and pricing projects can be found in one place, explained clearly, and supported by reproducible code.
 
----
+</div>
 
-# Contents
+## Contents
 
-## UK Gas & LNG Market Monitor
+### Projects
 
-1. [Project Overview](gas-lng/overview.md)  
-2. [Dashboard](gas-lng/dashboard.md)  
-3. [Market Structure](gas-lng/market-structure.md)  
-4. [Supply, Demand and Storage](gas-lng/supply-monitor.md)  
-5. [LNG and Interconnectors](gas-lng/lng-monitor.md)  
-6. [Weather-Demand Model](gas-lng/weather-demand-model.md)  
-7. [NBP vs TTF Spread](gas-lng/nbp-ttf-spread.md)  
-8. [GIS Infrastructure Map](gas-lng/gis-map.md)  
-9. [Weekly Analyst Notes](gas-lng/weekly-notes.md)  
-10. [Methodology & Data Sources](gas-lng/methodology.md)  
+<ol class="tight-list">
+  <li><a href="projects/energy_pricing_model.html">Energy Pricing & Commercial Scenario Model</a></li>
+  <li><a href="projects/uk-gas-balance/overview.html">UK Gas & LNG Case Study</a></li>
+  <li><a href="gas-lng/uk_gas_price_pressure_exposure_model.html">UK Gas Price Pressure and Exposure Model</a></li>
+</ol>
 
-## Additional Market Notes
+### Data & Methods
 
-1. [Oil Dashboard Overview](oil/overview.md)  
-2. [Power Dashboard Overview](power/overview.md)  
-3. [Geopolitics and Chokepoint Dashboard](geopolitics/overview.md)  
-4. [Energy Transition Metals Dashboard](metals/overview.md)  
-5. [Macro and Commodity Sensitivity Notes](macro/overview.md)  
+<ol class="tight-list">
+  <li><a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a></li>
+  <li><a href="projects/uk-gas-balance/sources.html">Data</a></li>
+</ol>
 
----
+## Author
 
-# Author
+<div class="author-small">
 
-I am Jaurice O’Connor, a final-year Mathematics student building practical research tools around energy markets, commodity risk, infrastructure exposure and applied modelling.
+I am Jaurice O'Connor, a mathematics student interested in energy markets, commodities, pricing, forecasting and commercial analytics.
 
-My work combines Python, Excel, GIS and economic reasoning to turn market data into clearer analyst-style interpretation.
+My work focuses on using Python and Excel to analyse market data, build pricing and scenario models, and explain the commercial implication of the results.
 
-I am especially interested in UK and European gas and power markets, LNG, storage, energy infrastructure, commodity risk and the way physical systems affect prices.
+I am especially interested in how physical commodity systems connect to market prices: gas storage, LNG flows, weather demand, power-system stress, benchmark spreads and commercial exposure.
 
-Connect with me:
+The aim of this site is to keep the technical work reproducible while making the commercial interpretation clear enough for analyst, risk, pricing and energy-market roles.
 
-- [GitHub](https://github.com/jauricestudios)
-- [LinkedIn](https://www.linkedin.com/)
+</div>
