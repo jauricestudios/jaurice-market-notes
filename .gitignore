@@ -1,1 +1,26 @@
+# Jupyter Book build outputs
+_build/
+_build/**
+
+# Python / Jupyter junk
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+Untitled.ipynb
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+.venv_energy/
+venv/
+env/
+
+# OS files
 .DS_Store
+
+# Backup/archive clutter
+*_backup*
+*_old*
+archive_unused/
+_static_old_css_backup/
+anaconda_projects/
