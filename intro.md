@@ -1,52 +1,29 @@
 # Jaurice O'Connor
 
-## Pricing, Commodity Markets & Risk Analytics
+I am a mathematics graduate building projects across pricing, commodity markets, forecasting and commercial risk.
 
-Mathematics graduate building practical pricing, forecasting and commercial risk models using Python, Excel and market data.
+My work uses Python, Excel and market data to connect physical drivers—such as demand, weather, LNG flows and benchmark prices—to decisions involving price, margin and exposure.
 
-My work connects physical market drivers—including demand, weather, LNG flows and benchmark prices—to decisions involving price, margin and exposure.
+[GitHub](https://github.com/jauricestudios/jaurice-market-notes)
 
-<div class="hero-links">
-  <a href="projects/energy_pricing_model.html">View featured project</a>
-  <a href="https://github.com/jauricestudios/jaurice-market-notes">View GitHub</a>
-</div>
+## Contents
 
-## Featured Work
+### Pricing & Commercial Analytics
 
-<div class="project-grid">
+1. [Energy Pricing & Commercial Scenario Model](projects/energy_pricing_model.html)
+2. [UK Gas Price Pressure & Exposure Model](gas-lng/uk_gas_price_pressure_exposure_model.html)
 
-<article class="project-card">
-  <h3>Energy Pricing &amp; Commercial Scenario Model</h3>
-  <p>A commercial model combining cost drivers, volume assumptions and market scenarios to examine price, margin and margin-at-risk.</p>
-  <p class="card-tools">Python · Excel · Scenario analysis · Commercial modelling</p>
-  <p><a href="projects/energy_pricing_model.html">Open project →</a></p>
-</article>
+### Commodity Markets
 
-<article class="project-card">
-  <h3>UK Gas &amp; LNG Case Study</h3>
-  <p>An analysis of UK gas-market pressure using storage, LNG flows, weather demand and benchmark-market relationships.</p>
-  <p class="card-tools">Python · Time series · Market data · Visualisation</p>
-  <p><a href="projects/uk-gas-balance/overview.html">Open project →</a></p>
-</article>
+1. [UK Gas & LNG Case Study](projects/uk-gas-balance/overview.html)
 
-<article class="project-card">
-  <h3>UK Gas Price Pressure &amp; Exposure Model</h3>
-  <p>A scenario model examining how European gas stress, Asian LNG demand and domestic conditions may affect UK prices and exposure.</p>
-  <p class="card-tools">Excel · Python · Stress testing · Sensitivity analysis</p>
-  <p><a href="gas-lng/uk_gas_price_pressure_exposure_model.html">Open project →</a></p>
-</article>
+### Data & Methods
 
-</div>
+1. [GIS Infrastructure Map](projects/gis-infrastructure-map.html)
+2. [Data Sources & Methodology](projects/uk-gas-balance/sources.html)
 
-## Data & Methods
+## Author
 
-<div class="method-links">
-  <a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a>
-  <a href="projects/uk-gas-balance/sources.html">Data Sources &amp; Methodology</a>
-</div>
+I am especially interested in pricing, margin and risk analytics across energy, commodities, insurance and other commercially focused industries.
 
-## About
-
-I am a mathematics graduate focused on pricing, commodities, forecasting and risk analytics. I use Python and Excel to turn market data into transparent models, test assumptions and explain the commercial implications of the results.
-
-I am targeting analyst opportunities across pricing, energy markets, insurance and commercial risk.
+My projects are designed to show the full analytical process: collecting and cleaning data, selecting assumptions, building models, testing scenarios and communicating the commercial implications of the results.
