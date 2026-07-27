@@ -6,25 +6,19 @@ My work focuses on how physical market drivers—including demand, weather, LNG 
 
 ## Contents
 
-### Pricing & Commercial Analytics
+### Projects
 
-<ol>
+<ol class="homepage-index">
   <li><a href="projects/energy_pricing_model.html">Energy Pricing &amp; Commercial Scenario Model</a></li>
+  <li><a href="projects/uk-gas-balance/overview.html">UK Gas &amp; LNG Case Study</a></li>
   <li><a href="gas-lng/uk_gas_price_pressure_exposure_model.html">UK Gas Price Pressure &amp; Exposure Model</a></li>
 </ol>
 
-### Commodity Market Research
+### Other Topics
 
-<ol>
-  <li><a href="projects/uk-gas-balance/overview.html">UK Gas &amp; LNG Case Study</a></li>
-</ol>
+<p><a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a></p>
 
-### Data & Methods
-
-<ol>
-  <li><a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a></li>
-  <li><a href="projects/uk-gas-balance/sources.html">Data Sources &amp; Methodology</a></li>
-</ol>
+<p><a href="projects/uk-gas-balance/sources.html">Data Sources &amp; Methodology</a></p>
 
 ## Author
 
