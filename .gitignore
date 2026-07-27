@@ -24,3 +24,10 @@ env/
 archive_unused/
 _static_old_css_backup/
 anaconda_projects/
+
+# Jupyter Book generated files
+_build/
+.ipynb_checkpoints/
+.DS_Store
+.venv/
+.venv_energy/
