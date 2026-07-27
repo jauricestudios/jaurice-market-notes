@@ -469,3 +469,118 @@ h6 {
   background: rgba(217, 249, 157, 0.16) !important;
   border-left: 3px solid #d9f99d !important;
 }
+
+/* =========================================================
+   FINAL DARK THEME OVERRIDE
+   Must remain at the bottom of custom.css
+   ========================================================= */
+
+:root,
+html[data-theme="light"],
+html[data-theme="dark"] {
+  --pst-color-background: #012f24 !important;
+  --pst-color-on-background: #f8fafc !important;
+  --pst-color-surface: #001f18 !important;
+  --pst-color-text-base: #f8fafc !important;
+  --pst-color-text-muted: #cbd5e1 !important;
+  --pst-color-primary: #ffffff !important;
+  --pst-color-link: #7dd3fc !important;
+}
+
+/* Remove every remaining white page area */
+html,
+body,
+.bd-page-width,
+.bd-container,
+.bd-main,
+.bd-content,
+.bd-article,
+.bd-article-container {
+  background-color: #012f24 !important;
+  color: #f8fafc !important;
+}
+
+/* Left navigation */
+.bd-sidebar-primary,
+.sidebar-primary-items__start,
+.sidebar-primary-items__end,
+.bd-sidebar-primary .sidebar-primary-item,
+.bd-sidebar-primary .navbar-brand {
+  background-color: #001f18 !important;
+  color: #f8fafc !important;
+}
+
+/* Right contents navigation */
+.bd-sidebar-secondary,
+.bd-toc,
+.sidebar-secondary-items {
+  background-color: #012f24 !important;
+  color: #f8fafc !important;
+}
+
+/* Force readable article text */
+.bd-article,
+.bd-article p,
+.bd-article li,
+.bd-article span,
+.bd-article strong,
+.bd-article em,
+.bd-article blockquote {
+  color: #f8fafc !important;
+}
+
+/* Chalk-style headings */
+.bd-article h1,
+.bd-article h2,
+.bd-article h3,
+.bd-article h4,
+.bd-article h5,
+.bd-article h6 {
+  color: #fffdf2 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+
+/* Navigation text */
+.bd-sidebar-primary a,
+.bd-sidebar-primary .nav-link,
+.bd-sidebar-primary p,
+.bd-sidebar-primary span,
+.bd-sidebar-secondary a,
+.bd-toc a {
+  color: #ecfeff !important;
+}
+
+/* Keep article links clearly visible */
+.bd-article a {
+  color: #7dd3fc !important;
+}
+
+/* Dark search area */
+.search-button,
+.bd-search,
+.bd-search input,
+.form-control {
+  background-color: #013d2f !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.3) !important;
+}
+
+/* Hide the unsuitable old 3D logo */
+.bd-sidebar-primary .navbar-brand img,
+.bd-sidebar-primary img.logo {
+  display: none !important;
+}
+
+/* Remove pale exterior gutters on wide screens */
+@media (min-width: 960px) {
+  body,
+  .bd-page-width {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .bd-main .bd-content .bd-article-container {
+    max-width: 900px !important;
+  }
+}
+
