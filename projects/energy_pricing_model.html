@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Energy Pricing &amp; Commercial Scenario Model &#8212; Jaurice O&#39;Connor | Risk Analytics Portfolio</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a228b768" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_ux_9.css?v=893446cc" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_restore_clean_research.css?v=e87cf95a" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_professional_colour.css?v=18471b45" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup.css?v=f93971ff" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_old_research_ux_only.css?v=72bccb57" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_keep_content_old_ux.css?v=002d1765" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_backup_ai_dashboard_style.css?v=2912722a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/energy_pricing_model';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="UK Gas Balance Study" href="uk-gas-balance/overview.html" />
+    <link rel="prev" title="Welcome" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Jaurice O'Connor | Risk Analytics Portfolio - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Projects</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Energy Pricing &amp; Commercial Scenario Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uk-gas-balance/overview.html">2. UK Gas &amp; LNG Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gas-lng/uk_gas_price_pressure_exposure_model.html">3. UK Gas Price Pressure and Exposure Model</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data &amp; Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="gis-infrastructure-map.html">1. GIS Infrastructure Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uk-gas-balance/sources.html">2. Data</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jauricestudios/jaurice-market-notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/projects/energy_pricing_model.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Energy Pricing & Commercial Scenario Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-summary">Project Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-question">Business Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-layer-forecast-error-and-volume-at-risk">Python Layer: Forecast Error and Volume-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-error-results">Forecast Error Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-vs-forecast-demand">Actual vs Forecast Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-error-distribution">Forecast Error Distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-at-risk">Volume-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-at-risk">Margin-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-layer-cost-stack-and-breakeven-pricing">Excel Layer: Cost-Stack and Breakeven Pricing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commercial-interpretation">Commercial Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-demonstrated">Skills Demonstrated</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="energy-pricing-commercial-scenario-model">
+<h1>Energy Pricing &amp; Commercial Scenario Model<a class="headerlink" href="#energy-pricing-commercial-scenario-model" title="Link to this heading">#</a></h1>
+<section id="project-summary">
+<h2>Project Summary<a class="headerlink" href="#project-summary" title="Link to this heading">#</a></h2>
+<p>This project builds a public-data-informed energy pricing workflow for a fixed-price electricity contract. The aim is to test how wholesale price stress, non-commodity cost assumptions, forecast error and volume uncertainty affect the sale price needed to protect margin.</p>
+<p>The project combines two layers:</p>
+<ul class="simple">
+<li><p>a Python forecast-error and volume-at-risk model using public NESO demand data</p></li>
+<li><p>an Excel cost-stack and breakeven pricing model for commercial scenario analysis</p></li>
+</ul>
+<p>The model is not intended to replicate a full supplier pricing engine. It is a transparent portfolio project showing how public data, simplified assumptions and scenario analysis can support pricing judgement.</p>
+</section>
+<section id="business-question">
+<h2>Business Question<a class="headerlink" href="#business-question" title="Link to this heading">#</a></h2>
+<p>What fixed sale price is required to protect margin, and how much margin remains exposed if demand differs from forecast under stressed price conditions?</p>
+<p>Energy pricing risk is not only about the price per MWh. It is also about the volume exposed at that price. A contract can look acceptable under base assumptions but become risky if demand is higher than expected during expensive periods.</p>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Link to this heading">#</a></h2>
+<p>Public NESO demand data<br />
+→ Python forecast-error model<br />
+→ Volume-at-risk calculation<br />
+→ Price-stress margin-at-risk<br />
+→ Excel cost-stack pricing model<br />
+→ Scenario and sensitivity analysis<br />
+→ Commercial recommendation</p>
+</section>
+<section id="python-layer-forecast-error-and-volume-at-risk">
+<h2>Python Layer: Forecast Error and Volume-at-Risk<a class="headerlink" href="#python-layer-forecast-error-and-volume-at-risk" title="Link to this heading">#</a></h2>
+<p>The Python model uses public NESO demand data for 2025 and 2026. A simple previous-day benchmark forecast is used:</p>
+<p><strong>Forecast demand = demand from the same settlement period yesterday</strong></p>
+<p>There are 48 half-hour settlement periods per day, so the model shifts demand by 48 rows.</p>
+<p>Forecast error is calculated as:</p>
+<p><strong>Forecast error = actual demand - forecast demand</strong></p>
+<p>The model then uses the P95 absolute forecast error as a practical volume-at-risk measure.</p>
+</section>
+<section id="forecast-error-results">
+<h2>Forecast Error Results<a class="headerlink" href="#forecast-error-results" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head text-right"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Mean error</p></td>
+<td class="text-right"><p>-6.63 MW</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mean absolute error</p></td>
+<td class="text-right"><p>1,927.10 MW</p></td>
+</tr>
+<tr class="row-even"><td><p>P50 absolute error</p></td>
+<td class="text-right"><p>1,351.50 MW</p></td>
+</tr>
+<tr class="row-odd"><td><p>P90 absolute error</p></td>
+<td class="text-right"><p>4,420.00 MW</p></td>
+</tr>
+<tr class="row-even"><td><p>P95 absolute error</p></td>
+<td class="text-right"><p>5,850.50 MW</p></td>
+</tr>
+<tr class="row-odd"><td><p>P99 absolute error</p></td>
+<td class="text-right"><p>8,674.50 MW</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The mean error is close to zero, so the previous-day forecast is not strongly biased overall. However, the high percentile errors show that large demand misses can occur.</p>
+</section>
+<section id="actual-vs-forecast-demand">
+<h2>Actual vs Forecast Demand<a class="headerlink" href="#actual-vs-forecast-demand" title="Link to this heading">#</a></h2>
+<p><img alt="Actual versus previous-day forecast demand" src="../_images/actual_vs_forecast_demand.png" /></p>
+<p>The previous-day benchmark captures the broad daily demand shape, but it misses some peaks and troughs. These missed movements create volume exposure.</p>
+</section>
+<section id="forecast-error-distribution">
+<h2>Forecast Error Distribution<a class="headerlink" href="#forecast-error-distribution" title="Link to this heading">#</a></h2>
+<p><img alt="Forecast error distribution" src="../_images/forecast_error_distribution.png" /></p>
+<p>The error distribution is centred close to zero, but the tails show that larger forecast errors can occur. This supports using a high-percentile absolute forecast error as a volume-at-risk measure.</p>
+</section>
+<section id="volume-at-risk">
+<h2>Volume-at-Risk<a class="headerlink" href="#volume-at-risk" title="Link to this heading">#</a></h2>
+<p>The P95 absolute forecast error is <strong>5,850.50 MW</strong>.</p>
+<p>Because each settlement period is half an hour, this is converted into MWh:</p>
+<p><strong>System volume-at-risk = 5,850.50 × 0.5 = 2,925.25 MWh</strong></p>
+<p>To avoid overstating the exposure, the model scales this by an illustrative 0.1% portfolio share:</p>
+<p><strong>Portfolio volume-at-risk = 2,925.25 × 0.001 = 2.93 MWh</strong></p>
+</section>
+<section id="margin-at-risk">
+<h2>Margin-at-Risk<a class="headerlink" href="#margin-at-risk" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head text-right"><p>Price stress</p></th>
+<th class="head text-right"><p>Portfolio volume-at-risk</p></th>
+<th class="head text-right"><p>Portfolio margin-at-risk</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Normal case</p></td>
+<td class="text-right"><p>GBP 77.18/MWh</p></td>
+<td class="text-right"><p>2.93 MWh</p></td>
+<td class="text-right"><p>GBP 225.77</p></td>
+</tr>
+<tr class="row-odd"><td><p>Extreme case</p></td>
+<td class="text-right"><p>GBP 135.71/MWh</p></td>
+<td class="text-right"><p>2.93 MWh</p></td>
+<td class="text-right"><p>GBP 396.99</p></td>
+</tr>
+<tr class="row-even"><td><p>Spike case</p></td>
+<td class="text-right"><p>GBP 696.20/MWh</p></td>
+<td class="text-right"><p>2.93 MWh</p></td>
+<td class="text-right"><p>GBP 2,036.56</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Portfolio margin at risk by price scenario" src="../_images/portfolio_margin_at_risk_by_scenario.png" /></p>
+<p>The same volume miss becomes much more damaging when it occurs during a spike-price period.</p>
+</section>
+<section id="excel-layer-cost-stack-and-breakeven-pricing">
+<h2>Excel Layer: Cost-Stack and Breakeven Pricing<a class="headerlink" href="#excel-layer-cost-stack-and-breakeven-pricing" title="Link to this heading">#</a></h2>
+<p>The Excel workbook estimates the fixed sale price needed to cover the full cost stack and target margin.</p>
+<p>The required sale price is calculated as:</p>
+<p><strong>Required Sale Price = Wholesale Cost + Network Cost + Policy Cost + Balancing Allowance + Operating Cost + Credit Allowance + Risk Premium + Target Margin</strong></p>
+<p>The margin buffer is calculated as:</p>
+<p><strong>Margin Buffer = Offered Sale Price - Required Sale Price</strong></p>
+<p>The workbook tests base, wholesale stress, non-commodity stress, combined stress and defensive pricing scenarios.</p>
+</section>
+<section id="commercial-interpretation">
+<h2>Commercial Interpretation<a class="headerlink" href="#commercial-interpretation" title="Link to this heading">#</a></h2>
+<p>The Excel layer answers: <strong>What price should be charged?</strong></p>
+<p>The Python layer answers: <strong>How much margin remains exposed if demand differs from forecast?</strong></p>
+<p>Together, the project shows that fixed-price energy contracts should be tested against both price risk and volume risk.</p>
+<p>The main commercial conclusion is that a fixed sale price should not be judged only against base wholesale cost. It should be tested against the full cost stack, stressed price conditions and forecast-volume uncertainty.</p>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">#</a></h2>
+<p>This project uses public data and simplified assumptions. It does not include real customer load profiles, live forward curves, actual hedge books, supplier tariff structures, collateral requirements, detailed network charging methodology or weather-adjusted demand forecasting.</p>
+<p>The portfolio share is illustrative. A real supplier or customer portfolio would need its own actual load profile and risk limits.</p>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading">#</a></h2>
+<p>Main project files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pricing_model/README.md</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pricing_model/scripts/forecast_error_volume_risk.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pricing_model/excel/energy_cost_stack_breakeven_model.xlsx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pricing_model/outputs/forecast_error_summary.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_pricing_model/outputs/volume_at_risk_summary.csv</span></code></p></li>
+</ul>
+</section>
+<section id="skills-demonstrated">
+<h2>Skills Demonstrated<a class="headerlink" href="#skills-demonstrated" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Python data cleaning</p></li>
+<li><p>Forecast-error analysis</p></li>
+<li><p>Volume-at-risk calculation</p></li>
+<li><p>Public energy-market data use</p></li>
+<li><p>Excel cost-stack modelling</p></li>
+<li><p>Scenario and sensitivity analysis</p></li>
+<li><p>Commercial recommendation writing</p></li>
+<li><p>Model limitation documentation</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="uk-gas-balance/overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">UK Gas Balance Study</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-summary">Project Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#business-question">Business Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow">Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-layer-forecast-error-and-volume-at-risk">Python Layer: Forecast Error and Volume-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-error-results">Forecast Error Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-vs-forecast-demand">Actual vs Forecast Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forecast-error-distribution">Forecast Error Distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#volume-at-risk">Volume-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#margin-at-risk">Margin-at-Risk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excel-layer-cost-stack-and-breakeven-pricing">Excel Layer: Cost-Stack and Breakeven Pricing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commercial-interpretation">Commercial Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-demonstrated">Skills Demonstrated</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jaurice O'Connor
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
