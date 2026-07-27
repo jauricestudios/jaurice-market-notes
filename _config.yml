@@ -28,7 +28,7 @@ sphinx:
     html_static_path:
       - "_static"
     html_css_files:
-      - "custom.css"
+      - "dark_theme_v3.css"
     html_title: "Jaurice O'Connor | Risk Analytics Portfolio"
 
 exclude_patterns:
