@@ -1,29 +1,33 @@
-# Jaurice O'Connor
+# Welcome
 
-I am a mathematics graduate building projects across pricing, commodity markets, forecasting and commercial risk.
+This is a collection of projects exploring pricing, commodity markets, forecasting and commercial risk. The aim is to use Python, Excel and market data to turn technical analysis into practical commercial insight.
 
-My work uses Python, Excel and market data to connect physical drivers—such as demand, weather, LNG flows and benchmark prices—to decisions involving price, margin and exposure.
-
-[GitHub](https://github.com/jauricestudios/jaurice-market-notes)
+My work focuses on how physical market drivers—including demand, weather, LNG flows, storage and benchmark prices—affect price, margin and exposure.
 
 ## Contents
 
 ### Pricing & Commercial Analytics
 
-1. [Energy Pricing & Commercial Scenario Model](projects/energy_pricing_model.html)
-2. [UK Gas Price Pressure & Exposure Model](gas-lng/uk_gas_price_pressure_exposure_model.html)
+<ol>
+  <li><a href="projects/energy_pricing_model.html">Energy Pricing &amp; Commercial Scenario Model</a></li>
+  <li><a href="gas-lng/uk_gas_price_pressure_exposure_model.html">UK Gas Price Pressure &amp; Exposure Model</a></li>
+</ol>
 
-### Commodity Markets
+### Commodity Market Research
 
-1. [UK Gas & LNG Case Study](projects/uk-gas-balance/overview.html)
+<ol>
+  <li><a href="projects/uk-gas-balance/overview.html">UK Gas &amp; LNG Case Study</a></li>
+</ol>
 
 ### Data & Methods
 
-1. [GIS Infrastructure Map](projects/gis-infrastructure-map.html)
-2. [Data Sources & Methodology](projects/uk-gas-balance/sources.html)
+<ol>
+  <li><a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a></li>
+  <li><a href="projects/uk-gas-balance/sources.html">Data Sources &amp; Methodology</a></li>
+</ol>
 
 ## Author
 
-I am especially interested in pricing, margin and risk analytics across energy, commodities, insurance and other commercially focused industries.
+I am Jaurice O'Connor, a mathematics graduate interested in pricing, commodities, forecasting and risk analytics.
 
-My projects are designed to show the full analytical process: collecting and cleaning data, selecting assumptions, building models, testing scenarios and communicating the commercial implications of the results.
+My projects cover the full analytical process: collecting and cleaning data, selecting assumptions, building models, testing scenarios and explaining the commercial implications of the results.
