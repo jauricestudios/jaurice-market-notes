@@ -3,7 +3,7 @@ author: Jaurice O'Connor
 logo: logo.png
 
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
 
 repository:
   url: https://github.com/jauricestudios/jaurice-market-notes
@@ -30,3 +30,13 @@ sphinx:
     html_css_files:
       - "custom.css"
     html_title: "Jaurice O'Connor | Risk Analytics Portfolio"
+
+exclude_patterns:
+  - "_build"
+  - ".venv"
+  - ".venv_energy"
+  - "archive_unused"
+  - "energy_pricing_model copy"
+  - "Untitled.ipynb"
+  - "**/.ipynb_checkpoints"
+  - "**/.DS_Store"
