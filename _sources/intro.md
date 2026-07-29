@@ -1,6 +1,4 @@
-# Welcome
-
-I’m Jaurice! A recent Mathematics graduate. This is a collection of projects exploring pricing, commodity markets, forecasting, commercial risk and my other interests. The aim is to use Python, Excel and market data to turn technical analysis into practical commercial insight.
+# WelcomeI’m Jaurice! A recent Mathematics graduate. This is a collection of projects exploring pricing, commodity markets, forecasting, commercial risk and my other interests. The aim is to use Python, Excel and market data to turn technical analysis into practical commercial insight.
 
 ## Contents
 
@@ -17,11 +15,13 @@ I’m Jaurice! A recent Mathematics graduate. This is a collection of projects e
 <p><a href="projects/gis-infrastructure-map.html">GIS Infrastructure Map</a></p>
 
 <p><a href="projects/uk-gas-balance/sources.html">Data Sources &amp; Methodology</a></p>
-```{note}
-- This project is under construction 🚧 and new material will be added on an ongoing basis.
-- If you find the project useful, please consider giving it a star on [GitHub](https://github.com/jauricestudios/jaurice-market-notes).
-```
-?
+
+:::{note}
+This project is under construction 🚧 and new material will be added on an ongoing basis.
+
+If you find the project useful, please consider giving it a star on [GitHub](https://github.com/jauricestudios/jaurice-market-notes).
+:::
+
 ## Author
 
 I am Jaurice O'Connor, a mathematics graduate interested in pricing, commodities, forecasting and risk analytics.
