@@ -1,8 +1,6 @@
 # Welcome
 
-This is a collection of projects exploring pricing, commodity markets, forecasting and commercial risk. The aim is to use Python, Excel and market data to turn technical analysis into practical commercial insight.
-
-My work focuses on how physical market drivers—including demand, weather, LNG flows, storage and benchmark prices—affect price, margin and exposure.
+I’m Jaurice! A recent Mathematics graduate. This is a collection of projects exploring pricing, commodity markets, forecasting, commercial risk and my other interests. The aim is to use Python, Excel and market data to turn technical analysis into practical commercial insight.
 
 ## Contents
 
